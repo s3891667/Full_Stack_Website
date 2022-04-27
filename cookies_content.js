@@ -1,15 +1,13 @@
-let cookieModal = document.querySelector(".wrapper");
-let acceptCookieBtn = document.querySelector(".button.btn-accept");
+const cookieContainer = document.querySelector(".cookie-container");
+const acceptButton = document.querySelector(".accept-button");
 
-acceptCookieBtn.addEventListener("click",function(){
-    cookieModal.classList.remove("active")
-    localStorage.setItem("cookieAccepted","yes")
-})
+acceptButton.addEventListener("click",() => {
+    cookieContainer.classList.remove("active");
+    localStorage.setItem("cookieAccepted", "true");
+});
 
-
-setTimeout(function(){
-    let cookieAccepted = localStorage.getItem("cookieAccepted")
-    if(cookieAccepted != "yes"){
-        cookieModal.classList.add("active")
+setTimeout(() => {
+    if(!localStorage.getItem("cookieAccepted")){
+        cookieContainer.classList.add("active");
     }
-},2000)
+}, 2000);
