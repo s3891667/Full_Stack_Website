@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <system>
   <user>
-    <firstname>khoa</firstname>
-    <lastname>nguyen</lastname>
-    <password>$2y$10$j1NNVu3itRl4cKIfNcjdbOjFZ.tvbqnYs8vkkyQehRqPsZ8zX5x9G</password>
-    <email>khoanguyn012@gmail.com</email>
+    <firstname>root</firstname>
+    <lastname>root</lastname>
+    <password>$2y$10$8XI9.xxKYIEHQ2VsuEnMvOxVT37Q8xeKDGeq1wV5PxxPmakqQa49W</password>
+    <email>s@rmit.edu.vn</email>
   </user>
 </system>
