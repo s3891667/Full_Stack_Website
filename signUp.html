@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+    
+<!-- Email address (must be unique for all users)
+Password
+Retype password
+Profile picture (an upload file field)
+First name
+Last name
+There are 2 buttons on the Register form
+
+Clear: reset button
+Register: submit button -->
+<!-- 
+The email address must be in a proper format
+There is no duplication of email (you need to validate this condition at the server-side only). Note that email addresses are case-insensitive (i.e., abc@gmail.com is the same as AbC@GmAiL.com)
+Password must be from 8 to 20 characters. Each password must contain at least 1 lower case letter, at least 1 upper case letter, at least 1 digit
+Password and Retype password must be the same (validate at the client-side only)
+Profile picture: only files with the following extensions are allowed: jpg/jpeg, png, and gif (validate at the server-side only)
+First name and last name: any values from 2 to 20 characters -->
+
+<form class="row col-md-3" method="post" action="./data_saving_retrieve.php" >
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">First name</label>
+    <input name="firstname"   type="text" class="form-control" placeholder="First name" aria-label="First name">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Last name</label>
+    <input name="lastname" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+  </div>
+  <div class="form-group">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="@gmail">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input name="password" type="password" class="form-control" id="inputPassword4">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword4" class="form-label">Re-type Password</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+  <div class="form-group">
+    <p>Choose your picture</p>
+    <input name="avatar" type="file" id="avatar" name="myfile">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Sign up</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+  </div>
+</form>
+</body>
+</html>
