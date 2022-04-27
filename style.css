@@ -106,6 +106,7 @@ span {
 
 .searchbar {
     display: block;
+
     width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
@@ -114,7 +115,8 @@ span {
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 12px solid #eee;
+    border-radius: 30%;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -154,4 +156,45 @@ footer {
     position: relative;
     text-transform: uppercase;
 
+}
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+
+}
+.avatar2 {
+    vertical-align: middle;
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+
+}
+.ava_user{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+
+}
+
+.username {
+    padding-left: 10px;
+    text-align: center;
+    color: rgb(7, 67, 120);
+}
+
+.picture_post{
+    padding-top: 10px;
+    position: relative;
+    display: block;
+}
+.overallpost {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 20px;
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-left: 10px;
 }
