@@ -60,6 +60,7 @@ header {
     text-align: center;
     background-color: #eee;
     letter-spacing: 0.6rem;
+    position: relative;
 }
 
 span {
@@ -202,4 +203,25 @@ footer {
 
 #alert {
     color :red;
+}
+
+.signup_instakilogram{
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 700px;
+}
+
+.file_selection{
+    padding-bottom: 10px;
+}
+
+/* For smartphone */
+@media  only screen and (max-width: 46.1875em){
+    
+}
+
+/* For tablet */
+@media  only screen and (min-width: 46.1875em) and (max-width: 63.9357em){
+    
 }
