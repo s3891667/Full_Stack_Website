@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <system>
-  <user>
+  <user id="1">
     <firstname>root</firstname>
     <lastname>root</lastname>
     <password>$2y$10$8XI9.xxKYIEHQ2VsuEnMvOxVT37Q8xeKDGeq1wV5PxxPmakqQa49W</password>
     <email>s@rmit.edu.vn</email>
+  </user>
+  <user id="2">
+    <firstname>mai</firstname>
+    <lastname>mai</lastname>
+    <password>$2y$10$qgw1vgw1.HT8TtIggKYXfu3nBYMmezYTn3VeZeZxnMZoCsK1rMaqa</password>
+    <email>maimai@gmail.com</email>
+  </user>
+  <user id="3">
+    <firstname>mai </firstname>
+    <lastname>mai</lastname>
+    <password>$2y$15$5h8tuohfsVaxvQDzoZdci.SkDUpGBVumZR3IpFG1mOsuFlt1xla1S</password>
+    <email>maimai2@gmail.com</email>
   </user>
 </system>

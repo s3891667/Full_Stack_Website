@@ -1,7 +1,7 @@
 <?php
 // define variables and set to empty values
 $lastname = $firstname = $email = $password = "";
-
+$check = 0;
 
 $xml = new DOMDocument();
 $xml->formatOutput = true;
@@ -18,20 +18,41 @@ else {
 
 //saving data to the xml file 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // This is in the PHP file and sends a Javascript alert to the client
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
-    $password = $_POST["password"];
-    $hashed_password = password_hash($password,PASSWORD_DEFAULT);
-    // $password = $_POST["password"];
     $email = $_POST["email"];
-    storing_data($system,$xml,$firstname,$lastname,$hashed_password,$email);
-    header("Location:index.html");
+    $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT,['cost'=>15]);   
+    $users = $xml->getElementsByTagName("user");
+    foreach($users as $user) {
+        $emails = $user->getElementsByTagName("email");
+        $email_data= $emails->item(0)->nodeValue;
+        if ($email != $email_data) {
+            echo $email_data;
+            storing_data($system,$xml,$firstname,$lastname,$hashed_password,$email);
+            header("Location:index.html");
+            break;
+        }    
+        else {
+            $message = "Your email has been registed !";
+            echo "<SCRIPT> //not showing me this
+            window.location.href = 'signUp.html?email=used';
+            alert('$message');
+            </SCRIPT>";
+            break;
+        }
+    }
 }
+
+
 
 
 // function that help create a database
 function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
+    $root = $xml->documentElement;
+    $totalAffiliates = ($root->childNodes->length)+1;
     $user = $xml->createElement("user");
+    $user->setAttribute("id", $totalAffiliates);
     $system->appendChild($user);
     $fname = $xml->createElement("firstname",$firstname);
     $user->appendChild($fname);
@@ -44,4 +65,6 @@ function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
     echo "<xmp>".$xml->saveXML(). "</xmp>";
     $xml->save("./accounts.xml");
 }
+
 ?>
+
