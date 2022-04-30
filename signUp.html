@@ -1,49 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-  
-<form  name="signupform"  class="row col-md-3" method="post"  action="./data_saving.php" >
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">First name</label>
-    <input id="firstname" name="firstname"  type="text" class="form-control" placeholder="First name" aria-label="First name">
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Last name</label>
-    <input  id="lastname" name="lastname" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-  </div>
-  <div class="form-group">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input  name="email" type="email" class="form-control" id="email" placeholder="@gmail">
-    <p id="emailAlert"></p>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input name="password"  type="password" class="form-control" id="inputPassword1" 
-    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" 
-    title="Must contains at least 8 characters and 1 special character" required placeholder="Input your password" >
-  </div>
-  <div class="form-group">
-    <label for="inputPassword4" class="form-label">Re-type Password</label>
-    <input type="password" class="form-control" id="inputPassword2" onkeyup="form_check(this)" placeholder="Input your password" >
-    <p id="alert"></p>
-  </div>
-  <div class="form-group">
-    <p>Choose your picture</p>
-    <input name="avatar" type="file" id="avatar" name="myfile">
-  </div>
-  <div class="form-group">
-    <button id="submitbutton" type="submit" class="btn btn-primary">Register</button>
-    <button type="reset" class="btn btn-primary">Reset</button>
-  </div>
-</form>
-<script defer type="text/javascript" src="./data_processing.js"></script>
-</body>
+
+  <body>
+    <header>
+      <!-- Logo Image  -->
+      <div>
+        <img class="img" src="picture/Logo_picture.jpg" alt="logo">
+      </div>
+      <div class="webheading">
+        <!-- Website Heading -->
+        <h1>InstaKilogram</h1>
+        <span>Inspire The World By Yourself</span>
+      </div>
+    </header>
+
+    <div class="signup_instakilogram" class=".float-none">
+      <form name="signupform" class="" method="post" action="./data_saving.php">
+        <div class="form-group">
+          <label for="inputEmail4" class="form-label">First name</label>
+          <input id="firstname" name="firstname" type="text" class="form-control" placeholder="First name"
+            aria-label="First name">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail4" class="form-label">Last name</label>
+          <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Last name"
+            aria-label="Last name">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="email" placeholder="@gmail">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input name="password " type="password" class="form-control" id="inputPassword1"
+            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+            title="Must contains at least 8 characters and 1 special character" required
+            placeholder="Input your password">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4" class="form-label">Re-type Password</label>
+          <input type="password" class="form-control" id="inputPassword2" onkeyup="form_check(this)"
+            placeholder="Input your password">
+          <p id="alert"></p>
+        </div>
+        <div class="form-group">
+          <div class="custom-file">
+            <label class="custom-file-label" for="customFile">Upload Your Profile Image</label>
+          <input name="avatar" class="custom-file-input" type="file" id="avatar" name="myfile">
+        </div>
+        <br>
+        </div>
+        <div class="form-group">
+          <span>
+            <button id="submitbutton" type="submit" class="btn btn-outline-secondary">Register</button>
+          </span>
+          <span>
+            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <footer>
+      <div>
+        <a class="footer_tab" href="#">About Us</a>
+        <a class="footer_tab" href="#">Copyright</a>
+        <a class="footer_tab" href="#">Privacy</a>
+        <a class="footer_tab" href="#">Contact Information</a>
+      </div>
+    </footer>
+    <script defer type="text/javascript" src="./data_processing.js"></script>
+  </body>
+
 </html>
