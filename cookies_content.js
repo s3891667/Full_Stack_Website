@@ -14,3 +14,5 @@ setTimeout(() => {
         cookieBackground.classList.add("active");
     }
 }, 2000);
+
+

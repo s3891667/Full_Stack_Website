@@ -11,7 +11,7 @@
   <section class="container-fluid">
     <section class="row justify-content-center">
       <section class="col-12 col-sm-6 col-md-3">  
-          <form action="./data_check.php" class="form-container" method="post">
+          <form action="data_check.php" class="form-container" method="post">
               <h1 class="text-center">Login</h1>
             <div class="form-group ">
               <label for="inputEmail3" class="col-form-label">Email</label>
@@ -28,10 +28,10 @@
               </label>
             </div>  
             <div class ="d-grid gap-2 mt-3">
-              <button type="submit" class="btn btn-primary" name="signIn" >Sign in</button>
+              <button type="submit" onclick="" class="btn btn-primary" name="signIn" >Sign in</button>
             </div>
             <div class="text-center mt-3">
-              <a href="signUp.html">Sign up for InstaKilogram </a>
+              <a href="signUp.html" >Sign up for InstaKilogram </a>
               <p class="d-inline">  .  </p>
               <a href="forgotpassword.html">Forgotten your password ?</a>
             </div>
