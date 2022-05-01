@@ -8,7 +8,7 @@
 }
 
 body{
-    background: #f8f8f8;
+    background: #fffefe;
 }
 
 :root {
@@ -19,8 +19,11 @@ body{
     position:  fixed;
     width: 300px;
     height: 100vh;
-    background: #eee;
+    background: linear-gradient(to right,rgb(147, 163, 201),#eee);
     z-index: 2;
+    padding-right: 20px;
+    border-right: 1px solid rgb(3, 32, 63);
+    
 }
 
 .main-home{
@@ -45,8 +48,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     border: 2px solid #041264;
     margin-bottom: 1.4rem;
@@ -78,6 +81,7 @@ body{
 
 .sidebar ul {
     margin-top: 20px;
+    
 }
 
 .sidebar ul li {
@@ -98,16 +102,17 @@ body{
     border-radius: 70px;
     outline: none;
     border: none;
-    background: #a2a4a7;
+    background: rgb(255, 253, 253);
     padding-left: 50px;
     font-size: 20px;
-    color: #fff;
+    color: rgb(5, 37, 73);
+    border: 2px solid #041264;
 }
 
 .sidebar ul li .search_box {
     position: absolute;
     z-index: 99;
-    color:#fff;
+    color:rgb(4, 4, 4);
     font-size: 22px;
     height: 30px;
     min-width: 30px;
@@ -131,7 +136,7 @@ body{
 .sidebar ul li a:hover {
     color:white;
     background: #032F53;
-
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .sidebar ul li a img {
