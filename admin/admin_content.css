@@ -160,19 +160,46 @@ body{
     line-height: 50px;
 }
 
-.user_title {
-    position: fixed;
-    height: 100%;
+.user_content {
+    position: relative;
     padding: 10px 0px 0px 0px;
-    width: calc(100% - 200px);
     left: 300px;
-    border-bottom: #041264;
+    background: linear-gradient(to right, #f7fdff, #ffffff);
 }
 
-.user_title .text {
+.user_content .text {
     font-size: 25px;
     font-weight: 700;
-    color: #1d1b31;
+    color: #041264;
     margin: 12px 12px 12px 12px;
-    border-bottom: 1px solid #041264;
+    border-bottom: 3px solid #041264;
 }
+
+table {
+    position: relative;
+    width: 1325px; 
+    margin: 12px 12px 12px 12px;
+    border: 3px solid #041264;
+}
+
+table th {
+    width: 100px;
+    height: 50px;
+    border: 2px solid #041264;
+    text-align: center;
+    font-weight: bold;
+    color: #041264;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+table td {
+    width: 100px;
+    height: 50px;
+    border: 2px solid #041264;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+
