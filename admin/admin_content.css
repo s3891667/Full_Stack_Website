@@ -11,10 +11,6 @@ body{
     background: #fffefe;
 }
 
-:root {
-    background: linear-gradient(to right, #e2336b, #fcac46);
-}
-
 .sidebar {
     position:  fixed;
     width: 300px;
@@ -162,4 +158,21 @@ body{
     bottom: -60px;
     list-style: none;
     line-height: 50px;
+}
+
+.user_title {
+    position: fixed;
+    height: 100%;
+    padding: 10px 0px 0px 0px;
+    width: calc(100% - 200px);
+    left: 300px;
+    border-bottom: #041264;
+}
+
+.user_title .text {
+    font-size: 25px;
+    font-weight: 700;
+    color: #1d1b31;
+    margin: 12px 12px 12px 12px;
+    border-bottom: 1px solid #041264;
 }
