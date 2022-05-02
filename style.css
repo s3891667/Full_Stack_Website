@@ -157,6 +157,7 @@ footer {
     text-decoration: wavy;
     position: relative;
     text-transform: uppercase;
+    box-shadow: 1px 1px 1px 1px black;
 
 }
 .avatar {
@@ -231,4 +232,12 @@ footer {
     position: relative;
     width: 10%;
     
+}
+
+.searchbar {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px sloid black;
+    box-shadow: 1px 1px 1px 1px black;
 }
