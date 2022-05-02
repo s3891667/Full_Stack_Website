@@ -9,8 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach($xml->user as $user) {
         if (($email == ($user->email)) && password_verify($inputpassword,$user->password) ) {   
             $_SESSION['user'] = "$user->firstname" ; 
-            $_SESSION['id'] = $user->attributes();
+            // $_SESSION['id'] = $user->attributes();
             $check = 1;
+            // echo $_SESSION['id'];
+            // echo $_SESSION['user'];
             header("location: home.php");
             break;
         }

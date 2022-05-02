@@ -22,8 +22,7 @@
         <div class="webheading">
             <!-- Website Heading -->
             <h1>InstaKilogram</h1>
-            <p>Welcome <?php echo $_SESSION['user']; ?> to InstaKilogram</p>
-            <p> <?php echo $_SESSION['id'];  ?> </p>
+            <p>Welcome <?php echo $_SESSION["user"]; ?> to InstaKilogram</p>
             <span>Inspire The World By Yourself</span>
         </div>
         <div class="nav_background">

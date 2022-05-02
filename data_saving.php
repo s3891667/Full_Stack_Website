@@ -44,9 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
-
-
 // function that help create a database
 function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
     $root = $xml->documentElement;
