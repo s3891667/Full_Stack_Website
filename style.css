@@ -216,12 +216,19 @@ footer {
     padding-bottom: 10px;
 }
 
-/* For smartphone */
+/* For smartphone  */
 @media  only screen and (max-width: 46.1875em){
     
 }
 
 /* For tablet */
 @media  only screen and (min-width: 46.1875em) and (max-width: 63.9357em){
+    
+}
+
+.personal-heading{
+    display: block;
+    position: relative;
+    width: 10%;
     
 }
