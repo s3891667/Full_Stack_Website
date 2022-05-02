@@ -7,26 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
   <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./signUp.css">
 </head>
 
 <body>
 
   <body>
-    <header>
-      <!-- Logo Image  -->
-      <div>
-        <img class="img" src="picture/Logo_picture.jpg" alt="logo">
-      </div>
-      <div class="webheading">
-        <!-- Website Heading -->
-        <h1>InstaKilogram</h1>
-        <span>Inspire The World By Yourself</span>
-      </div>
-    </header>
 
     <div class="signup_instakilogram" class=".float-none">
-      <form name="signupform" class="" method="post" action="./data_saving.php">
+      <form name="signupform" class="form_des form-horizontal" method="post" action="./data_saving.php">
+        <h1 class="text-center">Register Your Account</h1>
         <div class="form-group">
           <label for="inputEmail4" class="form-label">First name</label>
           <input id="firstname" name="firstname" type="text" class="form-control" placeholder="First name"
@@ -71,15 +61,9 @@
         </div>
       </form>
     </div>
-    <footer>
-      <div>
-        <a class="footer_tab" href="#">About Us</a>
-        <a class="footer_tab" href="#">Copyright</a>
-        <a class="footer_tab" href="#">Privacy</a>
-        <a class="footer_tab" href="#">Contact Information</a>
-        <!--  -->
-      </div>
-    </footer>
+    <div class="form-horizontal button_des">
+      <button type="button" class="btn btn-outline-secondary button_des2 form-control">Back To The Homepage</button>
+    </div>
     <script defer type="text/javascript" src="./data_processing.js"></script>
   </body>
 
