@@ -34,8 +34,13 @@ body {
 }
 
 .button_des{
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
+
+}
+
+.button_des2{
+    margin-top: 100px;
 }
 
 .text_des{
