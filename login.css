@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+*:focus {
+    outline: none;
+}
+body {
+    background-color: rgb(255, 254, 254);
+}
+
+.form_box{
+    background-color: #eee;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 200px 100px 30px 100px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+.form-control{
+    padding-left: 20px;
+}
+.form-group{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.form-check{
+    padding-left: 50px;
+}
+
+.button_des{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.text_des{
+    text-decoration: none;
+    color: black;
+}
+

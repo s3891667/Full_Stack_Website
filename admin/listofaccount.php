@@ -7,7 +7,6 @@
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    include 'list_of_account'
 </head>
 
 <body>
@@ -29,7 +28,7 @@
             </li>
             
             <li>
-                <a href="listofaccount.html">
+                <a href="listofaccount.php">
                     <img src="picture/user-account-solid-24.png" alt="user-account">
                     <span class="link">User-account</span>
                 </a>
@@ -52,9 +51,113 @@
         </ul>
     </div>
 
-    <div class="user_title">
+    <div class="user_content">
         <div class="text">List of account</div>
-        <?php include 'list_of_account.php';?>
+            <table>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Kiet</td>
+                    <td>Tran</td>
+                    <td>kiet123</td>
+                    <td>trantuankiet@gmail.com</td>
+                </tr>
+
+
+            </table>
+        
+        <?php 
+
+        ?>
     </div>
 </body>
 </html>
