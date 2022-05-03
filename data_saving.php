@@ -46,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // function that help create a database
 function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
+    $registerd_date = date("Y/m/d");
+    $registerd_time = date("h:i:sa");
     $root = $xml->documentElement;
     $totalAffiliates = ($root->childNodes->length)+1;
     $user = $xml->createElement("user");
@@ -59,6 +61,10 @@ function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
     $user->appendChild($pw);
     $em = $xml->createElement("email",$email);
     $user->appendChild($em);
+    $date = $xml->createElement("date",$registerd_date);
+    $user->appendChild($date);
+    $time =$xml->createElement("time",$registerd_time);
+    $user->appendChild($time);
     echo "<xmp>".$xml->saveXML(). "</xmp>";
     $xml->save("./accounts.xml");
 }
