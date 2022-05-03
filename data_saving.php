@@ -1,4 +1,5 @@
 <?php
+
 // define variables and set to empty values
 $lastname = $firstname = $email = $password = "";
 $check = 0;
