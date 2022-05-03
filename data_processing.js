@@ -20,9 +20,11 @@ function form_check(temp) {
     }
 }
 
+const img = document.getElementById("avatar");
+
 const submitbutton = document.getElementById("submitbutton");
 submitbutton.addEventListener('click',function(e){
-    if(check==0  && firstname.value.length ==0 && lastname.value.length ==0 && lastname.value.length ==0 ){
+    if(check ==0  || firstname.value.length ==0 || lastname.value.length ==0 || lastname.value.length ==0 ){
         e.preventDefault(); 
         alert ("Please check your infomation !");
     }
