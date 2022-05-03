@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+body{
+    background-image: url(/picture/welcomehomepage.jpg);
+    filter: contrast(100%);
+    position: relative;
+    background-repeat: no-repeat;
+}
+.logo_des{
+    margin-top: 25px;
+    margin-left: 15px;
+}
+.logo_des a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px 1px whitesmoke;
+    text-transform: none;
+    text-decoration: none;
+
+}
+.Text_des{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 250px;
+    padding: 40px;
+    color: rgb(255, 255, 255);
+    border-top: 0.2px solid white;
+    border-bottom: 3px solid white;
+}
+.Text_des h1{
+    text-align: center;
+    letter-spacing: 0.3em;
+    padding-bottom: 5px;
+    font-size: 30px;
+    text-decoration: none;
+}
+.Text_des h4{
+    text-align: center;
+    letter-spacing: 0.3em;
+    padding-top: 5px;
+    font-size: 20px;
+    text-decoration:solid;
+    
+}
+.button_des1{
+    margin-top: 180px;
+    margin-left: 45%;
+    margin-right: 45%;
+}
+
+.button_des{
+    border: 3px soplid white;
+    box-shadow: 5px 5px 5px 5px rgb(2, 38, 80);
+}
+
