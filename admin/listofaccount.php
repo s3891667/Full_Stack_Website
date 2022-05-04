@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="admin_content.js"></script>
 </head>
 
@@ -53,15 +53,16 @@
         <form action="" method="POST">
             <input type="text" id="myInput" name="myInput" placeholder="Search account (Leave blank and enter to reset the list)">
         </form>
+
 <?php
-        
-    $xmldata= simplexml_load_file("accounts.xml") or die("Failed to load");
+    $xmldata= simplexml_load_file("../accounts.xml") or die("Failed to load");
     $dom_sxe = dom_import_simplexml($xmldata);
     $dom = new DOMDocument ('1.0');
     $dom_sxe = $dom->importNode($dom_sxe, true);
     $dom_sxe = $dom->appendChild($dom_sxe);
     $user = $dom->getElementsByTagName('user');
     drawing_table();
+
     /*when there is user input*/
     if(isset($_POST['myInput'])){
         $input = $_POST['myInput'];
@@ -72,6 +73,7 @@
             $email = $node->getElementsByTagName('email');
             $date = $node->getElementsByTagName('date');
             $time = $node->getElementsByTagName('time');
+
             if ($input != "" ) {
                 /*firstname case*/
                 foreach($firstname as $child){
@@ -83,7 +85,6 @@
                             echo "<td>" . "$child->nodeValue" . "</td>";
                         }
                         listing($password,$email,$date,$time);
-
                     }
                 }
                 /*lastname case*/
@@ -95,34 +96,27 @@
                             echo "<td>" . "$child->nodeValue" . "</td>";
                         }
                         echo "<td>" . "$child1->nodeValue" . "</td>";
-
                         listing($password,$email,$date,$time);
                     }
                 }
             }
             else {
                 foreach($firstname as $child) {
-
                     foreach($firstname as $child) {
                         echo "<td>" . "$child->nodeValue" . "</td>";
                     }
-
                     foreach($lastname as $child) {
                         echo "<td>" . "$child->nodeValue" . "</td>";
                     }
-                    
                     listing($password,$email,$date,$time);
                 }
             }
         }
-    } 
-        echo "</table>";
+    }
+     
+    echo "</table>";
         
-        /*when there is no user input*/
-    
-
-
-
+    /*when there is no user input*/
     function drawing_table () {
         echo "<table id='myTable'>"
         ."<tr>"
@@ -133,10 +127,8 @@
         ."<th>" . "Date" . "</th>"
         ."<th>" . "Time" . "</th>"
         ."</tr>";
-
     }
     
-
     function listing($password,$email,$date,$time) {
         foreach($password as $child) {
             echo "<td>" . "$child->nodeValue" . "</td>";
@@ -153,17 +145,10 @@
         foreach($time as $child) {
             echo "<td>" . "$child->nodeValue" . "</td>";
         }
-        echo "</tr>";
-        
+        echo "</tr>"; 
     }
+?>
 
-    function listing2() {
-
-    }
-
-
-
-?>  
-    </div>
+</div>
 </body>
 </html>
