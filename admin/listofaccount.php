@@ -51,7 +51,7 @@
     <div class="user_content">
         <div class="text">List of account</div>
         <form action="" method="POST">
-            <input type="text" id="myInput" name="myInput" placeholder="Search...">
+            <input type="text" id="myInput" name="myInput" placeholder="Search account (Leave blank and enter to reset the list)">
         </form>
 <?php
         
@@ -158,7 +158,7 @@
     }
 
     function listing2() {
-        
+
     }
 
 
