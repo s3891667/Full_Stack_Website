@@ -3,7 +3,6 @@
 // define variables and set to empty values
 $lastname = $firstname = $email = $password = "";
 $check = 0;
-
 $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
@@ -23,14 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
+    $avatar = $_FILES["avatar"]["name"];
     $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT,['cost'=>15]);   
     $users = $xml->getElementsByTagName("user");
     foreach($users as $user) {
         $emails = $user->getElementsByTagName("email");
         $email_data= $emails->item(0)->nodeValue;
         if ($email != $email_data) {
-            echo $email_data;
-            storing_data($system,$xml,$firstname,$lastname,$hashed_password,$email);
+            storing_data($system,$xml,$firstname,$lastname,$hashed_password,$email,$avatar);
             header("Location:index.html");
             break;
         }    
@@ -44,16 +43,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+//function to store pictures for users;
+
+function resources_handling($totalAffiliates,$avatar) {
+    if (($avatar!="")){
+        // Where the file is going to be stored
+            $target_dir = "resources/user{$totalAffiliates}/";
+            $file = $avatar;
+            $path = pathinfo($file);
+            $filename = $path['filename'];
+            $ext = $path['extension'];
+            $temp_name = $_FILES['avatar']['tmp_name'];
+            $path_filename_ext = $target_dir.$filename.".".$ext;
+         
+        // Check if file already exists
+        if (file_exists($path_filename_ext)) {
+         echo "Sorry, file already exists.";
+         }else{
+         move_uploaded_file($temp_name,$path_filename_ext);
+         echo "Congratulations! File Uploaded Successfully.";
+         }
+    }
+}
 
 // function that help create a database
-function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
+function storing_data($system,$xml,$firstname,$lastname,$password,$email,$avatar) {
     $registerd_date = date("Y/m/d");
     $registerd_time = date("h:i:sa");
     $root = $xml->documentElement;
     $totalAffiliates = ($root->childNodes->length)+1;
+
+    
     $user = $xml->createElement("user");
     $user->setAttribute("id", $totalAffiliates);
     $system->appendChild($user);
+    
+
+    //Creating directory and save images for users.
+    if (!file_exists("resources/user{$totalAffiliates}")) {
+        mkdir("resources/user{$totalAffiliates}", 0777, true);
+        resources_handling($totalAffiliates,$avatar);
+    }
+
     $fname = $xml->createElement("firstname",$firstname);
     $user->appendChild($fname);
     $lname = $xml->createElement("lastname",$lastname);
@@ -66,6 +97,7 @@ function storing_data($system,$xml,$firstname,$lastname,$password,$email) {
     $user->appendChild($date);
     $time =$xml->createElement("time",$registerd_time);
     $user->appendChild($time);
+    
     echo "<xmp>".$xml->saveXML(). "</xmp>";
     $xml->save("./accounts.xml");
 }

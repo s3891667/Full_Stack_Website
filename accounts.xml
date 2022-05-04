@@ -9,11 +9,11 @@
     <time/>
   </user>
   <user id="2">
-    <firstname>khoa</firstname>
-    <lastname>nguyen</lastname>
-    <password>$2y$15$VP5mo0eB/vkbrliky0ksQOrY0iS5gScXjnWvi2wYiYFGaMANP4kpW</password>
-    <email>khoanguyn012@gmail.com</email>
-    <date>2022/05/03</date>
-    <time>12:31:30pm</time>
+    <firstname>mai</firstname>
+    <lastname>mai</lastname>
+    <password>$2y$15$rNQSznOomPwWg2LhM6a3L.l8jRSJqxdMEZiPvyZV6b958kr5G1Yz6</password>
+    <email>maimai34@gmail.com</email>
+    <date>2022/05/04</date>
+    <time>02:57:06pm</time>
   </user>
 </system>
