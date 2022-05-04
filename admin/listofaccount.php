@@ -51,7 +51,7 @@
     <div class="user_content">
         <div class="text">List of account</div>
         <form action="" method="POST">
-            <input type="text" id="myInput" name="myInput" placeholder="Search...">
+            <input type="text" id="myInput" name="myInput" placeholder="Search account (Leave blank and enter to reset the list)">
         </form>
                 <?php
                     
@@ -143,7 +143,7 @@
                                 /*firstname case*/
                                 
                                 foreach($firstname as $child){
-                                    if($child->nodeValue == $input){
+                                    if(strtoupper($child->nodeValue) == strtoupper($input)){
                                         echo "<tr>";
                                         echo "<td>" . "$child->nodeValue" . "</td>";
 
@@ -170,6 +170,42 @@
                                         
                                     }
                                 }
+
+                                /*lastname case*/
+
+                                foreach($lastname as $child1){
+                                    if(strtoupper($child1->nodeValue) == strtoupper($input)){
+                                        echo "<tr>";
+                                        
+                                        foreach($firstname as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+                                        
+                                        echo "<td>" . "$child1->nodeValue" . "</td>";
+
+                                        
+
+                                        foreach($password as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+                                        
+                                        foreach($email as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+
+                                        foreach($date as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+
+                                        foreach($time as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+                                        echo "</tr>";
+                                        
+                                    }
+                                }
+
+                                /*email case*/
                             } 
                         }
                     }
