@@ -41,15 +41,5 @@ session_start();
 </body>
 
     <script> 
-        // var elements = document.querySelector("#container1");
-        // var ele = elements.querySelectorAll("input");
-
-        // function create_post(text) {
-        //     // post.style.display =  'block'; 
-        //     // gloal.style.display = 'block';
-        //     // default_check.style.display = 'block';   
-        //     ele.style.visibility ="hidden";
-        // };
-    
     </script>
 </html>

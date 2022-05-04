@@ -40,7 +40,7 @@
             
             <!--Log out-->
             <li class ="log_out">
-                <a href="#">
+                <a href="../logout.php">
                     <img src="picture/log-out-regular-24.png" alt="log-out">
                     <span class="link">Log out</span>
                 </a>
@@ -53,127 +53,117 @@
         <form action="" method="POST">
             <input type="text" id="myInput" name="myInput" placeholder="Search...">
         </form>
-                <?php
-                    
-                    /*when there is no user input*/
-                    
-                    if(isset($_POST['myInput'])){
-                        $input = $_POST['myInput'];
-                        if($input == ""){
-                            $xmldata= simplexml_load_file("accounts.xml") or die("Failed to load");
-                            $dom_sxe = dom_import_simplexml($xmldata);
-                            $dom = new DOMDocument ('1.0');
-                            $dom_sxe = $dom->importNode($dom_sxe, true);
-                            $dom_sxe = $dom->appendChild($dom_sxe);
-                            $user = $dom->getElementsByTagName('user');
-                            echo "<table id='myTable'>";
-                            echo "<tr>";
-                            echo "<th>" . "First name" . "</th>";
-                            echo "<th>" . "Last name" . "</th>";
-                            echo "<th>" . "Password" . "</th>";
-                            echo "<th>" . "Email" . "</th>";
-                            echo "<th>" . "Date" . "</th>";
-                            echo "<th>" . "Time" . "</th>";
-                            echo "</tr>";
-                            foreach($user as $node) {
-                                $firstname = $node->getElementsByTagName('firstname');
-                                $lastname = $node->getElementsByTagName('lastname');
-                                $password = $node->getElementsByTagName('password');
-                                $email = $node->getElementsByTagName('email');
-                                $date = $node->getElementsByTagName('date');
-                                $time = $node->getElementsByTagName('time');
-                                echo "<tr>";
-                                foreach($firstname as $child) {
-                                    echo "<td>" . "$child->nodeValue" . "</td>";
-                                }
+<?php
+        
+    $xmldata= simplexml_load_file("accounts.xml") or die("Failed to load");
+    $dom_sxe = dom_import_simplexml($xmldata);
+    $dom = new DOMDocument ('1.0');
+    $dom_sxe = $dom->importNode($dom_sxe, true);
+    $dom_sxe = $dom->appendChild($dom_sxe);
+    $user = $dom->getElementsByTagName('user');
+    drawing_table();
+    /*when there is user input*/
+    if(isset($_POST['myInput'])){
+        $input = $_POST['myInput'];
+        foreach($user as $node) {
+            $firstname = $node->getElementsByTagName('firstname');
+            $lastname = $node->getElementsByTagName('lastname');
+            $password = $node->getElementsByTagName('password');
+            $email = $node->getElementsByTagName('email');
+            $date = $node->getElementsByTagName('date');
+            $time = $node->getElementsByTagName('time');
+            if ($input != "" ) {
+                /*firstname case*/
+                foreach($firstname as $child){
+                    if(strtoupper($child->nodeValue) == strtoupper($input)){
+                        echo "<tr>";
+                        echo "<td>" . "$child->nodeValue" . "</td>";
 
-                                foreach($lastname as $child) {
-                                    echo "<td>" . "$child->nodeValue" . "</td>";
-                                }
-
-                                foreach($password as $child) {
-                                    echo "<td>" . "$child->nodeValue" . "</td>";
-                                }
-
-                                foreach($email as $child) {
-                                    echo "<td>" . "$child->nodeValue" . "</td>";
-                                }
-
-                                foreach($date as $child) {
-                                    echo "<td>" . "$child->nodeValue" . "</td>";
-                                }
-
-                                foreach($time as $child) {
-                                    echo "<td>" . "$child->nodeValue" . "</td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
+                        foreach($lastname as $child) {
+                            echo "<td>" . "$child->nodeValue" . "</td>";
                         }
+                        listing($password,$email,$date,$time);
+
+                    }
+                }
+                /*lastname case*/
+                foreach($lastname as $child1){
+                    if(strtoupper($child1->nodeValue) == strtoupper($input)){
+                        echo "<tr>";
+                        
+                        foreach($firstname as $child) {
+                            echo "<td>" . "$child->nodeValue" . "</td>";
+                        }
+                        echo "<td>" . "$child1->nodeValue" . "</td>";
+
+                        listing($password,$email,$date,$time);
+                    }
+                }
+            }
+            else {
+                foreach($firstname as $child) {
+
+                    foreach($firstname as $child) {
+                        echo "<td>" . "$child->nodeValue" . "</td>";
+                    }
+
+                    foreach($lastname as $child) {
+                        echo "<td>" . "$child->nodeValue" . "</td>";
                     }
                     
-                    /*when there is user input*/
-                    
-                    if(isset($_POST['myInput'])){
-                        $input = $_POST['myInput'];
-                        if($input != ""){
-                            $xmldata= simplexml_load_file("accounts.xml") or die("Failed to load");
-                            $dom_sxe = dom_import_simplexml($xmldata);
-                            $dom = new DOMDocument ('1.0');
-                            $dom_sxe = $dom->importNode($dom_sxe, true);
-                            $dom_sxe = $dom->appendChild($dom_sxe);
-                            $user = $dom->getElementsByTagName('user');
-                            echo "<table id='myTable'>";
-                            echo "<tr>";
-                            echo "<th>" . "First name" . "</th>";
-                            echo "<th>" . "Last name" . "</th>";
-                            echo "<th>" . "Password" . "</th>";
-                            echo "<th>" . "Email" . "</th>";
-                            echo "<th>" . "Date" . "</th>";
-                            echo "<th>" . "Time" . "</th>";
-                            echo "</tr>";
-                            foreach($user as $node) {
-                                $firstname = $node->getElementsByTagName('firstname');
-                                $lastname = $node->getElementsByTagName('lastname');
-                                $password = $node->getElementsByTagName('password');
-                                $email = $node->getElementsByTagName('email');
-                                $date = $node->getElementsByTagName('date');
-                                $time = $node->getElementsByTagName('time');
-                                
-                                /*firstname case*/
-                                
-                                foreach($firstname as $child){
-                                    if($child->nodeValue == $input){
-                                        echo "<tr>";
-                                        echo "<td>" . "$child->nodeValue" . "</td>";
+                    listing($password,$email,$date,$time);
+                }
+            }
+        }
+    } 
+        echo "</table>";
+        
+        /*when there is no user input*/
+    
 
-                                        foreach($lastname as $child) {
-                                            echo "<td>" . "$child->nodeValue" . "</td>";
-                                        }
 
-                                        foreach($password as $child) {
-                                            echo "<td>" . "$child->nodeValue" . "</td>";
-                                        }
-                                        
-                                        foreach($email as $child) {
-                                            echo "<td>" . "$child->nodeValue" . "</td>";
-                                        }
 
-                                        foreach($date as $child) {
-                                            echo "<td>" . "$child->nodeValue" . "</td>";
-                                        }
+    function drawing_table () {
+        echo "<table id='myTable'>"
+        ."<tr>"
+        ."<th>" . "First name" . "</th>"
+        ."<th>" . "Last name" . "</th>"
+        ."<th>" . "Password" . "</th>"
+        ."<th>" . "Email" . "</th>"
+        ."<th>" . "Date" . "</th>"
+        ."<th>" . "Time" . "</th>"
+        ."</tr>";
 
-                                        foreach($time as $child) {
-                                            echo "<td>" . "$child->nodeValue" . "</td>";
-                                        }
-                                        echo "</tr>";
-                                        
-                                    }
-                                }
-                            } 
-                        }
-                    }
-                ?>  
+    }
+    
+
+    function listing($password,$email,$date,$time) {
+        foreach($password as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+        
+        foreach($email as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+
+        foreach($date as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+
+        foreach($time as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+        echo "</tr>";
+        
+    }
+
+    function listing2() {
+        
+    }
+
+
+
+?>  
     </div>
 </body>
 </html>
