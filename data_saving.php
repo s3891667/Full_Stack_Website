@@ -2,7 +2,7 @@
 
 // define variables and set to empty values
 $lastname = $firstname = $email = $password = "";
-$check = 0;
+$flag = 0;
 $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
@@ -31,22 +31,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($email != $email_data) {
             storing_data($system,$xml,$firstname,$lastname,$hashed_password,$email,$avatar);
             header("Location:index.html");
+            $flag = 1; // this is used for throwing exception
             break;
         }    
         else {
-            $message = "Your email has been registed !";
-            echo "<SCRIPT> //not showing me this
-            window.location.href = 'signUp.html?email=used';
-            alert('$message');
-            </SCRIPT>";
-            break;
+            $flag = 0;
         }
     }
+    //Throw errors when the email has already registed by someone else
+    if($flag == 0) {
+        $message = "Your email has been registed !";
+        echo "<SCRIPT> //not showing me this
+        window.location.href = 'signUp.html?email=used';
+        alert('$message');
+        </SCRIPT>";  
+    }
 }
-//function to store pictures for users;
 
+//function to store pictures for users;
 function resources_handling($totalAffiliates,$avatar) {
-    if (($avatar!="")){
+    if ($avatar != ""){
         // Where the file is going to be stored
             $target_dir = "resources/user{$totalAffiliates}/";
             $file = $avatar;
@@ -58,11 +62,12 @@ function resources_handling($totalAffiliates,$avatar) {
          
         // Check if file already exists
         if (file_exists($path_filename_ext)) {
-         echo "Sorry, file already exists.";
-         }else{
-         move_uploaded_file($temp_name,$path_filename_ext);
-         echo "Congratulations! File Uploaded Successfully.";
-         }
+            echo "Sorry, file already exists.";
+        }
+        else {
+            move_uploaded_file($temp_name,$path_filename_ext);
+            echo "Congratulations! File Uploaded Successfully.";
+        }
     }
 }
 
@@ -73,7 +78,6 @@ function storing_data($system,$xml,$firstname,$lastname,$password,$email,$avatar
     $root = $xml->documentElement;
     $totalAffiliates = ($root->childNodes->length)+1;
 
-    
     $user = $xml->createElement("user");
     $user->setAttribute("id", $totalAffiliates);
     $system->appendChild($user);
