@@ -7,6 +7,7 @@
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="admin_content.js"></script>
 </head>
 
 <body>
@@ -23,10 +24,6 @@
         
         <!--Navigator list-->
         <ul class="nav_list">
-            <li class="searchbar">
-                <input type="text" placeholder="Search..">
-            </li>
-            
             <li>
                 <a href="listofaccount.php">
                     <img src="picture/user-account-solid-24.png" alt="user-account">
@@ -53,111 +50,130 @@
 
     <div class="user_content">
         <div class="text">List of account</div>
-            <table>
-                <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Password</th>
-                    <th>Email</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
+        <form action="" method="POST">
+            <input type="text" id="myInput" name="myInput" placeholder="Search...">
+        </form>
+                <?php
+                    
+                    /*when there is no user input*/
+                    
+                    if(isset($_POST['myInput'])){
+                        $input = $_POST['myInput'];
+                        if($input == ""){
+                            $xmldata= simplexml_load_file("accounts.xml") or die("Failed to load");
+                            $dom_sxe = dom_import_simplexml($xmldata);
+                            $dom = new DOMDocument ('1.0');
+                            $dom_sxe = $dom->importNode($dom_sxe, true);
+                            $dom_sxe = $dom->appendChild($dom_sxe);
+                            $user = $dom->getElementsByTagName('user');
+                            echo "<table id='myTable'>";
+                            echo "<tr>";
+                            echo "<th>" . "First name" . "</th>";
+                            echo "<th>" . "Last name" . "</th>";
+                            echo "<th>" . "Password" . "</th>";
+                            echo "<th>" . "Email" . "</th>";
+                            echo "<th>" . "Date" . "</th>";
+                            echo "<th>" . "Time" . "</th>";
+                            echo "</tr>";
+                            foreach($user as $node) {
+                                $firstname = $node->getElementsByTagName('firstname');
+                                $lastname = $node->getElementsByTagName('lastname');
+                                $password = $node->getElementsByTagName('password');
+                                $email = $node->getElementsByTagName('email');
+                                $date = $node->getElementsByTagName('date');
+                                $time = $node->getElementsByTagName('time');
+                                echo "<tr>";
+                                foreach($firstname as $child) {
+                                    echo "<td>" . "$child->nodeValue" . "</td>";
+                                }
 
+                                foreach($lastname as $child) {
+                                    echo "<td>" . "$child->nodeValue" . "</td>";
+                                }
 
-            </table>
-        
-        <?php 
+                                foreach($password as $child) {
+                                    echo "<td>" . "$child->nodeValue" . "</td>";
+                                }
 
-        ?>
+                                foreach($email as $child) {
+                                    echo "<td>" . "$child->nodeValue" . "</td>";
+                                }
+
+                                foreach($date as $child) {
+                                    echo "<td>" . "$child->nodeValue" . "</td>";
+                                }
+
+                                foreach($time as $child) {
+                                    echo "<td>" . "$child->nodeValue" . "</td>";
+                                }
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
+                    }
+                    
+                    /*when there is user input*/
+                    
+                    if(isset($_POST['myInput'])){
+                        $input = $_POST['myInput'];
+                        if($input != ""){
+                            $xmldata= simplexml_load_file("accounts.xml") or die("Failed to load");
+                            $dom_sxe = dom_import_simplexml($xmldata);
+                            $dom = new DOMDocument ('1.0');
+                            $dom_sxe = $dom->importNode($dom_sxe, true);
+                            $dom_sxe = $dom->appendChild($dom_sxe);
+                            $user = $dom->getElementsByTagName('user');
+                            echo "<table id='myTable'>";
+                            echo "<tr>";
+                            echo "<th>" . "First name" . "</th>";
+                            echo "<th>" . "Last name" . "</th>";
+                            echo "<th>" . "Password" . "</th>";
+                            echo "<th>" . "Email" . "</th>";
+                            echo "<th>" . "Date" . "</th>";
+                            echo "<th>" . "Time" . "</th>";
+                            echo "</tr>";
+                            foreach($user as $node) {
+                                $firstname = $node->getElementsByTagName('firstname');
+                                $lastname = $node->getElementsByTagName('lastname');
+                                $password = $node->getElementsByTagName('password');
+                                $email = $node->getElementsByTagName('email');
+                                $date = $node->getElementsByTagName('date');
+                                $time = $node->getElementsByTagName('time');
+                                
+                                /*firstname case*/
+                                
+                                foreach($firstname as $child){
+                                    if($child->nodeValue == $input){
+                                        echo "<tr>";
+                                        echo "<td>" . "$child->nodeValue" . "</td>";
+
+                                        foreach($lastname as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+
+                                        foreach($password as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+                                        
+                                        foreach($email as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+
+                                        foreach($date as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+
+                                        foreach($time as $child) {
+                                            echo "<td>" . "$child->nodeValue" . "</td>";
+                                        }
+                                        echo "</tr>";
+                                        
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                ?>  
     </div>
 </body>
 </html>
