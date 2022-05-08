@@ -17,7 +17,7 @@ body{
     border: none;
     border-radius:0px;
     color: rgb(2, 39, 73);
-    background-color: rgb(0, 22, 53);
+    background-color: rgb(0, 0, 0);
     margin-bottom: 0px;
 }
 
@@ -32,7 +32,7 @@ body{
 }
 
 .container{
-    background-color: rgb(0, 22, 53);
+    background-color: rgb(0, 0, 0);
     margin-left: 0px;
     margin-right: 0px;
     position: relative;
@@ -41,12 +41,13 @@ body{
 
 .input-group{
     padding: 10px;
-    background-color: rgb(0, 22, 53);
+    background-color:rgb(26, 18, 18);
+    border-radius: 15px;
     
 }
 
 footer{
-    background-color: rgb(0, 22, 53);
+    background-color: rgb(0, 0, 0);
     left: 0;
     bottom: 0;
     width: 100%;
@@ -56,7 +57,7 @@ footer{
 }
 
 footer a{
-    background-color: rgb(2, 29, 68);
+    background-color: rgb(0, 0, 0);
     padding: 10px;
     border-bottom: 1px solid whitesmoke;
     border-radius: 12px;
