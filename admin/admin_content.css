@@ -92,13 +92,14 @@ body{
 .sidebar ul li input{
     position: absolute;
     height: 100%;
-    width: 96%;
-    left: 5px;
+    width: 100%;
+    left: 0;
     top: 0;
     border-radius: 70px;
     outline: none;
     border: none;
-    background: rgb(255, 253, 253);
+    background: url(picture/search-regular-24.png) no-repeat rgb(255, 253, 253);
+    background-position: 15px;
     padding-left: 50px;
     font-size: 20px;
     color: rgb(5, 37, 73);
@@ -136,6 +137,7 @@ body{
 }
 
 .sidebar ul li a img {
+    
     height: 30px;
     min-width: 30px;
     border-radius: 12px;
@@ -164,42 +166,65 @@ body{
     position: relative;
     padding: 10px 0px 0px 0px;
     left: 300px;
-    background: linear-gradient(to right, #f7fdff, #ffffff);
+    background-color: rgb(255, 255, 255);
 }
 
 .user_content .text {
     font-size: 25px;
     font-weight: 700;
-    color: #041264;
+    width: 1325px;
+    color: #000000;
     margin: 12px 12px 12px 12px;
-    border-bottom: 3px solid #041264;
+    border-bottom: 3px solid #000000;
 }
 
 table {
     position: relative;
     width: 1325px; 
     margin: 12px 12px 12px 12px;
-    border: 3px solid #041264;
+    border: 3px solid #000000;
+    border-collapse: collapse;
 }
 
 table th {
-    width: 100px;
-    height: 50px;
-    border: 2px solid #041264;
-    text-align: center;
-    font-weight: bold;
-    color: #041264;
-    font-size: 24px;
+    text-align: left; 
+    padding: 12px;
+    font-size: 18px;
+    background-color: #f1f1f1;
     text-decoration: underline;
 }
 
 table td {
-    width: 100px;
-    height: 50px;
-    border: 2px solid #041264;
-    text-align: center;
-    font-size: 16px;
+    text-align: left;
+    padding: 12px;
 }
+
+table tr {
+    border-bottom: 2px solid #ddd;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+input{
+    margin: 12px 12px 12px 12px;
+    position: relative;
+    height: 50px;
+    width: 1325px;
+    left: 12px;
+    top: 0;
+    border-radius: 70px;
+    outline: none;
+    border: none;
+    background: url(picture/search-regular-24.png) no-repeat rgb(255, 253, 253);
+    background-position: 15px;
+    padding-left: 50px;
+    font-size: 20px;
+    color: rgb(5, 37, 73);
+    border: 2px solid #041264;
+}
+
 
 
 

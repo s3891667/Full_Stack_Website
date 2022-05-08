@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="admin_content.js"></script>
 </head>
 
 <body>
@@ -23,10 +24,6 @@
         
         <!--Navigator list-->
         <ul class="nav_list">
-            <li class="searchbar">
-                <input type="text" placeholder="Search..">
-            </li>
-            
             <li>
                 <a href="listofaccount.php">
                     <img src="picture/user-account-solid-24.png" alt="user-account">
@@ -43,7 +40,7 @@
             
             <!--Log out-->
             <li class ="log_out">
-                <a href="#">
+                <a href="../logout.php">
                     <img src="picture/log-out-regular-24.png" alt="log-out">
                     <span class="link">Log out</span>
                 </a>
@@ -53,111 +50,105 @@
 
     <div class="user_content">
         <div class="text">List of account</div>
-            <table>
-                <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Password</th>
-                    <th>Email</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Kiet</td>
-                    <td>Tran</td>
-                    <td>kiet123</td>
-                    <td>trantuankiet@gmail.com</td>
-                </tr>
+        <form action="" method="POST">
+            <input type="text" id="myInput" name="myInput" placeholder="Search account (Leave blank and enter to reset the list)">
+        </form>
 
+<?php
+    $xmldata= simplexml_load_file("../accounts.xml") or die("Failed to load");
+    $dom_sxe = dom_import_simplexml($xmldata);
+    $dom = new DOMDocument ('1.0');
+    $dom_sxe = $dom->importNode($dom_sxe, true);
+    $dom_sxe = $dom->appendChild($dom_sxe);
+    $user = $dom->getElementsByTagName('user');
+    drawing_table();
 
-            </table>
+    /*when there is user input*/
+    if(isset($_POST['myInput'])){
+        $input = $_POST['myInput'];
+        foreach($user as $node) {
+            $firstname = $node->getElementsByTagName('firstname');
+            $lastname = $node->getElementsByTagName('lastname');
+            $password = $node->getElementsByTagName('password');
+            $email = $node->getElementsByTagName('email');
+            $date = $node->getElementsByTagName('date');
+            $time = $node->getElementsByTagName('time');
+
+            if ($input != "" ) {
+                /*firstname case*/
+                foreach($firstname as $child){
+                    if(strtoupper($child->nodeValue) == strtoupper($input)){
+                        echo "<tr>";
+                        echo "<td>" . "$child->nodeValue" . "</td>";
+
+                        foreach($lastname as $child) {
+                            echo "<td>" . "$child->nodeValue" . "</td>";
+                        }
+                        listing($password,$email,$date,$time);
+                    }
+                }
+                /*lastname case*/
+                foreach($lastname as $child1){
+                    if(strtoupper($child1->nodeValue) == strtoupper($input)){
+                        echo "<tr>";
+                        
+                        foreach($firstname as $child) {
+                            echo "<td>" . "$child->nodeValue" . "</td>";
+                        }
+                        echo "<td>" . "$child1->nodeValue" . "</td>";
+                        listing($password,$email,$date,$time);
+                    }
+                }
+            }
+            else {
+                foreach($firstname as $child) {
+                    foreach($firstname as $child) {
+                        echo "<td>" . "$child->nodeValue" . "</td>";
+                    }
+                    foreach($lastname as $child) {
+                        echo "<td>" . "$child->nodeValue" . "</td>";
+                    }
+                    listing($password,$email,$date,$time);
+                }
+            }
+        }
+    }
+     
+    echo "</table>";
         
-        <?php 
+    /*when there is no user input*/
+    function drawing_table () {
+        echo "<table id='myTable'>"
+        ."<tr>"
+        ."<th>" . "First name" . "</th>"
+        ."<th>" . "Last name" . "</th>"
+        ."<th>" . "Password" . "</th>"
+        ."<th>" . "Email" . "</th>"
+        ."<th>" . "Date" . "</th>"
+        ."<th>" . "Time" . "</th>"
+        ."</tr>";
+    }
+    
+    function listing($password,$email,$date,$time) {
+        foreach($password as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+        
+        foreach($email as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
 
-        ?>
-    </div>
+        foreach($date as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+
+        foreach($time as $child) {
+            echo "<td>" . "$child->nodeValue" . "</td>";
+        }
+        echo "</tr>"; 
+    }
+?>
+
+</div>
 </body>
 </html>
