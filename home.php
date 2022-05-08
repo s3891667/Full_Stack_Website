@@ -28,7 +28,6 @@
             <!-- Navigation Bar -->
             <a class="nav nav_setcolor" href="./index.html">Homepage</a>
             <a class="nav nav_setcolor" href="#">Trending Post</a>
-            <a class="nav nav_setcolor" href="./login.html">Log In</a>
             <a class="nav nav_setcolor" href="./logout.php">Logout</a>
             <a class="nav nav_setcolor"  href="./user_profile.php">Profile</a>
         </div>
