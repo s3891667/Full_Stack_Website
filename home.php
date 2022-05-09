@@ -1,8 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 session_start();
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -26,8 +26,8 @@ session_start();
                         <li><a href="#">TRENDING POST</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="./signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="./login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
             </nav>
@@ -38,8 +38,7 @@ session_start();
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" name="search">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i
-                                class="glyphicon glyphicon-search"></i></button>
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 </div>
             </form>
@@ -50,38 +49,9 @@ session_start();
         </div>
     </header>
     <main>
-    <section>
-        <!-- Post -->
-        <div>
-            <!-- Logo and Username-->
-            <span>
-                <!-- Logo -->
-                
-            </span>
-            <span>
-                <!-- Username -->
-            </span>
-        </div>
-        <div>
-            <!-- Picture -->
-        </div>
-        <div>
-            <!-- Caption -->
-        </div>
-        <div>
-            <!-- Like -->
-            <span>
-                <!-- Like -->
-            </span>
-            <span>
-                <!-- Share Button -->
-            </span>
-        </div>
-    </section>
+
+
     </main>
-    <<aside>
-        <!-- People follow-->
-    </aside>
     <footer>
         <div>
             <a class="footer_tab" href="#">About Us</a>
@@ -90,11 +60,6 @@ session_start();
             <a class="footer_tab" href="#">Contact Information</a>
         </div>
     </footer>
-</body>
-
-</html>
-    <!--Cookie javascript file-->
-    <script src="cookies_content.js"></script>
 </body>
 
 </html>

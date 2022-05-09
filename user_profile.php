@@ -53,25 +53,28 @@ $xml = simplexml_load_file("./posts.xml");
             //generate current time to compare the posts upload time
             $currentDate = date_create(date("Y-m-d"));
             $currentTime = date_create(date("h:i:sa"));
-            
             //query time from the xml file
             $postDate = date_create($user->date);
+
             $dateDiff = date_diff($postDate, $currentDate);
             //check to choose display method time or date
             $check = (int)$dateDiff->format('%a');
             $postTime = date_create($user->time);
             $timeDiff = date_diff($postTime, $currentTime);
-            time_check($check,$dateDiff,$timeDiff);
+            echo $user->content;
+            time_check($check, $dateDiff, $timeDiff);
             printf('<img src="%s" class="img-fluid" alt="">', $image);
         }
     }
-    
+
     ?>
 </body>
+
 </html>
 
-<?php 
-function time_check ($check,$dateDiff,$timeDiff) {
+<?php
+function time_check($check, $dateDiff, $timeDiff)
+{
     //day check
     if ($check >= 1) {
         if ($check == 1) {
@@ -93,5 +96,4 @@ function time_check ($check,$dateDiff,$timeDiff) {
         }
     }
 }
-
 ?>
