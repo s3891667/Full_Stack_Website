@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <posts>
-    <user>     
-        <content></content>
-        <attachment></attachment>
-        <status></status>
-    </user>
+  <user id="user2">
+    <content>okay okay</content>
+    <attachment>resources/user2/posts/2932542.jpg</attachment>
+    <status>global</status>
+    <date>2022/05/08</date>
+    <time>05:32:35pm</time>
+  </user>
+  <user id="user2">
+    <content>today is a wonderful day</content>
+    <attachment>resources/user2/posts/nature.jpeg</attachment>
+    <status>global</status>
+    <date>2022-05-09</date>
+    <time>12:23:00pm</time>
+  </user>
 </posts>

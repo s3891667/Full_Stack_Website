@@ -72,7 +72,7 @@ function resources_handling($totalAffiliates, $avatar)
 // function that help create a database
 function storing_data($system, $xml, $firstname, $lastname, $password, $email, $avatar)
 {
-    $registerd_date = date("Y/m/d");
+    $registerd_date = date("Y-m-d");
     $registerd_time = date("h:i:sa");
     $root = $xml->documentElement;
     $totalAffiliates = ($root->childNodes->length) + 1;

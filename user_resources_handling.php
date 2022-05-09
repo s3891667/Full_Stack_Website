@@ -14,7 +14,7 @@ $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
 $xml->load("./posts.xml");
-
+$picAddress = "";
 
 if (!$xml) {
     $posts = $xml->createElement("posts");
@@ -22,57 +22,63 @@ if (!$xml) {
 } else {
     $posts = $xml->firstChild;
 }
-
-
 //one default , two global
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $content = $_POST['content'];
+    $content = $_POST['contents'];
     $status = $_POST['checker'];
     $attachment = $_FILES["picture"]["name"];
-    $users = $xml->getElementsByTagName("user");
     if ($status == "1") {
         $status = "default";
-    }
-    else {
+    } else {
         $status = "global";
     }
+    $users = $xml->getElementsByTagName("user");
     foreach ($users as $user) {
-        storing_data($posts,$xml,$content,$status,$attachment,$id);
+        storing_data($posts, $xml, $content, $status, $attachment, $id);
         header("Location:user_profile.php");
+        break;
     }
 }
 
-
 // function that help create a database
-function storing_data($posts,$xml,$content,$status,$attachment,$id) {
+function storing_data($posts, $xml, $content, $status, $attachment, $id)
+{
     //Creating directory and save images for users.
+    $registerd_date = date("Y-m-d");
+    $registerd_time = date("h:i:sa");
     $user = $xml->createElement("user");
     $user->setAttribute("id", "user{$id}");
     $posts->appendChild($user);
-    $picAddress="";
-    if (!file_exists("resources/user{$id}/pictures")) {
-        mkdir("resources/user{$id}/pictures", 0777, true);
-        resources_handling($id, $attachment,$picAddress);
+    if (!file_exists("resources/user{$id}/posts")) {
+        mkdir("resources/user{$id}/posts", 0777, true);
+        resources_handling($id, $attachment);
+    } else if (file_exists("resources/user{$id}/posts")) {
+        resources_handling($id, $attachment);
     }
 
-
+    global $picAddress;
     $contents = $xml->createElement("content", $content);
     $user->appendChild($contents);
-    $attachment = $xml->createElement("attachment",$attachment);
+    $attachment = $xml->createElement("attachment", $picAddress);
     $user->appendChild($attachment);
-    $status= $xml->createElement("status",$status);
+    $status = $xml->createElement("status", $status);
     $user->appendChild($status);
+    $date = $xml->createElement("date", $registerd_date);
+    $user->appendChild($date);
+    $time = $xml->createElement("time", $registerd_time);
+    $user->appendChild($time);
     echo "<xmp>" . $xml->saveXML() . "</xmp>";
     $xml->save("./posts.xml");
 }
 
 
-function resources_handling($id, $attachment,$picAddress)
+function resources_handling($id, $attachment)
 {
     if ($attachment != "") {
+        global $picAddress;
         // Where the file is going to be stored
-        $target_dir = "resources/user{$id}/pictures/";
+        $target_dir = "resources/user{$id}/posts/";
         $file = $attachment;
         $path = pathinfo($file);
         $filename = $path['filename'];

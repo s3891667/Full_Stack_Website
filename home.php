@@ -1,6 +1,5 @@
 <?php
- session_start();
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cookies_content.css">   
+    <link rel="stylesheet" href="cookies_content.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +16,7 @@
         <!-- Logo Image  -->
         <div>
             <img class="img" src="picture/Logo_picture.jpg" alt="logo">
-        </div> 
+        </div>
         <div class="webheading">
             <!-- Website Heading -->
             <h1>InstaKilogram</h1>
@@ -29,9 +28,9 @@
             <a class="nav nav_setcolor" href="./index.html">Homepage</a>
             <a class="nav nav_setcolor" href="#">Trending Post</a>
             <a class="nav nav_setcolor" href="./logout.php">Logout</a>
-            <a class="nav nav_setcolor"  href="./user_profile.php">Profile</a>
+            <a class="nav nav_setcolor" href="./user_profile.php">Profile</a>
         </div>
-            <!-- Search Bar -->
+        <!-- Search Bar -->
         <div>
             <input class="searchbar" type="text" placeholder="Search here...">
         </div>
@@ -81,23 +80,23 @@
         </div>
     </main>
     <aside>
-        
+
     </aside>
     <footer>
-    <div>
-        <a class="footer_tab" href="#">About Us</a>
-        <a class="footer_tab" href="#">Copyright</a>
-        <a class="footer_tab" href="#">Privacy</a>
-        <a class="footer_tab" href="#">Contact Information</a>
-    </div>
+        <div>
+            <a class="footer_tab" href="#">About Us</a>
+            <a class="footer_tab" href="#">Copyright</a>
+            <a class="footer_tab" href="#">Privacy</a>
+            <a class="footer_tab" href="#">Contact Information</a>
+        </div>
     </footer>
-    
+
     <!--Cookie black screen-->
     <div class="wrapper"></div>
 
     <!--Cookie consent popup-->
     <div class="cookie-container">
-        <div>I use cookies</div> 
+        <div>I use cookies</div>
         <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to my use of cookies and other technologies.
         </p>
         <button class="accept-button">I understand</button>
@@ -107,4 +106,5 @@
     <!--Cookie javascript file-->
     <script src="cookies_content.js"></script>
 </body>
+
 </html>
