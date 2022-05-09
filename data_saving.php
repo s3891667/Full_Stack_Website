@@ -1,7 +1,7 @@
 <?php
 
 // define variables and set to empty values
-$lastname = $firstname = $email = $password = "";
+$lastname = $firstname = $email = $password = $avatar_dir  = "";
 $flag = 0;
 $xml = new DOMDocument();
 $xml->formatOutput = true;
@@ -51,14 +51,15 @@ function resources_handling($totalAffiliates, $avatar)
 {
     if ($avatar != "") {
         // Where the file is going to be stored
-        $target_dir = "resources/user{$totalAffiliates}/";
+        $target_dir = "resources/user{$totalAffiliates}/avatar/";
         $file = $avatar;
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
         $temp_name = $_FILES['avatar']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
-
+        global $avatar_dir;
+        $avatar_dir = $path_filename_ext;
         // Check if file already exists
         if (file_exists($path_filename_ext)) {
             echo "Sorry, file already exists.";
@@ -84,7 +85,7 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
 
     //Creating directory and save images for users.
     if (!file_exists("resources/user{$totalAffiliates}")) {
-        mkdir("resources/user{$totalAffiliates}", 0777, true);
+        mkdir("resources/user{$totalAffiliates}/avatar", 0777, true);
         resources_handling($totalAffiliates, $avatar);
     }
 
@@ -100,6 +101,9 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
     $user->appendChild($date);
     $time = $xml->createElement("time", $registerd_time);
     $user->appendChild($time);
+    global $avatar_dir;
+    $ava = $xml->createElement("avatar", $avatar_dir);
+    $user->appendChild($ava);
 
     echo "<xmp>" . $xml->saveXML() . "</xmp>";
     $xml->save("./accounts.xml");

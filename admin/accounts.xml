@@ -7,6 +7,7 @@
     <email>s@rmit.edu.vn</email>
     <date>NULL</date>
     <time>NULL</time>
+    <avatar></avatar>
   </user>
   <user id="2">
     <firstname>khoa</firstname>
@@ -15,5 +16,6 @@
     <email>khoanguyn012@gmail.com</email>
     <date>2022/05/03</date>
     <time>12:31:30pm</time>
+    <avatar></avatar>
   </user>
 </system>

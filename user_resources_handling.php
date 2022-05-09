@@ -1,13 +1,5 @@
 <?php
 session_start();
-
-
-//this file will store the post contents to posts.xml (Picture will be saved in the resources
-//in the folder of that specific user.
-
-
-// echo $_SESSION['id'];
-
 $id = $_SESSION['id'];
 $user = $_SESSION['user'];
 $xml = new DOMDocument();
@@ -95,3 +87,8 @@ function resources_handling($id, $attachment)
         }
     }
 }
+
+
+
+
+

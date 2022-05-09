@@ -2,7 +2,6 @@
 <html lang="en">
 <?php
 session_start();
-
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
     alert('Please login your account !');
@@ -20,8 +19,9 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="./style.css">
     <title>Homepage</title>
 </head>
+
 <body>
-    <header id = "header">
+    <header id="header">
         <div>
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
@@ -56,76 +56,128 @@ if (!isset($_SESSION['user'])) {
         </div>
     </header>
     <main>
-    <section >
-    <div class="content2" >
-                <div class="content2_pad">
+        <?php
+
+        $xml = simplexml_load_file("./posts.xml");
+        foreach ($xml->user as $user) {
+            if ("$user->status" == "global") {
+                $image = $user->attachment;
+                //generate current time to compare the posts upload time
+                $currentDate = date_create(date("Y-m-d"));
+                $currentTime = date_create(date("h:i:sa"));
+                //query time from the xml file
+                $postDate = date_create($user->date);
+
+                $dateDiff = date_diff($postDate, $currentDate);
+                //check to choose display method time or date
+                $check = (int)$dateDiff->format('%a');
+                $postTime = date_create($user->time);
+                $timeDiff = date_diff($postTime, $currentTime);
+                echo "
+            <section >
+            <div class='content2' >
+                        <div class='content2_pad'>
+                            
+                    <div class='content2-first-1'>
+            ";
+                $ava = avatar_dir_check($user['id']);
+                echo "
+                                    <img class='images1' src='$ava' alt='avatarimage'>
+                                </div>
+
+                                <div class='content2-first-2'>";
+
+                echo "                <p class='content2-text' href=''>";
+                echo  reading_user_name($user['id']);
+                echo "               
+                                    </p>
                     
-                        <div class="content2-first-1">
-                            <img class="images1" src="./picture/ava.jpeg" alt="avatarimage">
-                        </div>
+                                    <img class='dots' src='https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png'>
+                                </div> 
+                                <div class='imgdiv'>
 
-                        <div class="content2-first-2">
-                            <p class="content2-text" href="">Millionaire</p>
-                            <img class="dots" src="https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png">
-                        </div>
+                    <p class='content2-text' href=''> $user->content</p> 
+                    ";
+                printf('<img src="%s" class="imgdiv-style" alt="">', $image);
 
-                       
-                        <div class="imgdiv">
-                            <img class="imgdiv-style" src="./picture/welcomehomepage.jpg" alt="">
-                        </div>
+                echo "
+                                </div>
 
-                        <div class="icons">
-                            <img class="icons1" src="./picture/heart.png" alt="">
-                            <img class="icon2" src="./picture/network.png" alt="">
-                        </div>
+                                <div class='icons'>
+                                    <img class='icons1' src='./picture/heart.png' alt=''>
+                                    <img class='icon2' src='./picture/network.png' alt=''>
+                                </div>
+                            
 
-
-                        <div class="likes">
-                            <h5 class="time-text">7 HOURS AGO</h5>
-                        </div>
-                </div>
-    </div>
-    </section>
-
-    <section >
-    <div class="content2" >
-                <div class="content2_pad">
                     
-                        <div class="content2-first-1">
-                            <img class="images1" src="./picture/ava.jpeg" alt="avatarimage">
+                                <div class='likes'>
+                ";
+                echo      time_check($check, $dateDiff, $timeDiff);
+
+                echo '
+                                </div>
                         </div>
+            </div>
+            </section> ';
+            }
+        }
 
-                        <div class="content2-first-2">
-                            <p class="content2-text" href="">Millionaire</p>
-                            <img class="dots" src="https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png">
-                        </div>
+        function reading_user_name($id)
+        {
+            $name = "";
+            $xml = simplexml_load_file("./accounts.xml");
+            foreach ($xml->user as $user) {
+                if ($id == "user{$user['id']}") {
+                    $name = $user->firstname;
+                };
+            }
+            return $name;
+        }
 
-                       
-                        <div class="imgdiv">
-                            <img class="imgdiv-style" src="./picture/welcomehomepage.jpg" alt="">
-                        </div>
+        function avatar_dir_check($id)
+        {
+            $dir = "";
+            $xml = simplexml_load_file("./accounts.xml");
+            foreach ($xml->user as $user) {
+                if ($id == "user{$user['id']}") {
+                    $dir = $user->avatar;
+                };
+            }
+            return $dir;
+        }
+        function time_check($check, $dateDiff, $timeDiff)
+        {
+            //day check
+            if ($check >= 1) {
+                if ($check == 1) {
+                    echo $dateDiff->format('%a day ago');
+                } else {
+                    echo $dateDiff->format('%a days ago');
+                }
+            } else {
+                // hour check
+                if ((int)$timeDiff->format('%h') == 0) {
+                    //minutes check
+                    if ((int)$timeDiff->format('%i') <= 0) {
+                        echo "recently";
+                    } else {
+                        echo $timeDiff->format('%i minutes ago');
+                    }
+                } else {
+                    echo $timeDiff->format('%h hours ago');
+                }
+            }
+        }
 
-                        <div class="icons">
-                            <img class="icons1" src="./picture/heart.png" alt="">
-                            <img class="icon2" src="./picture/network.png" alt="">
-                        </div>
+        ?>
 
 
-                        <div class="likes">
-                            <h5 class="time-text">7 HOURS AGO</h5>
-                        </div>
-                </div>
-    </div>
-    </section>
-    
-
-    
-    
     </main>
-     <aside>
-    </aside> 
-    
+    <aside>
+    </aside>
+
     <!--Cookie javascript file-->
     <script src="cookies_content.js"></script>
 </body>
+
 </html>
