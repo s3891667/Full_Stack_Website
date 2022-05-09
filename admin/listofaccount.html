@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="admin_content.js"></script>
 </head>
 
@@ -49,11 +49,11 @@
         </ul>
     </div>
 
-    <div class="user_content">
+    <div class="user_content" onload="loadXMLDoc()">
         <div class="text">List of account</div>
         <form action="" method="POST">
             <input type="text" id="myInput" name="myInput" onkeyup="myFunction()"
-                placeholder="Search account (Leave blank and enter to reset the list)">
+                placeholder="Search account">
         </form>
         <table id="myTable"></table>
     </div>
