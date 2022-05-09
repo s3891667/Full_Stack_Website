@@ -47,7 +47,7 @@
         </div>
 
         <div class="img_dess">
-            <img class="img_des" src="./picture/imgconnect.jpg" alt="intropic">
+            <img class="img_des" src="./picture/imgconnect.jpeg" alt="intropic">
         </div>
     </header>
     <main>
@@ -55,6 +55,7 @@
         <!-- Post -->
         <div>
             <!-- Logo and Username-->
+            
             <span>
                 <!-- Logo -->
                 
@@ -79,8 +80,42 @@
             </span>
         </div>
     </section>
+    <section>
+    <div class="content2">
+                <div class="content2_pad">
+                    <div class="content2-first">
+                        <div class="content2-first-1">
+                            <img class="images1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrWxMZDuo3LPhZRj3awd8koZQH9q0RgYYbxg&amp;usqp=CAU" alt="">
+
+                        </div>
+                        <div class="content2-first-2">
+                            <p class="content2-text" href="">Millionaire</p>
+                            <img class="dots" src="https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png">
+                        </div>
+                        <hr>
+                        <div class="imgdiv">
+                            <img class="imgdiv-style" src="photo2.jpg" alt="">
+                        </div>
+                        <div class="icons">
+                            <img class="icons1" src="icons1.PNG" alt="">
+                            <img class="icon2" src="icon2.PNG" alt="">
+                        </div>
+        
+                        <br>
+                        <div class="likes">
+                            <h5 class="time-text">7 HOURS AGO</h5>
+                        </div>
+
+
+                    </div>
+                    
+                </div>
+                
+    
+            </div>
+    </section>
     </main>
-    <<aside>
+    <aside>
         <!-- People follow-->
     </aside>
     <footer>
