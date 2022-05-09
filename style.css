@@ -7,25 +7,9 @@
     outline: none;
 }
 body{
-    background-color: #eee;
+    background-color: rgb(193, 193, 193);
     position: relative
 }
-
-
-.header{
-    display: block;
-    position: relative;
-}
-.navbar{
-    border: none;
-    border-radius:0px;
-    color: rgb(2, 39, 73);
-    background-color: rgb(0, 0, 0);
-    margin-bottom: 0px;
-    position: sticky;
-    
-}
-
 
 .img_dess{
     margin-top: auto;
@@ -35,6 +19,12 @@ body{
     display: block;
     width: 100%;
     height: 600px;
+    margin-top: 0px;
+}
+.navbar{
+    margin: 0px;
+    background-color: #969696;
+    
 }
 
 .container{
@@ -108,6 +98,7 @@ footer a{
 .content2-first-2{
     width: 100%;
     height: 60px;
+    margin-left: 30px;
    
 }
 .dots{
@@ -177,3 +168,7 @@ footer a{
     cursor: pointer;
     
 }
+
+
+/* CSS STYLE */
+
