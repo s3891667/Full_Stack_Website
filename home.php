@@ -20,9 +20,8 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="./style.css">
     <title>Homepage</title>
 </head>
-
 <body>
-    <header>
+    <header id = "header">
         <div>
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
@@ -57,78 +56,76 @@ if (!isset($_SESSION['user'])) {
         </div>
     </header>
     <main>
-        <section>
-            <!-- Post -->
-            <div>
-                <!-- Logo and Username-->
-
-                <span>
-                    <!-- Logo -->
-
-                </span>
-                <span>
-                    <!-- Username -->
-                </span>
-            </div>
-            <div>
-                <!-- Picture -->
-            </div>
-            <div>
-                <!-- Caption -->
-            </div>
-            <div>
-                <!-- Like -->
-                <span>
-                    <!-- Like -->
-                </span>
-                <span>
-                    <!-- Share Button -->
-                </span>
-            </div>
-        </section>
-        <section>
-            <div class="content2">
+    <section >
+    <div class="content2" >
                 <div class="content2_pad">
-                    <div class="content2-first">
+                    
                         <div class="content2-first-1">
-                            <img class="images1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrWxMZDuo3LPhZRj3awd8koZQH9q0RgYYbxg&amp;usqp=CAU" alt="">
+                            <img class="images1" src="./picture/ava.jpeg" alt="avatarimage">
                         </div>
+
                         <div class="content2-first-2">
                             <p class="content2-text" href="">Millionaire</p>
                             <img class="dots" src="https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png">
                         </div>
-                        <hr>
+
+                       
                         <div class="imgdiv">
-                            <img class="imgdiv-style" src="photo2.jpg" alt="">
-                        </div>
-                        <div class="icons">
-                            <img class="icons1" src="icons1.PNG" alt="">
-                            <img class="icon2" src="icon2.PNG" alt="">
+                            <img class="imgdiv-style" src="./picture/welcomehomepage.jpg" alt="">
                         </div>
 
-                        <br>
+                        <div class="icons">
+                            <img class="icons1" src="./picture/heart.png" alt="">
+                            <img class="icon2" src="./picture/network.png" alt="">
+                        </div>
+
+
                         <div class="likes">
                             <h5 class="time-text">7 HOURS AGO</h5>
                         </div>
-                    </div>
                 </div>
-            </div>
+    </div>
+    </section>
+
+    <section >
+    <div class="content2" >
+                <div class="content2_pad">
+                    
+                        <div class="content2-first-1">
+                            <img class="images1" src="./picture/ava.jpeg" alt="avatarimage">
+                        </div>
+
+                        <div class="content2-first-2">
+                            <p class="content2-text" href="">Millionaire</p>
+                            <img class="dots" src="https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png">
+                        </div>
+
+                       
+                        <div class="imgdiv">
+                            <img class="imgdiv-style" src="./picture/welcomehomepage.jpg" alt="">
+                        </div>
+
+                        <div class="icons">
+                            <img class="icons1" src="./picture/heart.png" alt="">
+                            <img class="icon2" src="./picture/network.png" alt="">
+                        </div>
 
 
+                        <div class="likes">
+                            <h5 class="time-text">7 HOURS AGO</h5>
+                        </div>
+                </div>
+    </div>
+    </section>
+    
 
-        </section>
+    
+    
     </main>
-    <aside>
-        <!-- People follow-->
-    </aside>
-    <footer>
-        <div>
-            <a class="footer_tab" href="#">About Us</a>
-            <a class="footer_tab" href="#">Copyright</a>
-            <a class="footer_tab" href="#">Privacy</a>
-            <a class="footer_tab" href="#">Contact Information</a>
-        </div>
-    </footer>
+     <aside>
+    </aside> 
+    
+    <!--Cookie javascript file-->
+    <script src="cookies_content.js"></script>
 </body>
-
 </html>
