@@ -12,12 +12,14 @@ body{
 }
 
 .sidebar {
-    position:absolute;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     width: 300px;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(to right,rgb(147, 163, 201),#eee);
     z-index: 2;
-    padding-right: 20px;
+    padding-right: 0px;
     border-right: 1px solid rgb(3, 32, 63);
     
 }
@@ -89,38 +91,6 @@ body{
     line-height: 50px;
 }
 
-.sidebar ul li input{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 70px;
-    outline: none;
-    border: none;
-    background: url(picture/search-regular-24.png) no-repeat rgb(255, 253, 253);
-    background-position: 15px;
-    padding-left: 50px;
-    font-size: 20px;
-    color: rgb(5, 37, 73);
-    border: 2px solid #041264;
-}
-
-.sidebar ul li .search_box {
-    position: absolute;
-    z-index: 99;
-    color:rgb(4, 4, 4);
-    font-size: 22px;
-    height: 30px;
-    min-width: 30px;
-    border-radius: 12px;
-    margin-top: 15px;
-    margin-left: 10px;
-    position: relative;
-    line-height: 50px;
-}
-
-
 .sidebar ul li a {
     color: #032F53;
     display: flex;
@@ -128,6 +98,7 @@ body{
     text-decoration: none;
     transition: 400ms;
     position: relative;
+    padding-right: 32px;
 }
 
 .sidebar ul li a:hover {
