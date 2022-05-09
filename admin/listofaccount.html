@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +8,10 @@
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="admin_content.js"></script>
 </head>
 
-<body>
+<body onload="loadXMLDoc()">
     <!--Sidebar menu-->
     <div class="sidebar">
         <!--Logo-->
@@ -22,13 +22,9 @@
         </div>
         <div class="title">ADMIN</div>
         <div class="message">Welcom to InstaKilogram!</div>
-        
-        <!--Navigator list -->
+
+        <!--Navigator list-->
         <ul class="nav_list">
-            <li class="searchbar">
-                <input type="text" placeholder="Search..">
-            </li>
-            
             <li>
                 <a href="listofaccount.html">
                     <img src="picture/user-account-solid-24.png" alt="user-account">
@@ -42,9 +38,9 @@
                     <span class="link">List of image</span>
                 </a>
             </li>
-            
+
             <!--Log out-->
-            <li class ="log_out">
+            <li class="log_out">
                 <a href="#">
                     <img src="picture/log-out-regular-24.png" alt="log-out">
                     <span class="link">Log out</span>
@@ -52,5 +48,21 @@
             </li>
         </ul>
     </div>
+
+    <div class="user_content" onload="loadXMLDoc()">
+        <div class="text">List of account</div>
+        <form action="" method="POST">
+            <select name="filterType" id="filterType">
+                <option value="#">--Select filter type--</option>
+                <option value="firstname">Firstname</option>
+                <option value="lastname">Lastname</option>
+                <option value="email">Email</option>
+            </select>
+            <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search account">
+        </form>
+        <table id="myTable"></table>
+    </div>
+
 </body>
+
 </html>

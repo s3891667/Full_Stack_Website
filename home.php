@@ -4,107 +4,122 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cookies_content.css">   
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  
+    <script src="./JS/bootstrap.min.js"></script>
+
+    <title>Homepgae</title>
 </head>
+
 <body>
-    <header>
-        <!-- Logo Image  -->
-        <div>
-            <img class="img" src="picture/Logo_picture.jpg" alt="logo">
-        </div> 
-        <div class="webheading">
-            <!-- Website Heading -->
-            <h1>InstaKilogram</h1>
-            <p>Welcome <?php echo $_SESSION["user"]; ?> to InstaKilogram</p>
-            <span>Inspire The World By Yourself</span>
-        </div>
-        <div class="nav_background">
-            <!-- Navigation Bar -->
-            <a class="nav nav_setcolor" href="./index.html">Homepage</a>
-            <a class="nav nav_setcolor" href="#">Trending Post</a>
-            <a class="nav nav_setcolor" href="./login.html">Log In</a>
-            <a class="nav nav_setcolor" href="./logout.php">Logout</a>
-            <a class="nav nav_setcolor"  href="./user_profile.php">Profile</a>
-        </div>
-            <!-- Search Bar -->
-        <div>
-            <input class="searchbar" type="text" placeholder="Search here...">
+    
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">InstaKilogram</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log In</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+        <div class="img_dess">
+            <img class="img_des" src="./picture/imgconnect.jpeg" alt="intropic">
         </div>
     </header>
     <main>
-        <div class="overallpost">
-            <!-- Overall Post -->
-            <div class="ava_user">
-                <!-- icon and user name -->
-                <img src="picture/ava.jpeg" alt="Avatar" class="avatar">
-                <span class="username">
-                    Dang Khoa
-                </span>
-            </div>
-            <div class="picture_post">
-                <!-- Picture -->
-                <img src="picture/image1.jpeg" alt="post">
-            </div>
-            <div>
-                <!-- Icon: like, comment -->
-                <span>
-                    <!-- Like -->
-                    <img src="picture/likeicon.png" alt="likeicon" class="avatar">
-                </span>
-                <span>
-                    <!-- Comment -->
-                    <img src="picture/commenticon.webp" alt="comment" class="avatar2">
-                </span>
-            </div>
-            <div>
-                <!-- Number of like -->
-                <div>
-                    <p>
-                        <qoute>Today is not an easy day</qoute>
-                    </p>
+    <section >
+    <div class="content2" >
+                <div class="content2_pad">
+                    
+                        <div class="content2-first-1">
+                            <img class="images1" src="./picture/ava.jpeg" alt="avatarimage">
+                        </div>
+
+                        <div class="content2-first-2">
+                            <p class="content2-text" href="">Millionaire</p>
+                            
+                        </div>
+
+                       
+                        <div class="imgdiv">
+                            <img class="imgdiv-style" src="./picture/welcomehomepage.jpg" alt="">
+                        </div>
+
+                        <div class="icons">
+                            <img class="icons1" src="./picture/heart.png" alt="">
+                            <img class="icon2" src="./picture/network.png" alt="">
+                        </div>
+
+
+                        <div class="likes">
+                            <h5 class="time-text">7 HOURS AGO</h5>
+                        </div>
                 </div>
-            </div>
-            <div>
-                <!-- Caption -->
-            </div>
-            <div>
-                <!-- View comment -->
-            </div>
-            <div>
-                <!-- Data time -->
-            </div>
-        </div>
-    </main>
-    <aside>
-        
-    </aside>
-    <footer>
-    <div>
-        <a class="footer_tab" href="#">About Us</a>
-        <a class="footer_tab" href="#">Copyright</a>
-        <a class="footer_tab" href="#">Privacy</a>
-        <a class="footer_tab" href="#">Contact Information</a>
     </div>
-    </footer>
+    </section>
+
+    <section >
+    <div class="content2" >
+                <div class="content2_pad">
+                    
+                        <div class="content2-first-1">
+                            <img class="images1" src="./picture/ava.jpeg" alt="avatarimage">
+                        </div>
+
+                        <div class="content2-first-2">
+                            <p class="content2-text" href="">Millionaire</p>
+                            <img class="dots" src="https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png">
+                        </div>
+
+                       
+                        <div class="imgdiv">
+                            <img class="imgdiv-style" src="./picture/welcomehomepage.jpg" alt="">
+                        </div>
+
+                        <div class="icons">
+                            <img class="icons1" src="./picture/heart.png" alt="">
+                            <img class="icon2" src="./picture/network.png" alt="">
+                        </div>
+
+
+                        <div class="likes">
+                            <h5 class="time-text">7 HOURS AGO</h5>
+                        </div>
+                </div>
+    </div>
+    </section>
     
-    <!--Cookie black screen-->
-    <div class="wrapper"></div>
 
-    <!--Cookie consent popup-->
-    <div class="cookie-container">
-        <div>I use cookies</div> 
-        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to my use of cookies and other technologies.
-        </p>
-        <button class="accept-button">I understand</button>
-        <a href="#">Learn more</a>
-    </div>
-
+    
+    
+    </main>
+     <aside>
+    </aside> 
+    
     <!--Cookie javascript file-->
     <script src="cookies_content.js"></script>
 </body>
