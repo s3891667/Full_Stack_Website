@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="admin_content.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+  <table id = "school_data">
+  <tr><th>Firstname</th><th>Lastname</th><th>Password</th><!--<th>Email</th><th>Date</th><th>Time</th>-->
+  </tr>
+  </table>
+
+  <script>
+    $(document).ready(function(){
+        console.log("Golly, we're verifying that jQuery is working on page-load");
+
+        $.ajax({
+            type: "GET",
+            url: "accounts.xml",
+            dataType: "xml",
+            complete: function(xml){
+                console.log('Yes, we did finish loading the XML file.')
+
+                console.log(xml);
+
+                $(xml).find('identification').each(function(){
+                    console.log('Iterating through the XML tags');
+
+                    var firstname = $(this).find('firstname').text();
+                    var lastname = $(this).find('lastname').text();
+                    var password = $(this).find('password').text();
+                    $('<tr></tr>').html('<td>' +firstname+ '</td><td>$' +lastname+ '</td><td>$' +password+ '</td>').appendTo('#school_data');
+                });
+            },
+            error: function(errorData){
+                console.log('Error: request failed!');
+                console.log(errorData);
+            }
+        });
+    });
+  </script>
+
+</body>
+</html>
