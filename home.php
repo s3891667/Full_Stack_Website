@@ -2,6 +2,14 @@
 <html lang="en">
 <?php
 session_start();
+
+if (!isset($_SESSION['user'])) {
+    echo "<SCRIPT>
+    alert('Please login your account !');
+    window.location.href='index.html';
+    </SCRIPT>";
+    die();
+}
 ?>
 
 <head>
@@ -10,7 +18,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
-    <title>Homepgae</title>
+    <title>Homepage</title>
 </head>
 
 <body>
@@ -26,8 +34,8 @@ session_start();
                         <li><a href="#">TRENDING POST</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="./login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="./user_profile.php"><span class="glyphicon glyphicon-log-in"></span> Profile</a></li>
+                        <li><a href="./logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>
                 </div>
             </nav>
@@ -49,42 +57,41 @@ session_start();
         </div>
     </header>
     <main>
-    <section>
-        <!-- Post -->
-        <div>
-            <!-- Logo and Username-->
-            
-            <span>
-                <!-- Logo -->
-                
-            </span>
-            <span>
-                <!-- Username -->
-            </span>
-        </div>
-        <div>
-            <!-- Picture -->
-        </div>
-        <div>
-            <!-- Caption -->
-        </div>
-        <div>
-            <!-- Like -->
-            <span>
+        <section>
+            <!-- Post -->
+            <div>
+                <!-- Logo and Username-->
+
+                <span>
+                    <!-- Logo -->
+
+                </span>
+                <span>
+                    <!-- Username -->
+                </span>
+            </div>
+            <div>
+                <!-- Picture -->
+            </div>
+            <div>
+                <!-- Caption -->
+            </div>
+            <div>
                 <!-- Like -->
-            </span>
-            <span>
-                <!-- Share Button -->
-            </span>
-        </div>
-    </section>
-    <section>
-    <div class="content2">
+                <span>
+                    <!-- Like -->
+                </span>
+                <span>
+                    <!-- Share Button -->
+                </span>
+            </div>
+        </section>
+        <section>
+            <div class="content2">
                 <div class="content2_pad">
                     <div class="content2-first">
                         <div class="content2-first-1">
                             <img class="images1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrWxMZDuo3LPhZRj3awd8koZQH9q0RgYYbxg&amp;usqp=CAU" alt="">
-
                         </div>
                         <div class="content2-first-2">
                             <p class="content2-text" href="">Millionaire</p>
@@ -98,20 +105,18 @@ session_start();
                             <img class="icons1" src="icons1.PNG" alt="">
                             <img class="icon2" src="icon2.PNG" alt="">
                         </div>
-        
+
                         <br>
                         <div class="likes">
                             <h5 class="time-text">7 HOURS AGO</h5>
                         </div>
-
-
                     </div>
-                    
                 </div>
-                
-    
             </div>
-    </section>
+
+
+
+        </section>
     </main>
     <aside>
         <!-- People follow-->

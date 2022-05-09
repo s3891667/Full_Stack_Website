@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         alert('$message');
         window.location.href='login.php?error';
         </SCRIPT>";
-        $error = "Wrong wrong";
     }
 }
 

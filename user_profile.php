@@ -66,7 +66,6 @@ $xml = simplexml_load_file("./posts.xml");
             printf('<img src="%s" class="img-fluid" alt="">', $image);
         }
     }
-
     ?>
 </body>
 
