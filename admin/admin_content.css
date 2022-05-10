@@ -221,9 +221,9 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.sidebar.active ~ .user_content{
-    width: calc(100% - 300px);
-    left:300px;
+.sidebar.active~.user_content {
+    width: 100%;
+    left: 300px;
 }
 
 .user_content .text {
@@ -292,7 +292,7 @@ select {
 
 form {
     padding: 12px 12px 24px 0px;
-    
+
     border-bottom: 3px solid #000000;
     margin: 12px 12px 12px 12px;
     width: 100%;
