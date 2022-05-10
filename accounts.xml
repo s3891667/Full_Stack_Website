@@ -5,15 +5,26 @@
     <lastname>root</lastname>
     <password>$2y$10$8XI9.xxKYIEHQ2VsuEnMvOxVT37Q8xeKDGeq1wV5PxxPmakqQa49W</password>
     <email>s@rmit.edu.vn</email>
-    <date>NULL</date>
-    <time>NULL</time>
+    <date/>
+    <time/>
+    <avatar/>
   </user>
   <user id="2">
     <firstname>khoa</firstname>
     <lastname>nguyen</lastname>
     <password>$2y$15$yX8RjOc9MP67O3mQaFPQrOh3a/6nGnhf6jXcFw/cGhD6mA.8qFKJ2</password>
     <email>khoanguyn012@gmail.com</email>
-    <date>2022/05/04</date>
+    <date>2022-05-04</date>
     <time>04:56:13pm</time>
+    <avatar/>
+  </user>
+  <user id="3">
+    <firstname>Mai</firstname>
+    <lastname>Ho</lastname>
+    <password>$2y$15$sG4q8NQVKOoHxlx9sn5.MOZDT6uoYeE8JjpdsKMJqQHxe4Ub5DBbG</password>
+    <email>maimai@gmail.com</email>
+    <date>2022-05-09</date>
+    <time>06:07:57pm</time>
+    <avatar>resources/user3/avatar/352084.jpg</avatar>
   </user>
 </system>
