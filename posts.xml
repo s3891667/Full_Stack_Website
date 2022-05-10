@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <posts>
-  <user id="root">
-    <content>NULL</content>
-    <attachment>NULL</attachment>
-    <status>NULL</status>
-    <date>NULL</date>
-    <time>NULL</time>
-  </user>
   <user id="user2">
     <content>okay okay</content>
     <attachment>resources/user2/posts/2932542.jpg</attachment>

@@ -53,6 +53,7 @@
   </header>
   <main>
     <?php
+    include "./user_resources_handling.php";
     $xml = simplexml_load_file("./posts.xml");
     foreach ($xml->user as $user) {
       if ("$user->status" == "global") {
@@ -111,54 +112,6 @@
                 </div>
     </div>
     </section> ';
-      }
-    }
-
-
-    function reading_user_name($id)
-    {
-      $name = "";
-      $xml = simplexml_load_file("./accounts.xml");
-      foreach ($xml->user as $user) {
-        if ($id == "user{$user['id']}") {
-          $name = $user->firstname;
-        };
-      }
-      return $name;
-    }
-
-    function avatar_dir_check($id)
-    {
-      $dir = "";
-      $xml = simplexml_load_file("./accounts.xml");
-      foreach ($xml->user as $user) {
-        if ($id == "user{$user['id']}") {
-          $dir = $user->avatar;
-        };
-      }
-      return $dir;
-    }
-    function time_check($check, $dateDiff, $timeDiff)
-    {
-      //day check
-      if ($check >= 1) {
-        if ($check == 1) {
-          echo $dateDiff->format('%a day ago');
-        } else {
-          echo $dateDiff->format('%a days ago');
-        }
-      } else {
-        // hour check
-        if ((int)$timeDiff->format('%h') == 0) {
-          //minutes check
-          if ((int)$timeDiff->format('%i') <= 0) {
-            echo "recently";
-          } else {
-            echo $timeDiff->format('%i minutes ago');
-          }
-        } else {
-          echo $timeDiff->format('%h hours ago');
-        }
       }
     }
     ?>
