@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
-    <script src="listofaccount.js"></script>
+    <script src="listofimage.js"></script>
 </head>
 
 <body onload="loadXMLDoc()">
@@ -21,8 +21,7 @@
         </div>
         <div class="title">ADMIN</div>
         <div class="message">Welcom to InstaKilogram!</div>
-        <input type="image" src="picture/menu-alt-right-regular-24.png" class="menu_btn" id="btn"
-            onclick="menuFunction()">
+        <input type="image" src="picture/menu-alt-right-regular-24.png" class="menu_btn" id="btn" onclick="menuFunction()">
 
         <!--Navigator list-->
         <ul class="nav_list">
@@ -49,19 +48,40 @@
             </li>
         </ul>
     </div>
-    
-    <div class="user_content">
-        <div class="text">List of account</div>
-        <form action="" method="POST">
-            <select name="filterType" id="filterType">
-                <option value="#">--Select filter type--</option>
-                <option value="firstname">Firstname</option>
-                <option value="lastname">Lastname</option>
-                <option value="email">Email</option>
-            </select>
-            <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search account">
-        </form>
-        <table id="myTable"></table>
+
+    <div class="user_content" onload="loadXMLDoc()">
+        <div class="text">List of image</div>
+        <table id="myTable">
+            <tr>
+                <th>File name</th>
+                <th>Action</th>
+            </tr>
+
+            <?php
+            $total_user = count(glob("resources/*", GLOB_ONLYDIR));
+            for ($x = 2; $x <= 3; $x++) {
+                $files = glob("../resources/user" . $x . "/posts/*.*");
+                for ($i = 1; $i < count($files); $i++) {
+                    echo "<tr>";
+                    $image = $files[$i];
+                    $supported_file = array(
+                        'gif',
+                        'jpg',
+                        'jpeg',
+                        'png'
+                    );
+
+                    $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+                    if (in_array($ext, $supported_file)) {
+                        // print $image ."<br />";
+                        echo '<td><a href=' . $image . '><div>' . $image . '</div></a></td>';
+                    }
+                    echo "</tr>";
+                }
+            }
+
+            ?>
+        </table>
     </div>
 
 </body>
