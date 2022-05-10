@@ -53,7 +53,7 @@ function loadXMLDoc() {
             readFunction(this);
         }
     };
-    xmlhttp.open("GET", "../accounts.xml", true);
+    xmlhttp.open("GET", "accounts.xml", true);
     xmlhttp.send();
 }
 function readFunction(xml) {
