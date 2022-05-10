@@ -215,15 +215,22 @@ body {
 
 .user_content {
     position: relative;
-    padding: 10px 0px 0px 0px;
-    left: 300px;
+    height: 100%;
+    left: 90px;
+    width: calc(100% - 90px);
     background-color: rgb(255, 255, 255);
+}
+
+.sidebar.active ~ .user_content{
+    width: calc(100% - 300px);
+    left:300px;
 }
 
 .user_content .text {
     font-size: 25px;
     font-weight: 700;
-    width: 1325px;
+    width: 100%;
+    right: 10%;
     color: #000000;
     margin: 12px 12px 12px 12px;
     border-bottom: 3px solid #000000;
@@ -231,7 +238,7 @@ body {
 
 table {
     position: relative;
-    width: 1325px;
+    width: 100%;
     margin: 12px 12px 12px 12px;
     border: 3px solid #000000;
     border-collapse: collapse;
@@ -262,9 +269,6 @@ table tr:hover {
     margin: 12px 12px 12px 0px;
     position: relative;
     height: 50px;
-    width: 1125px;
-    left: 20px;
-    top: 0;
     border-radius: 70px;
     outline: none;
     border: none;
@@ -288,8 +292,8 @@ select {
 
 form {
     padding: 12px 12px 24px 0px;
-    ;
+    
     border-bottom: 3px solid #000000;
     margin: 12px 12px 12px 12px;
-    width: 1325px;
+    width: 100%;
 }
