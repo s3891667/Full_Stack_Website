@@ -53,7 +53,7 @@ function loadXMLDoc() {
             readFunction(this);
         }
     };
-    xmlhttp.open("GET", "../accounts.xml", true);
+    xmlhttp.open("GET", "accounts.xml", true);
     xmlhttp.send();
 }
 function readFunction(xml) {
@@ -77,4 +77,12 @@ function readFunction(xml) {
             "</td></tr>";
     }
     document.getElementById("myTable").innerHTML = table;
+}
+
+function menuFunction() {
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
 }
