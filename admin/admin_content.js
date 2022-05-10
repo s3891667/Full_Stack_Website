@@ -78,3 +78,13 @@ function readFunction(xml) {
     }
     document.getElementById("myTable").innerHTML = table;
 }
+
+function menuFunction(){
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    let logoCover = document.querySelector(".logo");
+    btn.onclick = function(){
+        logoCover.classList.toggle("active");
+        sidebar.classList.toggle("active");
+    }
+}

@@ -2,12 +2,12 @@
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    box-sizing:  border-box;
+    box-sizing: border-box;
     list-style: none;
     text-decoration: none;
 }
 
-body{
+body {
     background: #fffefe;
 }
 
@@ -15,16 +15,33 @@ body{
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 300px;
+    width: 90px;
     height: 100%;
-    background: linear-gradient(to right,rgb(147, 163, 201),#eee);
+    background: linear-gradient(to right, rgb(147, 163, 201), #eee);
     z-index: 2;
     padding-right: 0px;
     border-right: 1px solid rgb(3, 32, 63);
-    
+    transition: 400ms;
 }
 
-.main-home{
+.sidebar.active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(to right, rgb(147, 163, 201), #eee);
+    z-index: 2;
+    padding-right: 0px;
+    border-right: 1px solid rgb(3, 32, 63);
+    transition: 400ms;
+}
+
+.sidebar.active.logo img {
+    opacity: 1;
+}
+
+.main-home {
     position: absolute;
     width: calc(100% - 300px);
     top: 0;
@@ -42,7 +59,7 @@ body{
     margin-top: 1.4rem;
 }
 
-.logo {
+.sidebar div.logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,13 +68,51 @@ body{
     border-radius: 50%;
     border: 2px solid #041264;
     margin-bottom: 1.4rem;
+    opacity: 0;
 }
 
-.logo img {
+.sidebar.active div.logo {
+    opacity: 1;
+}
+
+.sidebar div .logo img {
+    display: flex;
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
+    opacity: 0;
+    align-items: center;
+}
+
+.sidebar.active div .logo img {
+    opacity: 1;
+}
+
+.sidebar #btn {
+    color: #041264;
+    position: absolute;
+    left: 70%;
+    top: 6px;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 50px;
+    transform: translate(-50%);
+}
+
+.sidebar.active #btn {
+    color: #041264;
+    position: absolute;
+    left: 92%;
+    top: 6px;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 50px;
+    transform: translate(-50%);
 }
 
 .sidebar div.title {
@@ -67,6 +122,11 @@ body{
     margin-bottom: 10px;
     font-weight: bold;
     color: #032F53;
+    opacity: 0;
+}
+
+.sidebar.active div.title {
+    opacity: 1;
 }
 
 .sidebar div.message {
@@ -75,11 +135,16 @@ body{
     text-align: center;
     color: #032F53;
     margin-bottom: 2rem;
+    opacity: 0;
+}
+
+.sidebar.active div.message {
+    opacity: 1;
 }
 
 .sidebar ul {
     margin-top: 20px;
-    
+
 }
 
 .sidebar ul li {
@@ -98,21 +163,30 @@ body{
     text-decoration: none;
     transition: 400ms;
     position: relative;
-    padding-right: 32px;
+    width: 100%;
+    height: 90px;
 }
 
 .sidebar ul li a:hover {
-    color:white;
+    color: white;
     background: #032F53;
     border: 2px solid rgb(255, 255, 255);
 }
 
 .sidebar ul li a img {
-    
+    left: 34%;
     height: 30px;
-    min-width: 30px;
+    width: 30px;
     border-radius: 12px;
-    margin-left: 10px;
+    position: relative;
+    line-height: 50px;
+}
+
+.sidebar.active ul li a img {
+    left: 30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 12px;
     position: relative;
     line-height: 50px;
 }
@@ -120,13 +194,19 @@ body{
 .sidebar ul li a span {
     font-size: 20px;
     font-weight: bold;
-    margin-left: 20px;
+    left: 50px;
     position: relative;
+    opacity: 0;
 }
 
-.sidebar ul li.log_out{
+
+.sidebar.active ul li a span {
+    opacity: 1;
+}
+
+.sidebar ul li.log_out {
     position: relative;
-    height: 60px;
+    height: 90px;
     width: 100%;
     bottom: -60px;
     list-style: none;
@@ -151,14 +231,14 @@ body{
 
 table {
     position: relative;
-    width: 1325px; 
+    width: 1325px;
     margin: 12px 12px 12px 12px;
     border: 3px solid #000000;
     border-collapse: collapse;
 }
 
 table th {
-    text-align: left; 
+    text-align: left;
     padding: 12px;
     font-size: 18px;
     background-color: #f1f1f1;
@@ -178,7 +258,7 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
-input{
+.user_content input {
     margin: 12px 12px 12px 0px;
     position: relative;
     height: 50px;
@@ -196,7 +276,7 @@ input{
     border: 2px solid #041264;
 }
 
-select{
+select {
     margin: 12px 12px 12px 0px;
     height: 50px;
     position: relative;
@@ -206,13 +286,10 @@ select{
     font-weight: 600;
 }
 
-form{
-    padding: 12px 12px 24px 0px;;
+form {
+    padding: 12px 12px 24px 0px;
+    ;
     border-bottom: 3px solid #000000;
     margin: 12px 12px 12px 12px;
     width: 1325px;
 }
-
-
-
-
