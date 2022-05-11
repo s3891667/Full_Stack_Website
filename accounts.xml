@@ -12,28 +12,10 @@
   <user id="2">
     <firstname>khoa</firstname>
     <lastname>nguyen</lastname>
-    <password>$2y$15$yX8RjOc9MP67O3mQaFPQrOh3a/6nGnhf6jXcFw/cGhD6mA.8qFKJ2</password>
+    <password>$2y$15$EDvF39d3cDylNH7ZJ6.gVOKaXUuDNYnNmW6TWRhgxu0JUTAtTdmn2</password>
     <email>khoanguyn012@gmail.com</email>
-    <date>2022-05-04</date>
-    <time>04:56:13pm</time>
-    <avatar>NULL</avatar>
-  </user>
-  <user id="3">
-    <firstname>Mai</firstname>
-    <lastname>Ho</lastname>
-    <password>$2y$15$sG4q8NQVKOoHxlx9sn5.MOZDT6uoYeE8JjpdsKMJqQHxe4Ub5DBbG</password>
-    <email>maimai@gmail.com</email>
-    <date>2022-05-09</date>
-    <time>06:07:57pm</time>
-    <avatar>resources/user3/avatar/352084.jpg</avatar>
-  </user>
-  <user id="4">
-    <firstname>owen</firstname>
-    <lastname>nguyen</lastname>
-    <password>$2y$15$RjtCPd1SsF4/1ypd81u7fueAK0fcF20A1uhxTY0wNUrXD2Q/gXDDq</password>
-    <email>owen@gmail.com</email>
     <date>2022-05-11</date>
-    <time>02:11:38pm</time>
+    <time>11:25:11pm</time>
     <avatar>resources/avatar.png</avatar>
   </user>
 </system>

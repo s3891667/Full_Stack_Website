@@ -7,7 +7,7 @@ session_start();
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
     alert('Please login your account !');
-    window.location.href='index.html';
+    window.location.href='index.php';
     </SCRIPT>";
     die();
 }
@@ -60,6 +60,7 @@ if (!isset($_SESSION['user'])) {
     include "./user_resources_handling.php";
     $xml = simplexml_load_file("./posts.xml");
     foreach ($xml->user as $user) {
+        if ("$user->status" == "Public" || "$user->status" == "Internal") {
         $image = $user->attachment;
         //generate current time to compare the posts upload time
         $currentDate = date_create(date("Y-m-d"));
@@ -115,6 +116,7 @@ if (!isset($_SESSION['user'])) {
     </div>
     </section> ';
       }
+    }
     ?>
     <div class="empty_box">
         <h1>EMPTYBOX</h1>

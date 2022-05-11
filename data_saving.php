@@ -57,6 +57,12 @@ function resources_handling($totalAffiliates, $avatar)
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
+        if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
+            echo "<SCRIPT> //not showing me this
+            window.location.href = 'signUp.html?email=used';
+            alert('Please check for file type');
+            </SCRIPT>";
+        }
         $temp_name = $_FILES['avatar']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
         $avatar_dir = $path_filename_ext;

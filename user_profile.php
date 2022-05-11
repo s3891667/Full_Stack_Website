@@ -4,7 +4,6 @@ session_start();
 include "./user_resources_handling.php";
 $xml = simplexml_load_file("./posts.xml");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,43 +17,44 @@ $xml = simplexml_load_file("./posts.xml");
 </head>
 
 <body>
-<header>
-    <div>
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">InstaKilogram</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="#">TRENDING POST</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="./home.php"><span class="glyphicon glyphicon-user"></span>Home</a>
-            </li>
-            <li>
-              <a href="./logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
-            </li>
-          </ul>
+
+    <header>
+        <div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="./home.php">InstaKilogram</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">TRENDING POST</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="./home.php"><span class="glyphicon glyphicon-user"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="./logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-      </nav>
-    </div>
 
-    <div class="container">
-      <form action="/action_page.php">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search" name="search" />
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
+        <div class="container">
+            <form action="/action_page.php">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
-    </div>
 
 
-  </header>
+    </header>
     <div class="container square-box d-flex justify-content-center">
         <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
             <?php
@@ -67,15 +67,21 @@ $xml = simplexml_load_file("./posts.xml");
                 <label for="floatingTextarea">How do you feel today ?</label>
             </div>
             <div class="col-auto form-check">
-                <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="one">
+                <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="1">
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Default mode
+                    Internal mode
                 </label>
             </div>
             <div class=" col-auto form-check">
-                <input class="form-check-input" type="radio" id="flexRadioDefault1" name="checker" value="two">
+                <input class="form-check-input" type="radio" id="flexRadioDefault1" name="checker" value="2">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Global mode
+                    Public mode
+                </label>
+            </div>
+            <div class="col-auto form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="3">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    private mode
                 </label>
             </div>
             <div class="mb-3 form-group">
@@ -86,6 +92,8 @@ $xml = simplexml_load_file("./posts.xml");
             </div>
             <button type='submit' class="btn btn-primary">Post</button>
         </form>
+
+
     </div>
 
     <?php

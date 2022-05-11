@@ -63,7 +63,7 @@
     include "./user_resources_handling.php";
     $xml = simplexml_load_file("./posts.xml");
     foreach ($xml->user as $user) {
-      if ("$user->status" == "global") {
+      if ("$user->status" == "Public") {
         $image = $user->attachment;
         //generate current time to compare the posts upload time
         $currentDate = date_create(date("Y-m-d"));

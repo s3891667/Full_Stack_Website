@@ -21,9 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $status = $_POST['checker'];
     $attachment = $_FILES["picture"]["name"];
     if ($status == "1") {
-        $status = "default";
+        $status = "Internal";
+    } else if ($status == "2"){
+        $status = "Public";
     } else {
-        $status = "global";
+        $status = "Private";
     }
     $users = $xml->getElementsByTagName("user");
     foreach ($users as $user) {
@@ -64,7 +66,6 @@ function storing_data($posts, $xml, $content, $status, $attachment, $id)
     $xml->save("./posts.xml");
 }
 
-
 function resources_handling($id, $attachment)
 {
     if ($attachment != "") {
@@ -75,6 +76,12 @@ function resources_handling($id, $attachment)
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
+        if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
+            echo "<SCRIPT> //not showing me this
+            window.location.href = 'user_profile.php?img=invalidType';
+            alert('Please check for file type');
+            </SCRIPT>";
+        }
         $temp_name = $_FILES['picture']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
         $picAddress = $path_filename_ext;
@@ -87,12 +94,6 @@ function resources_handling($id, $attachment)
         }
     }
 }
-
-
-function change_avatar() {
-    
-}
-
 
 
 function time_check($check, $dateDiff, $timeDiff)
@@ -142,3 +143,5 @@ function avatar_dir_check($id)
     }
     return $dir;
 }
+
+

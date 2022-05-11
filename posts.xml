@@ -3,29 +3,36 @@
   <user id="user2">
     <content>okay okay</content>
     <attachment>resources/user2/posts/2932542.jpg</attachment>
-    <status>global</status>
+    <status>Public</status>
     <date>2022/05/08</date>
     <time>05:32:35pm</time>
   </user>
   <user id="user2">
-    <content>today is a wonderful day</content>
-    <attachment>resources/user2/posts/nature.jpeg</attachment>
-    <status>global</status>
-    <date>2022-05-09</date>
-    <time>12:23:00pm</time>
+    <content>i love my life</content>
+    <attachment>resources/user/posts/352084.jpg</attachment>
+    <status>Private</status>
+    <date>2022-05-11</date>
+    <time>11:26:39pm</time>
   </user>
   <user id="user2">
-    <content>today is lovely</content>
-    <attachment>resources/user2/posts/352084.jpg</attachment>
-    <status>global</status>
-    <date>2022-05-09</date>
-    <time>05:43:01pm</time>
+    <content>sooooo great ! </content>
+    <attachment>resources/user2/posts/2932542.jpg</attachment>
+    <status>Private</status>
+    <date>2022-05-11</date>
+    <time>11:29:11pm</time>
   </user>
-  <user id="user3">
-    <content>dwdwdw</content>
-    <attachment>resources/user3/posts/Screenshot from 2022-04-26 01-34-21.png</attachment>
-    <status>global</status>
-    <date>2022-05-09</date>
-    <time>06:39:57pm</time>
+  <user id="user2">
+    <content>RMIT !!! </content>
+    <attachment>resources/user2/posts/Q1.png</attachment>
+    <status>Internal</status>
+    <date>2022-05-11</date>
+    <time>11:30:41pm</time>
+  </user>
+  <user id="user2">
+    <content>diagrams ! </content>
+    <attachment>resources/user2/posts/Q2.png</attachment>
+    <status>Public</status>
+    <date>2022-05-11</date>
+    <time>11:33:56pm</time>
   </user>
 </posts>
