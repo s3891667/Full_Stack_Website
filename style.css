@@ -176,4 +176,28 @@ footer a{
     visibility: hidden;
 }
 
+/* USER'S PROFILE */
+
+.user-profile-box{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px  rgb(150, 149, 149);
+    margin:auto;
+    width: 70%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.ava-box{
+    padding: 10px;
+}
+
+.box-des{
+    padding: 10px;
+}
+
+.box-des2{
+    padding: 5px;
+}
+
 

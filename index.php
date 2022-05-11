@@ -86,7 +86,7 @@
         echo "
                             <img class='images1' src='$ava' alt='avatarimage'>
                         </div>
-                        <img class='dots' src='https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png'> 
+                         
                         <div class='content2-first-2'> ";
 
         echo "                <p class='content2-text' href=''>";

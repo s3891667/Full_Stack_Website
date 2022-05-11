@@ -11,61 +11,57 @@ $xml = simplexml_load_file("./posts.xml");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Profile</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+<header>
+    <div>
+    <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">InstaKilogram</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Log In</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn  btn-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+  </header>
 
-    <header>
-        <div>
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="./home.php">InstaKilogram</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">TRENDING POST</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="./home.php"><span class="glyphicon glyphicon-user"></span>Home</a>
-                        </li>
-                        <li>
-                            <a href="./logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-        <div class="container">
-            <form action="/action_page.php">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search" />
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-
-    </header>
-    <div class="container square-box d-flex justify-content-center">
+  <main>
+    <div class="user-profile-box"> 
+      <!-- edit this fucking class -->
         <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
+            <div class="ava-box">
             <?php
             echo " <div>
             <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
             </div>";
             ?>
+            </div>
+            <div class="box-des">
             <div id="col-auto" class="form-floating mb-3  ">
                 <textarea class="form-control" placeholder="Leave a comment here" id="text" name="contents"></textarea>
                 <label for="floatingTextarea">How do you feel today ?</label>
             </div>
+</div>
+            <div class="box-des">
             <div class="col-auto form-check">
                 <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="1">
                 <label class="form-check-label" for="flexRadioDefault2">
@@ -84,17 +80,21 @@ $xml = simplexml_load_file("./posts.xml");
                     private mode
                 </label>
             </div>
-            <div class="mb-3 form-group">
-                <div class="custom-file">
-                    <label id="avatar_label" class="custom-file-label" for="customFile">Choose your pics</label>
+</div>
+          
+    
+            
+                    <label id="avatar_label"  class="box-des2" for="customFile"></label>
                     <input name="picture" class="custom-file-input" type="file" id="avatar">
-                </div>
-            </div>
-            <button type='submit' class="btn btn-primary">Post</button>
-        </form>
-
-
+                
+          
+            <div class="box-des">
+            <button type='submit' class="btn btn-secondary">Post</button>
+</div>
+          </form>
     </div>
+    <hr>
+    </main>
 
     <?php
     foreach ($xml->user as $user) {
@@ -121,7 +121,7 @@ $xml = simplexml_load_file("./posts.xml");
                                     <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
                                 </div>
 
-                                <img class='dots' src='https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png'>
+
                                 <div class='content2-first-2'>
                 
                                     <p class='content2-text' href=''>{$_SESSION['user']}</p>
@@ -154,6 +154,10 @@ $xml = simplexml_load_file("./posts.xml");
         }
     }
     ?>
+    <div class="empty_box">
+        <h1>EMPTYBOX</h1>
+        <h1>EMPTYBOX</h1>
+    </div>
     <footer>
         <div>
             <a class="footer_tab" href="#">About Us</a>

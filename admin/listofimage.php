@@ -73,12 +73,16 @@
                     );
                     $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     if (in_array($ext, $supported_file)) {
-                        echo "<td><a href='{$image}'><div>  $image  </div></a></td>";
+                        echo "<form method='post' action='listofimage.php'>";
+                        echo "<td><a href='{$image}'><div name='file_name'>  $image  </div></a></td>";
                         echo '<td><div>' . filesize($image) . ' bytes</div></td>';
+                        echo "<td><button name='delete_file''>Delete</button></td>";
+                        echo "</form>";
                     }
                     echo "</tr>";
                 }
             }
+
             ?>
         </table>
     </div>
