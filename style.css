@@ -206,7 +206,9 @@ footer a{
     width: 80%;
     height: auto;
     margin-top: 50px;
-    border: 2px solid black;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    box-shadow: 1px 3px 1px 3px rgb(10, 8, 8);
 }
 
 .infor-nav{
@@ -224,9 +226,30 @@ footer a{
 .pic-des{
     width: 100%;
     height: 400px;
+    border-radius: 15px;
 }
 
 .write-box{
     margin-left: 15px;
     margin-right: 15px;
+}
+
+#box-set{
+    padding-bottom: 20px;
+}
+
+.contact-box{
+    background-color: #3f3f3f;
+    margin: auto;
+    
+}
+
+.pic-des1{
+    width: 50%;
+    border-radius: 15px;
+}
+#color-text-des{
+    background: -webkit-linear-gradient(rgb(2, 29, 109), rgb(3, 142, 202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
