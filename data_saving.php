@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_data = $emails->item(0)->nodeValue;
         if ($email != $email_data) {
             storing_data($system, $xml, $firstname, $lastname, $hashed_password, $email, $avatar);
-            header("Location:index.html");
+            header("Location:index.php");
             $flag = 1; // this is used for throwing exception
             break;
         } else {
@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //function to store pictures for users;
 function resources_handling($totalAffiliates, $avatar)
 {
+    global $avatar_dir;
     if ($avatar != "") {
         // Where the file is going to be stored
         $target_dir = "resources/user{$totalAffiliates}/avatar/";
@@ -58,15 +59,14 @@ function resources_handling($totalAffiliates, $avatar)
         $ext = $path['extension'];
         $temp_name = $_FILES['avatar']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
-        global $avatar_dir;
         $avatar_dir = $path_filename_ext;
-        // Check if file already exists
-        if (file_exists($path_filename_ext)) {
-            echo "Sorry, file already exists.";
-        } else {
-            move_uploaded_file($temp_name, $path_filename_ext);
-            echo "Congratulations! File Uploaded Successfully.";
-        }
+        //save files in the directory
+        move_uploaded_file($temp_name, $path_filename_ext);
+        
+    }
+    else {
+        $avatar_dir = "resources/avatar.png";
+
     }
 }
 
@@ -85,6 +85,7 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
 
     //Creating directory and save images for users.
     if (!file_exists("resources/user{$totalAffiliates}")) {
+        // create a folder for each user
         mkdir("resources/user{$totalAffiliates}/avatar", 0777, true);
         resources_handling($totalAffiliates, $avatar);
     }

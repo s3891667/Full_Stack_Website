@@ -3,7 +3,6 @@
 session_start();
 include "./user_resources_handling.php";
 $xml = simplexml_load_file("./posts.xml");
-
 ?>
 
 <!DOCTYPE html>
@@ -19,32 +18,75 @@ $xml = simplexml_load_file("./posts.xml");
 </head>
 
 <body>
-    <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
-        <h1>Posts </h1>
-        <div id="container1" class="form-floating mb-3">
-            <textarea class="form-control" placeholder="Leave a comment here" id="text" name="contents"></textarea>
-            <label for="floatingTextarea">How do you feel today ?</label>
+<header>
+    <div>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">InstaKilogram</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="#">TRENDING POST</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="./home.php"><span class="glyphicon glyphicon-user"></span>Home</a>
+            </li>
+            <li>
+              <a href="./logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+            </li>
+          </ul>
         </div>
-        <div class="mb-3 form-check">
-            <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="one">
-            <label class="form-check-label" for="flexRadioDefault2">
-                Default mode
-            </label>
+      </nav>
+    </div>
+
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="search" />
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
         </div>
-        <div class=" mb-3 form-check">
-            <input class="form-check-input" type="radio" id="flexRadioDefault1" name="checker" value="two">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Global mode
-            </label>
-        </div>
-        <div class="mb-3 form-group">
-            <div class="custom-file">
-                <label id="avatar_label" class="custom-file-label" for="customFile">Choose your pics</label>
-                <input name="picture" class="custom-file-input" type="file" id="avatar">
+      </form>
+    </div>
+
+
+  </header>
+    <div class="container square-box d-flex justify-content-center">
+        <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
+            <?php
+            echo " <div>
+            <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
+            </div>";
+            ?>
+            <div id="col-auto" class="form-floating mb-3  ">
+                <textarea class="form-control" placeholder="Leave a comment here" id="text" name="contents"></textarea>
+                <label for="floatingTextarea">How do you feel today ?</label>
             </div>
-        </div>
-        <button type='submit' class="btn btn-primary">Submit</button>
-    </form>
+            <div class="col-auto form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="one">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Default mode
+                </label>
+            </div>
+            <div class=" col-auto form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault1" name="checker" value="two">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Global mode
+                </label>
+            </div>
+            <div class="mb-3 form-group">
+                <div class="custom-file">
+                    <label id="avatar_label" class="custom-file-label" for="customFile">Choose your pics</label>
+                    <input name="picture" class="custom-file-input" type="file" id="avatar">
+                </div>
+            </div>
+            <button type='submit' class="btn btn-primary">Post</button>
+        </form>
+    </div>
 
     <?php
     foreach ($xml->user as $user) {
@@ -92,7 +134,7 @@ $xml = simplexml_load_file("./posts.xml");
                             
 
                     
-                                <div class='likes'>
+                                <div class='timedisplay'>
                 ";
 
             echo      time_check($check, $dateDiff, $timeDiff);
@@ -104,6 +146,14 @@ $xml = simplexml_load_file("./posts.xml");
         }
     }
     ?>
+    <footer>
+        <div>
+            <a class="footer_tab" href="#">About Us</a>
+            <a class="footer_tab" href="#">Copyright</a>
+            <a class="footer_tab" href="#">Privacy</a>
+            <a class="footer_tab" href="#">Contact Information</a>
+        </div>
+    </footer>
 </body>
 
 </html>

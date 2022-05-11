@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php 
+  session_start();
+  if (isset($_SESSION['user'])) {
+    header("location: home.php");
+  }
+?>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,7 +110,7 @@
                     
 
             
-                        <div class='likes'>
+                        <div class='timedisplay'>
         ";
         echo      time_check($check, $dateDiff, $timeDiff);
 

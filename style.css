@@ -27,13 +27,7 @@ body{
     
 }
 
-.container{
-    background-color: rgb(0, 0, 0);
-    margin-left: 0px;
-    margin-right: 0px;
-    position: relative;
-    width: 100%;
-}
+
 
 .input-group{
     padding: 10px;
@@ -136,8 +130,9 @@ footer a{
     margin-right: 10px;
     margin-top: 10px;
 }
-.likes{
+.timedisplay{
     width: 100%;
+    padding-left: 0.5%;
 }
 .time-text{
     color: #3f3f3f;

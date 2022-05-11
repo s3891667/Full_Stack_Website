@@ -5,9 +5,9 @@
     <lastname>root</lastname>
     <password>$2y$10$8XI9.xxKYIEHQ2VsuEnMvOxVT37Q8xeKDGeq1wV5PxxPmakqQa49W</password>
     <email>s@rmit.edu.vn</email>
-    <date/>
-    <time/>
-    <avatar/>
+    <date>NULL</date>
+    <time> NULL</time>
+    <avatar>NULL </avatar>
   </user>
   <user id="2">
     <firstname>khoa</firstname>
@@ -16,7 +16,7 @@
     <email>khoanguyn012@gmail.com</email>
     <date>2022-05-04</date>
     <time>04:56:13pm</time>
-    <avatar/>
+    <avatar>NULL</avatar>
   </user>
   <user id="3">
     <firstname>Mai</firstname>
@@ -26,5 +26,14 @@
     <date>2022-05-09</date>
     <time>06:07:57pm</time>
     <avatar>resources/user3/avatar/352084.jpg</avatar>
+  </user>
+  <user id="4">
+    <firstname>owen</firstname>
+    <lastname>nguyen</lastname>
+    <password>$2y$15$RjtCPd1SsF4/1ypd81u7fueAK0fcF20A1uhxTY0wNUrXD2Q/gXDDq</password>
+    <email>owen@gmail.com</email>
+    <date>2022-05-11</date>
+    <time>02:11:38pm</time>
+    <avatar>resources/avatar.png</avatar>
   </user>
 </system>

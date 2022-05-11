@@ -68,7 +68,6 @@ if (!isset($_SESSION['user'])) {
     include "./user_resources_handling.php";
     $xml = simplexml_load_file("./posts.xml");
     foreach ($xml->user as $user) {
-    
         $image = $user->attachment;
         //generate current time to compare the posts upload time
         $currentDate = date_create(date("Y-m-d"));
@@ -115,7 +114,7 @@ if (!isset($_SESSION['user'])) {
                     
 
             
-                        <div class='likes'>
+                        <div class='timedisplay'>
         ";
         echo      time_check($check, $dateDiff, $timeDiff);
 
@@ -124,11 +123,8 @@ if (!isset($_SESSION['user'])) {
                 </div>
     </div>
     </section> ';
-      }
+    }
     
-
-
-   
     ?>
   </main>
   <footer>
