@@ -58,10 +58,11 @@
             </tr>
 
             <?php
-            $total_user = count(glob("resources/*", GLOB_ONLYDIR));
+            $total_user = count(glob("../resources/*", GLOB_ONLYDIR));
             for ($x = 2; $x <= 3; $x++) {
-                $files = glob("../resources/user" . $x . "/posts/*.*");
-                for ($i = 1; $i < count($files); $i++) {
+                $files = glob("../resources/user" . $x . "/posts/*");
+
+                for ($i = 0; $i < count($files); $i++) {
                     echo "<tr>";
                     $image = $files[$i];
                     $supported_file = array(
