@@ -33,7 +33,7 @@
             </li>
 
             <li>
-                <a href="listofimage.html">
+                <a href="listofimage.php">
                     <img src="picture/image-solid-24.png" alt="image-list">
                     <span class="link">List of image</span>
                 </a>
@@ -73,8 +73,7 @@
                     );
                     $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     if (in_array($ext, $supported_file)) {
-                        // print $image ."<br />";
-                        echo '<td><a href=' . $image . '><div>' . $image . '</div></a></td>';
+                        echo "<td><a href='{$image}'><div>  $image  </div></a></td>";
                         echo '<td><div>' . filesize($image) . ' bytes</div></td>';
                     }
                     echo "</tr>";
