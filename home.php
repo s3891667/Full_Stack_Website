@@ -35,10 +35,10 @@ if (!isset($_SESSION['user'])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white" href="./user_profile.php">Profile</a>
+          <a class="nav-link text-white" href="#">Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="./logout.php">Logout</a>
+          <a class="nav-link text-white" href="#">Log In</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -60,6 +60,7 @@ if (!isset($_SESSION['user'])) {
     include "./user_resources_handling.php";
     $xml = simplexml_load_file("./posts.xml");
     foreach ($xml->user as $user) {
+    
         $image = $user->attachment;
         //generate current time to compare the posts upload time
         $currentDate = date_create(date("Y-m-d"));
@@ -81,7 +82,8 @@ if (!isset($_SESSION['user'])) {
         $ava = avatar_dir_check($user['id']);
         echo "
                             <img class='images1' src='$ava' alt='avatarimage'>
-                        </div> 
+                        </div>
+ 
                         <div class='content2-first-2'> ";
 
         echo "                <p class='content2-text' href=''>";
@@ -105,7 +107,7 @@ if (!isset($_SESSION['user'])) {
                     
 
             
-                        <div class='timedisplay'>
+                        <div class='likes'>
         ";
         echo      time_check($check, $dateDiff, $timeDiff);
 
