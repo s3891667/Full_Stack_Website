@@ -7,7 +7,7 @@
     outline: none;
 }
 body{
-    background-color: rgb(193, 193, 193);
+    background-color: #eee;
     position: relative
 }
 
@@ -43,27 +43,34 @@ body{
 }
 
 footer{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(150, 149, 149);
     left: 0;
     bottom: 0;
     width: 100%;
     position: fixed;
-    padding:0px;
+    padding:13px;
     text-align: center;
 }
 
 footer a{
-    background-color: rgb(0, 0, 0);
-    padding: 10px;
-    border-bottom: 1px solid whitesmoke;
-    border-radius: 12px;
+    background-color: rgb(150, 149, 149);
+    padding: 5px;
+    border-radius: 8px;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    box-shadow: 1px 1px 1px 1px whitesmoke;
+    box-shadow: 1px 1px 1px 1px rgb(232, 231, 231);
 }
+
 .footer_tab{
     margin: 5px;
 }
+
+.footer_tab:hover{
+    color: rgb(150, 149, 149);
+    background-color: #eee;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
+}
+
 
 .content2{
     margin-left: 14%;
@@ -92,7 +99,6 @@ footer a{
     width: 10%;
     padding-top: 5px;
     height: 60px;
-    
     float: left;
 }
 .content2-first-2{
@@ -138,11 +144,12 @@ footer a{
 }
 .likes{
     width: 100%;
+    margin-left: 10px;
 }
 .time-text{
     color: #3f3f3f;
     font-size: 12px;
-    padding-left: 10px;
+    margin-left: 5px;
 }
 
 .images{
@@ -168,7 +175,11 @@ footer a{
     cursor: pointer;
     
 }
+.empty_box{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    visibility: hidden;
+}
 
-
-/* CSS STYLE */
 
