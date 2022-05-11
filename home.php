@@ -19,43 +19,35 @@ if (!isset($_SESSION['user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./JS/bootstrap.min.js"></script>
   <title>Homepage</title>
 </head>
 
 <body>
   <header>
     <div>
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">InstaKilogram</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="#">TRENDING POST</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="./user_profile.php"><span class="glyphicon glyphicon-user"></span>Profile </a>
-            </li>
-            <li>
-              <a href="./logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="container">
-      <form action="/action_page.php">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search" name="search" />
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
-        </div>
+    <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">InstaKilogram</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Log In</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn  btn-light" type="submit">Search</button>
       </form>
+    </div>
+  </div>
+</nav>
     </div>
 
     <div class="img_dess">
@@ -89,8 +81,7 @@ if (!isset($_SESSION['user'])) {
         $ava = avatar_dir_check($user['id']);
         echo "
                             <img class='images1' src='$ava' alt='avatarimage'>
-                        </div>
-                        <img class='dots' src='https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png'> 
+                        </div> 
                         <div class='content2-first-2'> ";
 
         echo "                <p class='content2-text' href=''>";
@@ -123,9 +114,12 @@ if (!isset($_SESSION['user'])) {
                 </div>
     </div>
     </section> ';
-    }
-    
+      }
     ?>
+    <div class="empty_box">
+        <h1>EMPTYBOX</h1>
+        <h1>EMPTYBOX</h1>
+    </div>
   </main>
   <footer>
     <div>
