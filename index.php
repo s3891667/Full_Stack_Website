@@ -14,48 +14,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./JS/bootstrap.min.js"></script>
+  <script src="./JS/bootstrap.js"></script>
   <title>Homepage</title>
 </head>
 
 <body>
   <header>
     <div>
-      <nav class="navbar navbar-inverse">
+    <header>
+    <div>
+      <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">InstaKilogram</a>
+          <a class="navbar-brand text-white" href="#">InstaKilogram</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Log In</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn  btn-light" type="submit">Search</button>
+            </form>
           </div>
-          <ul class="nav navbar-nav">
-            <li><a href="#">TRENDING POST</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="./signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-            </li>
-            <li>
-              <a href="./login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-            </li>
-          </ul>
         </div>
       </nav>
+  </header>
     </div>
 
-    <div class="container">
-      <form action="/action_page.php">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search" name="search" />
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="./picture/3.jpg" alt="First slide">
     </div>
-
-    <div class="img_dess">
-      <img class="img_des" src="./picture/imgconnect.jpeg" alt="intropic">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./picture/ava.jpeg" alt="Second slide">
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
   </header>
   <main>
