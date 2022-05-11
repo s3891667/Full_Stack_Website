@@ -54,6 +54,7 @@
         <table id="myTable">
             <tr>
                 <th>File name</th>
+                <th>File size</th>
                 <th>Action</th>
             </tr>
 
@@ -61,7 +62,6 @@
             $total_user = count(glob("../resources/*", GLOB_ONLYDIR));
             for ($x = 2; $x <= 3; $x++) {
                 $files = glob("../resources/user" . $x . "/posts/*");
-
                 for ($i = 0; $i < count($files); $i++) {
                     echo "<tr>";
                     $image = $files[$i];
@@ -71,16 +71,15 @@
                         'jpeg',
                         'png'
                     );
-
                     $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     if (in_array($ext, $supported_file)) {
                         // print $image ."<br />";
                         echo '<td><a href=' . $image . '><div>' . $image . '</div></a></td>';
+                        echo '<td><div>' . filesize($image) . ' bytes</div></td>';
                     }
                     echo "</tr>";
                 }
             }
-
             ?>
         </table>
     </div>
