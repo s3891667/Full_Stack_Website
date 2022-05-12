@@ -145,3 +145,28 @@ function avatar_dir_check($id)
 }
 
 
+function email_check ($id) {
+    $email = "";
+    $xml = simplexml_load_file("./accounts.xml");
+    foreach ($xml->user as $user) {
+        if ($id == $user['id']) {
+            $email = $user->email;
+        };
+    }
+    return $email;
+}
+
+
+function lastName_check ($id) {
+    $lastname = "";
+    $xml = simplexml_load_file("./accounts.xml");
+    foreach ($xml->user as $user) {
+        if ($id == $user['id']) {
+            $lastname = $user->lastname;
+        };
+    }
+    return $lastname;
+}
+
+
+

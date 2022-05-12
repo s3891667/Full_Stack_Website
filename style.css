@@ -211,6 +211,7 @@ footer a {
 
 .box-des {
     padding: 10px;
+
 }
 
 .box-des2 {
@@ -266,8 +267,17 @@ footer a {
     border-radius: 15px;
 }
 
+#change_ava {
+    display : none;
+}
+
+
 #color-text-des {
     background: -webkit-linear-gradient(rgb(2, 29, 109), rgb(3, 142, 202));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#info_show {
+    padding: 10px;
 }

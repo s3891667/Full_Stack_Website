@@ -9,18 +9,18 @@ var avatar = document.getElementById("avatar");
 
 function form_check(temp) {
     if (temp.value.length > 0) {
-        if(temp.value != password.value){
+        if (temp.value != password.value) {
             document.getElementById('alert').innerText = "Your password does not match";
             check = 0;
         }
         else {
-            document.getElementById('alert').innerText ="";
-            check=1;
+            document.getElementById('alert').innerText = "";
+            check = 1;
         }
     }
-    else if (temp.value.length == 0 ) {
+    else if (temp.value.length == 0) {
         document.getElementById('alert').innerText = "Please confirm your password";
-        check =0;
+        check = 0;
     }
 }
 
@@ -34,11 +34,11 @@ function avatar_confirm() {
 }
 
 const submitbutton = document.getElementById("submitbutton");
-submitbutton.addEventListener('click',function(e){
-    if(check ==0  || firstname.value.length ==0 || lastname.value.length ==0 || lastname.value.length ==0 || 
-        (!checker.checked && avatar.getAttribute('src') == "")){
-        e.preventDefault(); 
-        alert ("Please check your infomation !");
+submitbutton.addEventListener('click', function (e) {
+    if (check == 0 || firstname.value.length == 0 || lastname.value.length == 0 || lastname.value.length == 0 ||
+        (!checker.checked && avatar.getAttribute('src') == "")) {
+        e.preventDefault();
+        alert("Please check your infomation !");
     }
 
 })
@@ -55,6 +55,3 @@ submitbutton.addEventListener('click',function(e){
 
 
 
-
-
-  

@@ -3,6 +3,9 @@
 session_start();
 include "./user_resources_handling.php";
 $xml = simplexml_load_file("./posts.xml");
+$id = $_SESSION['id'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +17,23 @@ $xml = simplexml_load_file("./posts.xml");
     <title>User Profile</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/JS/bootstrap.min.js"></script>
+
+
+
 </head>
+<script>
+    function change_avatar() {
+        var x = document.getElementById("change_ava");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 
 <body>
     <header>
@@ -31,7 +50,7 @@ $xml = simplexml_load_file("./posts.xml");
                                 <a class="nav-link text-white" href="./About Us.html">About us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Logout</a>
+                                <a class="nav-link text-white" href="./logout.php">Logout</a>
                             </li>
                         </ul>
                         <form class="d-flex">
@@ -44,6 +63,7 @@ $xml = simplexml_load_file("./posts.xml");
         </div>
     </header>
 
+
     <main>
         <div class="user-profile-box">
             <!-- edit this fucking class -->
@@ -52,13 +72,17 @@ $xml = simplexml_load_file("./posts.xml");
                     <?php
                     echo " <div>
             <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
+            
             </div>";
+
+
+
                     ?>
                 </div>
                 <div class="box-des">
                     <div id="col-auto" class="form-floating mb-3  ">
                         <textarea class="form-control" placeholder="Leave a comment here" id="text" name="contents"></textarea>
-                        <label for="floatingTextarea">How do you feel today ?</label>
+                        <label for="floatingTextarea">How do you feel today <?php echo "{$_SESSION['user']}" ?> ? </label>
                     </div>
                 </div>
                 <div class="box-des">
@@ -92,18 +116,39 @@ $xml = simplexml_load_file("./posts.xml");
                     <button type='submit' class="btn btn-secondary">Post</button>
                 </div>
             </form>
+            <hr>
+            <div class="box-des col-md-12 text-center ">
+                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#info_show" aria-expanded="false" aria-controls="collapseExample">
+                    Show information
+                </button>
+                <button type='check' onclick="change_avatar()" class="btn btn-secondary">Change Avatar</button>
+            </div>
         </div>
         <hr>
-        <div class="user-profile-box">
+        <div id="change_ava" class="user-profile-box container square-box ">
             <form action="./changeAva.php" method="post" enctype="multipart/form-data">
-                <label id="avatar_label" class="box-des2" for="customFile"></label>
+                <label id="avatar_label" class="box-des2" for="customFile">Choose your image : </label>
                 <input name="newAvatar" class="custom-file-input" type="file" id="newAvatar">
-                <div class="box-des">
-                    <button type='submit' class="btn btn-secondary">Change avatar</button>
+                <div class="box-des ">
+                    <button id="hello" type='submit' class="btn btn-secondary">Change</button>
                 </div>
             </form>
         </div>
     </main>
+
+    
+    <div class="collapse  user-profile-box" id="info_show">
+        <div class="">
+            <?php echo "Email : "  . email_check($id);
+            echo "<br>";
+            echo "First name : " . $_SESSION['user'];
+            echo "<br>";
+            echo "Last name : " . lastName_check($id);
+            ?>
+        </div>
+    </div>
+
+
 
     <?php
     foreach ($xml->user as $user) {
@@ -162,6 +207,9 @@ $xml = simplexml_load_file("./posts.xml");
             </section> ';
         }
     }
+
+
+
     ?>
     <div class="empty_box">
         <h1>EMPTYBOX</h1>
