@@ -18,4 +18,13 @@
     <time>11:25:11pm</time>
     <avatar>resources/avatar.png</avatar>
   </user>
+  <user id="3">
+    <firstname>Hoang</firstname>
+    <lastname>Pham</lastname>
+    <password>$2y$15$6v1Cl9VOdHbjayihJaczl.8Pp3SEkEq.c6rzs2pX2KCa4KmTXDZYS</password>
+    <email>hoangfamm@gmail.com</email>
+    <date>2022-05-12</date>
+    <time>10:05:52am</time>
+    <avatar>resources/avatar.png</avatar>
+  </user>
 </system>

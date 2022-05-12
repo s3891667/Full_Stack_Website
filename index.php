@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-session_start();
-if (isset($_SESSION['user'])) {
-  header("location: home.php");
-}
+<?php 
+  session_start();
+  if (isset($_SESSION['user'])) {
+    header("location: home.php");
+  }
 ?>
 
 <head>
@@ -14,65 +14,48 @@ if (isset($_SESSION['user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
-  <script src="./JS/bootstrap.min.js"></script>
-  <script src="./JS/bootstrap.js"></script>
   <title>Homepage</title>
-  <link rel="stylesheet" href="cookies_content.css">
 </head>
 
 <body>
   <header>
     <div>
-    <header>
-    <div>
-      <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-          <a class="navbar-brand text-white" href="#">InstaKilogram</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link text-white" href="./signUp.html">Sign Up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="./login.php">Log In</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn  btn-light" type="submit">Search</button>
-            </form>
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">InstaKilogram</a>
           </div>
+          <ul class="nav navbar-nav">
+            <li><a href="#">TRENDING POST</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="./signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            </li>
+            <li>
+              <a href="./login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            </li>
+          </ul>
         </div>
       </nav>
-  </header>
     </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="./picture/3.jpg" alt="First slide">
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="search" />
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="./picture/ava.jpeg" alt="Second slide">
+
+    <div class="img_dess">
+      <img class="img_des" src="./picture/imgconnect.jpeg" alt="intropic">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
   </header>
   <main>
@@ -80,7 +63,7 @@ if (isset($_SESSION['user'])) {
     include "./user_resources_handling.php";
     $xml = simplexml_load_file("./posts.xml");
     foreach ($xml->user as $user) {
-      if ("$user->status" == "Public") {
+      if ("$user->status" == "global") {
         $image = $user->attachment;
         //generate current time to compare the posts upload time
         $currentDate = date_create(date("Y-m-d"));
@@ -103,7 +86,7 @@ if (isset($_SESSION['user'])) {
         echo "
                             <img class='images1' src='$ava' alt='avatarimage'>
                         </div>
-                         
+                        <img class='dots' src='https://img.icons8.com/material-outlined/50/000000/dots-loading--v7.png'> 
                         <div class='content2-first-2'> ";
 
         echo "                <p class='content2-text' href=''>";
@@ -148,16 +131,6 @@ if (isset($_SESSION['user'])) {
       <a class="footer_tab" href="#">Contact Information</a>
     </div>
   </footer>
-  <div class="wrapper"></div>
-    <div class="cookie-container">
-        <div>I use cookies</div>
-        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
-            my use of cookies and other technologies.
-        </p>
-        <button class="accept-button">I understand</button>
-        <a href="#">Learn more</a>
-    </div>
-    <script src="cookies_content.js"></script>
 </body>
 
 </html>
