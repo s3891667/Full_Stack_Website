@@ -22,6 +22,7 @@ if (!isset($_SESSION['user'])) {
   <link rel="stylesheet" href="./carousel.css">
   <script src="./JS/bootstrap.min.js"></script>
   <title>Homepage</title>
+  <link rel="stylesheet" href="cookies_content.css">
 </head>
 
 <body>
@@ -180,6 +181,16 @@ if (!isset($_SESSION['user'])) {
             <a class="footer_tab" href="#">Contact Information</a>
         </div>
     </footer>
+    <div class="wrapper"></div>
+    <div class="cookie-container">
+        <div>I use cookies</div>
+        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
+            my use of cookies and other technologies.
+        </p>
+        <button class="accept-button">I understand</button>
+        <a href="#">Learn more</a>
+    </div>
+    <script src="cookies_content.js"></script>
 </body>
 
 </html>
