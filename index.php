@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-  session_start();
-  if (isset($_SESSION['user'])) {
-    header("location: home.php");
-  }
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+  header("location: home.php");
+}
 ?>
 
 <head>

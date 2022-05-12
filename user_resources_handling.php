@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id = $_SESSION['id'];
 $user = $_SESSION['user'];
 $xml = new DOMDocument();

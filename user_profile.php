@@ -17,83 +17,92 @@ $xml = simplexml_load_file("./posts.xml");
 </head>
 
 <body>
-<header>
-    <div>
-    <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">InstaKilogram</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Log In</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn  btn-light" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-</div>
-  </header>
+    <header>
+        <div>
+            <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="./home.php">InstaKilogram</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="./About Us.html">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Logout</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn  btn-light" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <div class="user-profile-box"> 
-      <!-- edit this fucking class -->
-        <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
-            <div class="ava-box">
-            <?php
-            echo " <div>
+    <main>
+        <div class="user-profile-box">
+            <!-- edit this fucking class -->
+            <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
+                <div class="ava-box">
+                    <?php
+                    echo " <div>
             <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
             </div>";
-            ?>
-            </div>
-            <div class="box-des">
-            <div id="col-auto" class="form-floating mb-3  ">
-                <textarea class="form-control" placeholder="Leave a comment here" id="text" name="contents"></textarea>
-                <label for="floatingTextarea">How do you feel today ?</label>
-            </div>
-</div>
-            <div class="box-des">
-            <div class="col-auto form-check">
-                <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="1">
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Internal mode
-                </label>
-            </div>
-            <div class=" col-auto form-check">
-                <input class="form-check-input" type="radio" id="flexRadioDefault1" name="checker" value="2">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Public mode
-                </label>
-            </div>
-            <div class="col-auto form-check">
-                <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="3">
-                <label class="form-check-label" for="flexRadioDefault2">
-                    private mode
-                </label>
-            </div>
-</div>
-          
-    
-            
-                    <label id="avatar_label"  class="box-des2" for="customFile"></label>
-                    <input name="picture" class="custom-file-input" type="file" id="avatar">
-                
-          
-            <div class="box-des">
-            <button type='submit' class="btn btn-secondary">Post</button>
-</div>
-          </form>
-    </div>
-    <hr>
+                    ?>
+                </div>
+                <div class="box-des">
+                    <div id="col-auto" class="form-floating mb-3  ">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="text" name="contents"></textarea>
+                        <label for="floatingTextarea">How do you feel today ?</label>
+                    </div>
+                </div>
+                <div class="box-des">
+                    <div class="col-auto form-check">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="1">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Internal mode
+                        </label>
+                    </div>
+                    <div class=" col-auto form-check">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault1" name="checker" value="2">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Public mode
+                        </label>
+                    </div>
+                    <div class="col-auto form-check">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="checker" value="3">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            private mode
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <label id="avatar_label" class="box-des2" for="customFile"></label>
+                <input name="picture" class="custom-file-input" type="file" id="avatar">
+
+
+                <div class="box-des">
+                    <button type='submit' class="btn btn-secondary">Post</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="user-profile-box">
+            <form action="./changeAva.php" method="post" enctype="multipart/form-data">
+                <label id="avatar_label" class="box-des2" for="customFile"></label>
+                <input name="newAvatar" class="custom-file-input" type="file" id="newAvatar">
+                <div class="box-des">
+                    <button type='submit' class="btn btn-secondary">Change avatar</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <?php

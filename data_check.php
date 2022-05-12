@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             continue;
         }
     }
-
     if ($check == 0) {
         $message = "Wrong email or Password";
         echo "<SCRIPT>
