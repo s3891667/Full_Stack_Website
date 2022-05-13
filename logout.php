@@ -1,3 +1,4 @@
+<!--when users exits the account-->
 <?php
 session_start();
 unset($_SESSION["id"]);

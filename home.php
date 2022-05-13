@@ -101,7 +101,7 @@ if (!isset($_SESSION['user'])) {
     </svg>
     </div>
   </div>
-</div>    
+</div>
     </header>
   <main>
     <?php
@@ -125,23 +125,23 @@ if (!isset($_SESSION['user'])) {
     <section >
     <div class='content2' >
                 <div class='content2_pad'>
-                    
+
             <div class='content2-first-1'>";
                 $ava = avatar_dir_check($user['id']);
                 echo "
-                            <img class='images1' src='$ava' alt='avatarimage'>
+                            <img class='images1' src='$ava' alt='Hoang_avatar'>
                         </div>
- 
+
                         <div class='content2-first-2'> ";
 
                 echo "                <p class='content2-text' href=''>";
                 echo  reading_user_name($user['id']);
-                echo "               
+                echo "
                             </p>
-                            
-                            </div> 
+
+                            </div>
                             <div class='imgdiv'>
-                            
+
                             <p class='content2-text' href=''> $user->content</p>";
                 printf('<img src="%s" class="imgdiv-style" alt="">', $image);
 
@@ -149,12 +149,12 @@ if (!isset($_SESSION['user'])) {
                         </div>
 
                         <div class='icons'>
-                            <img class='icons1' src='./picture/heart.png' alt=''>
-                            <img class='icon2' src='./picture/network.png' alt=''>
+                            <img class='icons1' src='./picture/heart.png' alt='Love'>
+                            <img class='icon2' src='./picture/network.png' alt='Connection'>
                         </div>
-                    
 
-            
+
+
                         <div class='likes'>
         ";
                 echo      time_check($check, $dateDiff, $timeDiff);

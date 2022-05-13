@@ -8,8 +8,9 @@
     <title>InstaKilogram</title>
 </head>
 <body>
+  <!--Login page require user to provide enough information before using our website-->
   <section class="form_box">
-      <section class="container">  
+      <section class="container">
           <form action="data_check.php" class="form-horizontal" method="post">
               <h1 class="text-center">Login</h1>
             <div class="form-group ">
@@ -25,7 +26,7 @@
               <label class="form-check-label" for="autoSizingCheck">
                 Remember me
               </label>
-            </div>  
+            </div>
             <div class ="d-grid gap-2 mt-3">
               <button type="submit" onclick="" class="btn btn-dark button_des" name="signIn" >Sign in</button>
             </div>
@@ -42,4 +43,3 @@
     </div>
   </body>
 </html>
-
