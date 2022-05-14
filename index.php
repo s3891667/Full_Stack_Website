@@ -65,8 +65,8 @@ if (isset($_SESSION['user'])) {
         $postTime = date_create($user->time);
         $timeDiff = date_diff($postTime, $currentTime);
         echo "
-    <section >
-    <div class='content2' >
+    <section class = 'posts' >
+    <div  class='user-profile-box'  >
                 <div class='content2_pad'>
 
             <div class='content2-first-1'>";

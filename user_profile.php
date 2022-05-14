@@ -5,7 +5,6 @@ include "./user_resources_handling.php";
 $xml = simplexml_load_file("./posts.xml");
 $id = $_SESSION['id'];
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +19,6 @@ $id = $_SESSION['id'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="/JS/bootstrap.min.js"></script>
-
-
 
 </head>
 <script>
@@ -65,6 +62,7 @@ $id = $_SESSION['id'];
 
 
     <main>
+        <a href="" onclick="" ></a>
         <div class="user-profile-box">
             <!-- edit this fucking class -->
             <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
@@ -167,8 +165,8 @@ $id = $_SESSION['id'];
             $postTime = date_create($user->time);
             $timeDiff = date_diff($postTime, $currentTime);
             echo "
-            <section >
-            <div class='content2' >
+            <section class = 'posts'>
+            <div class='user-profile-box'  >
                         <div class='content2_pad'>
 
                     <div class='content2-first-1'>

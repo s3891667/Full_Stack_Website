@@ -1,4 +1,3 @@
-<!--The page will be updated information when new users create accounts-->
 <?xml version="1.0" encoding="UTF-8"?>
 <system>
   <user id="1">
@@ -18,50 +17,5 @@
     <date>2022-05-11</date>
     <time>11:25:11pm</time>
     <avatar>resources/user2/avatar/1348001.jpg</avatar>
-  </user>
-  <user id="3">
-    <firstname>Hoang</firstname>
-    <lastname>Pham</lastname>
-    <password>$2y$15$6v1Cl9VOdHbjayihJaczl.8Pp3SEkEq.c6rzs2pX2KCa4KmTXDZYS</password>
-    <email>hoangfamm@gmail.com</email>
-    <date>2022-05-12</date>
-    <time>10:05:52am</time>
-    <avatar>resources/avatar.png</avatar>
-  </user>
-  <user id="4">
-    <firstname>Duc Anh</firstname>
-    <lastname>Hoang</lastname>
-    <password>$2y$15$ksWoHITf4SUG2QzPbZVc/eZ3Z0s3a0wz/B309W.M2UvDhesq7EtmW</password>
-    <email>davidanh98@gmail.com</email>
-    <date>2022-05-13</date>
-    <time>09:28:35am</time>
-    <avatar>resources/avatar.png</avatar>
-  </user>
-  <user id="5">
-    <firstname>Duc Anh</firstname>
-    <lastname>Hoang</lastname>
-    <password>$2y$15$49lk48zhRnm5JRqK2ZOV1.vsTxNnjhAxrby47/8LoaqWQIf1k6QQe</password>
-    <email>davidanh98@gmail.com</email>
-    <date>2022-05-13</date>
-    <time>09:29:01am</time>
-    <avatar>resources/avatar.png</avatar>
-  </user>
-  <user id="6">
-    <firstname>Hoang</firstname>
-    <lastname>Duc Anh</lastname>
-    <password>$2y$15$FW2J5Hxu44AWA.1caY/nM.FTbhtgrTGQu.14m7Lqt7.gcwe87EqxG</password>
-    <email>davidanh98@gmail.com</email>
-    <date>2022-05-13</date>
-    <time>09:29:40am</time>
-    <avatar>resources/avatar.png</avatar>
-  </user>
-  <user id="7">
-    <firstname>Hoang1</firstname>
-    <lastname>Duc Anh</lastname>
-    <password>$2y$15$N4X1Cx4wxbspjvG1K/HmQeJwku0Xx3Jd8cPv2eYrC976Yub6.JUp.</password>
-    <email>davidanh981@gmail.com</email>
-    <date>2022-05-13</date>
-    <time>09:31:25am</time>
-    <avatar>resources/avatar.png</avatar>
   </user>
 </system>
