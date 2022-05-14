@@ -203,6 +203,7 @@ footer a {
     width: 70%;
     height: auto;
     margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .ava-box {
@@ -280,4 +281,21 @@ footer a {
 
 #info_show {
     padding: 10px;
+}
+.posts {
+    padding-top: 20px;
+}
+
+.carousel_style {
+    padding-top: 20px;
+}
+
+
+#icon{
+    float: right;
+    color: #969696;
+    text-decoration: none;
+    
+
+
 }

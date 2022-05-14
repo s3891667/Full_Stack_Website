@@ -27,13 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($users as $user) {
         $emails = $user->getElementsByTagName("email");
         $email_data = $emails->item(0)->nodeValue;
-        if ($email != $email_data) {
-            storing_data($system, $xml, $firstname, $lastname, $hashed_password, $email, $avatar);
-            header("Location:index.php");
-            $flag = 1; // this is used for throwing exception
+        
+        if ($email == $email_data) {
+            $flag = 0; // this is used for throwing exception
             break;
         } else {
-            $flag = 0;
+            $flag = 1;
         }
     }
     //Throw errors when the email has already registed by someone else
@@ -43,6 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         window.location.href = 'signUp.html?email=used';
         alert('$message');
         </SCRIPT>";
+    } else if ($flag ==1 ) {
+        storing_data($system, $xml, $firstname, $lastname, $hashed_password, $email, $avatar);
+        header("Location:index.php");
+
     }
 }
 

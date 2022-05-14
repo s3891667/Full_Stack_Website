@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['avatar'] = "$user->avatar";
             $id = $user['id'];
             $_SESSION['id'] = "$id";
+            $_SESSION['checker'] = true;
             $check = 1;
             header("location: home.php");
             break;
