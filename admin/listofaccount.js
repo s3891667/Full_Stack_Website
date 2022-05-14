@@ -45,105 +45,109 @@ function myFunction() {
         }
     }
 }
-function sortDate(type) {
-    function loadXMLDocASC() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                readFunctionASC(this);
-            }
-        };
-        xmlhttp.open("GET", "../accounts.xml", true);
-        xmlhttp.send();
-    }
-    
-    function loadXMLDocDESC() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                readFunctionDESC(this);
-            }
-        };
-        xmlhttp.open("GET", "../accounts.xml", true);
-        xmlhttp.send();
-    }
-    
-    function readFunctionASC(xml) {
-        var i;
-        var xmlDoc = xml.responseXML;
-        var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
-        var x = xmlDoc.getElementsByTagName("user");
-        table += "<tr><td>" +
-            x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("password")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("email")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("date")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-            "</td></tr>";
-        for (i = 1; i < x.length; i++) {
-            table += "<tr><td>" +
-                x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("password")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-                "</td></tr>";
+function loadXMLDocASC() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            readFunctionASC(this);
         }
-        document.getElementById("myTable").innerHTML = table;
-    }
-    
-    function readFunctionDESC(xml) {
-        var i;
-        var xmlDoc = xml.responseXML;
-        var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
-        var x = xmlDoc.getElementsByTagName("user");
-        table += "<tr><td>" +
-            x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("password")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("email")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("date")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[0].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-            "</td></tr>";
+    };
+    xmlhttp.open("GET", "../accounts.xml", true);
+    xmlhttp.send();
+}
 
-        for (i = x.length - 1; i > 0; i--) {
-            table += "<tr><td>" +
-                x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("password")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-                "</td></tr>";
+
+function loadXMLDocDESC() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            readFunctionDESC(this);
         }
-        document.getElementById("myTable").innerHTML = table;
+    };
+    xmlhttp.open("GET", "../accounts.xml", true);
+    xmlhttp.send();
+}
+
+
+function readFunctionASC(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
+    var x = xmlDoc.getElementsByTagName("user");
+    table += "<tr><td>" +
+        x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("password")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("date")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+        "</td></tr>";
+    for (i = 1; i < x.length; i++) {
+        table += "<tr><td>" +
+            x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("password")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+            "</td></tr>";
     }
-    switch (type.className){
+    document.getElementById("myTable").innerHTML = table;
+}
+
+function readFunctionDESC(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
+    var x = xmlDoc.getElementsByTagName("user");
+    table += "<tr><td>" +
+        x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("password")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("date")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+        "</td></tr>";
+
+    for (i = x.length - 1; i > 0; i--) {
+        table += "<tr><td>" +
+            x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("password")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+    }
+    document.getElementById("myTable").innerHTML = table;
+}
+
+
+
+function sortDate(type) {
+    switch (type.className) {
         case "asc": loadXMLDocASC(); break;
         case "desc": loadXMLDocDESC(); break;
-
     }
 }
 
