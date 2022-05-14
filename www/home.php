@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-
 session_start();
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
@@ -49,7 +47,6 @@ function welcome()
     <script src="../JS/bootstrap.min.js"></script>
     <title>Homepage</title>
 </head>
-
 <body>
     <header>
         <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
@@ -193,5 +190,4 @@ function welcome()
         </div>
     </footer>
 </body>
-
 </html>

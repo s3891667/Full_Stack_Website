@@ -56,16 +56,33 @@ function menuFunction() {
 
 function loadXMLDoc() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            readFunction(this);
-        }
+    var dateSelector = document.getElementById("sortDate"); 
+    const changeSelected = (e) => {
+        const $select = document.querySelector('#sortDate');
+        $select.value = 'desc'
+        window.location.reload();
     };
+    document.querySelector('.changeSelected').addEventListener('click', changeSelected);
+    
+    if (dateSelector.value == 'asc') {
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                readFunctionASC(this);
+            }
+        }
+    }
+    else if (dateSelector.value == 'desc') {
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                readFunctionDESC(this);
+            }
+        }
+    }
     xmlhttp.open("GET", "../accounts.xml", true);
     xmlhttp.send();
 }
 
-function readFunction(xml) {
+function readFunctionASC(xml) {
     var i;
     var xmlDoc = xml.responseXML;
     var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
@@ -99,8 +116,27 @@ function readFunction(xml) {
             "</td></tr>";
     }
     document.getElementById("myTable").innerHTML = table;
+}
 
-    for (i = x.length - 1; i > 1; i--) {
+function readFunctionDESC(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
+    var x = xmlDoc.getElementsByTagName("user");
+    table += "<tr><td>" +
+        x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("password")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("date")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+        "</td></tr>";
+    for (i = x.length - 1; i > 0; i--) {
         table += "<tr><td>" +
             x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
             "</td><td>" +
@@ -117,6 +153,4 @@ function readFunction(xml) {
     }
     document.getElementById("myTable").innerHTML = table;
 }
-
-
 
