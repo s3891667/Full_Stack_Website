@@ -11,33 +11,30 @@ if (!isset($_SESSION['user'])) {
 }
 
 function welcome()
-{ 
+{
     if ($_SESSION['checker']) {
-      echo "
+        echo "
       <div id= 'alert' class='alert alert-success' role='alert'>
       <strong>Welcome </strong>";
-      echo $_SESSION['user'];
-      echo " to InstaKilogram ! 
+        echo $_SESSION['user'];
+        echo " to InstaKilogram ! 
       <a href='#' onclick = 'hide_alert()'; id= 'icon' 
       class='close' data-dismiss='alert' aria-label='close'>&#10005;</a>
       </div>
       ";
-      $_SESSION['checker'] = false;
-
+        $_SESSION['checker'] = false;
     }
 }
 
 ?>
 <script>
-    function hide_alert () {
-      document.getElementById("alert").style.visibility = "hidden";
-      location.reload();
-    }   
-
+    function hide_alert() {
+        document.getElementById("alert").style.visibility = "hidden";
+        location.reload();
+    }
 </script>
 
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +44,7 @@ function welcome()
     <script src="../JS/bootstrap.min.js"></script>
     <title>Homepage</title>
 </head>
+
 <body>
     <header>
         <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
@@ -72,7 +70,7 @@ function welcome()
             </div>
         </nav>
         <?php welcome();  ?>
-    
+
 
     </header>
     <main>
@@ -190,4 +188,5 @@ function welcome()
         </div>
     </footer>
 </body>
+
 </html>

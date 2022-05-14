@@ -63,7 +63,7 @@ function loadXMLDoc() {
         window.location.reload();
     };
     document.querySelector('.changeSelected').addEventListener('click', changeSelected);
-    
+        
     if (dateSelector.value == 'asc') {
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {

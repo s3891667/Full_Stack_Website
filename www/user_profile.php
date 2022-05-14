@@ -62,7 +62,6 @@ $id = $_SESSION['id'];
 
 
     <main>
-        <a href="" onclick="" ></a>
         <div class="user-profile-box">
             <!-- edit this fucking class -->
             <form action="../dataProcessing/user_resources_handling.php" method="post" enctype="multipart/form-data">
