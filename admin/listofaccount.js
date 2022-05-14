@@ -45,31 +45,27 @@ function myFunction() {
         }
     }
 }
-function loadXMLDocASC() {
+
+function menuFunction() {
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+}
+
+function loadXMLDoc() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            readFunctionASC(this);
+            readFunction(this);
         }
     };
     xmlhttp.open("GET", "../accounts.xml", true);
     xmlhttp.send();
 }
 
-
-function loadXMLDocDESC() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            readFunctionDESC(this);
-        }
-    };
-    xmlhttp.open("GET", "../accounts.xml", true);
-    xmlhttp.send();
-}
-
-
-function readFunctionASC(xml) {
+function readFunction(xml) {
     var i;
     var xmlDoc = xml.responseXML;
     var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
@@ -103,26 +99,6 @@ function readFunctionASC(xml) {
             "</td></tr>";
     }
     document.getElementById("myTable").innerHTML = table;
-}
-
-function readFunctionDESC(xml) {
-    var i;
-    var xmlDoc = xml.responseXML;
-    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
-    var x = xmlDoc.getElementsByTagName("user");
-    table += "<tr><td>" +
-        x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[0].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[0].getElementsByTagName("password")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[0].getElementsByTagName("email")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[0].getElementsByTagName("date")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[0].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-        "</td></tr>";
 
     for (i = x.length - 1; i > 0; i--) {
         table += "<tr><td>" +
@@ -144,22 +120,3 @@ function readFunctionDESC(xml) {
 
 
 
-function sortDate(type) {
-    switch (type.className) {
-        case "asc": loadXMLDocASC(); break;
-        case "desc": loadXMLDocDESC(); break;
-    }
-}
-
-
-
-
-
-
-function menuFunction() {
-    let btn = document.querySelector("#btn");
-    let sidebar = document.querySelector(".sidebar");
-    btn.onclick = function () {
-        sidebar.classList.toggle("active");
-    }
-}
