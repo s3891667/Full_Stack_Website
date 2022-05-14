@@ -60,8 +60,11 @@
                 <option value="email">Email</option>
             </select>
             <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search account">
-            <button id="asc" class="asc">Date ASC</button>
-            <button id="desc" class="desc">Date DESC</button>
+            <select name="sortDate" id="sortDate" onchange="location.reload()">
+                <option value="asc" selected="selected">ASC</option>
+                <option value="desc">DESC</option>
+            </select>
+            <button class="changeSelected">Change Selected</button>
         </form>
         <table id="myTable"></table>
     </div>
