@@ -79,40 +79,15 @@ function welcome()
         <div class="carousel_style">
             <div class="container d-flex justify-content-center ">
                 <div class="card">
-                    <h3 class="title">Card 1</h3>
-                    <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div>
-
+                <img src="../picture/caro1.png" alt="">
                 </div>
                 <div class="card">
-                    <h3 class="title">Card 2</h3>
-                    <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div>
-                </div>
+                <img src="../picture/caro2.png" alt="">                </div>
                 <div class="card">
-                    <h3 class="title">Card 3</h3>
-                    <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div>
-                </div>
+                <img src="../picture/caro3.png" alt="">                </div>
                 <div class="card">
-                    <h3 class="title">Card 4</h3>
+                <img src="../picture/caro4.png" alt="">                    <!-- <div class="bar">
 
-                    <img src="../picture/3.jpg" alt="">
-                    <!-- <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div> -->
-
-                </div>
-            </div>
-
-        </div>
 
         <?php
         include "../dataProcessing/user_resources_handling.php";
