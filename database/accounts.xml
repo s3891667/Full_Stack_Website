@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <system>
+  <user id="1">
+    <firstname>root</firstname>
+    <lastname>root</lastname>
+    <password>$2y$10$8XI9.xxKYIEHQ2VsuEnMvOxVT37Q8xeKDGeq1wV5PxxPmakqQa49W</password>
+    <email>s@rmit.edu.vn</email>
+    <date/>
+    <time/>
+    <avatar/>
+  </user>
   <user id="2">
     <firstname>mai</firstname>
     <lastname>mai</lastname>

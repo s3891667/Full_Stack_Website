@@ -34,7 +34,7 @@ if (isset($_SESSION['user'])) {
                 <a class="nav-link text-white" href="./user_profile.php">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="./logout.php">Logout</a>
+                <a class="nav-link text-white" href="./login.php">Login</a>
               </li>
             </ul>
             <form class="d-flex">
