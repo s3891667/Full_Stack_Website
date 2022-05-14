@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php
-session_start();
 if (isset($_SESSION['user'])) {
   header("location: home.php");
 }
@@ -24,6 +23,7 @@ if (isset($_SESSION['user'])) {
     <div>
     <header>
     <div>
+      <!--link to address that user want-->
       <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <a class="navbar-brand text-white" href="#">InstaKilogram</a>
@@ -40,7 +40,11 @@ if (isset($_SESSION['user'])) {
               <li class="nav-item">
                 <a class="nav-link text-white" href="./login.php">Log In</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./Menu.html">Menu</a>
+              </li>
             </ul>
+            <!--Search information-->
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn  btn-light" type="submit">Search</button>
@@ -96,23 +100,23 @@ if (isset($_SESSION['user'])) {
     <section class = 'posts' >
     <div  class='user-profile-box'  >
                 <div class='content2_pad'>
-                    
+
             <div class='content2-first-1'>";
         $ava = avatar_dir_check($user['id']);
         echo "
-                            <img class='images1' src='$ava' alt='avatarimage'>
+                            <img class='images1' src='$ava' alt='Hoang_avatar'>
                         </div>
-                         
+
                         <div class='content2-first-2'> ";
 
         echo "                <p class='content2-text' href=''>";
         echo  reading_user_name($user['id']);
-        echo "               
+        echo "
                             </p>
-                            
-                            </div> 
+
+                            </div>
                             <div class='imgdiv'>
-                            
+
                             <p class='content2-text' href=''> $user->content</p>";
         printf('<img src="%s" class="imgdiv-style" alt="">', $image);
 
@@ -120,12 +124,12 @@ if (isset($_SESSION['user'])) {
                         </div>
 
                         <div class='icons'>
-                            <img class='icons1' src='./picture/heart.png' alt=''>
-                            <img class='icon2' src='./picture/network.png' alt=''>
+                            <img class='icons1' src='./picture/heart.png' alt='Love'>
+                            <img class='icon2' src='./picture/network.png' alt='Connection'>
                         </div>
-                    
 
-            
+
+
                         <div class='timedisplay'>
         ";
         echo      time_check($check, $dateDiff, $timeDiff);

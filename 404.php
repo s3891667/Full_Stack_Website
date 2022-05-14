@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+  <!--The page notices users what something wrong in syntax or error-->
 <div class="container">
     <div class="row">
         <div class="col-md-12">

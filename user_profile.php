@@ -70,7 +70,7 @@ $id = $_SESSION['id'];
                     <?php
                     echo " <div>
             <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
-            
+
             </div>";
 
 
@@ -134,7 +134,7 @@ $id = $_SESSION['id'];
         </div>
     </main>
 
-    
+
     <div class="collapse  user-profile-box" id="info_show">
         <div class="">
             <?php echo "Email : "  . email_check($id);
@@ -168,32 +168,32 @@ $id = $_SESSION['id'];
             <section class = 'posts'>
             <div class='user-profile-box'  >
                         <div class='content2_pad'>
-                            
+
                     <div class='content2-first-1'>
                                     <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
                                 </div>
 
 
                                 <div class='content2-first-2'>
-                
+
                                     <p class='content2-text' href=''>{$_SESSION['user']}</p>
-                    
-                                </div> 
+
+                                </div>
                                 <div class='imgdiv'>
 
-                    <p class='content2-text' href=''> $user->content</p> 
+                    <p class='content2-text' href=''> $user->content</p>
                     ";
             printf('<img src="%s" class="imgdiv-style" alt="">', $image);
             echo "
                                 </div>
 
                                 <div class='icons'>
-                                    <img class='icons1' src='./picture/heart.png' alt=''>
-                                    <img class='icon2' src='./picture/network.png' alt=''>
+                                    <img class='icons1' src='./picture/heart.png' alt='Love'>
+                                    <img class='icon2' src='./picture/network.png' alt='Connection'>
                                 </div>
-                            
 
-                    
+
+
                                 <div class='timedisplay'>
                 ";
 
