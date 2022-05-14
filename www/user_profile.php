@@ -1,8 +1,8 @@
 <?php
 //print out all the posts from the xml files;
 session_start();
-include "./user_resources_handling.php";
-$xml = simplexml_load_file("./posts.xml");
+include "../dataProcessing/user_resources_handling.php";
+$xml = simplexml_load_file("../database/posts.xml");
 $id = $_SESSION['id'];
 
 ?>
@@ -14,11 +14,11 @@ $id = $_SESSION['id'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="/JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
 
 </head>
 <script>
@@ -65,7 +65,7 @@ $id = $_SESSION['id'];
         <a href="" onclick="" ></a>
         <div class="user-profile-box">
             <!-- edit this fucking class -->
-            <form action="./user_resources_handling.php" method="post" enctype="multipart/form-data">
+            <form action="../dataProcessing/user_resources_handling.php" method="post" enctype="multipart/form-data">
                 <div class="ava-box">
                     <?php
                     echo " <div>
@@ -124,7 +124,7 @@ $id = $_SESSION['id'];
         </div>
         <hr>
         <div id="change_ava" class="user-profile-box container square-box ">
-            <form action="./changeAva.php" method="post" enctype="multipart/form-data">
+            <form action="../dataProcessing/changeAva.php" method="post" enctype="multipart/form-data">
                 <label id="avatar_label" class="box-des2" for="customFile">Choose your image : </label>
                 <input name="newAvatar" class="custom-file-input" type="file" id="newAvatar">
                 <div class="box-des ">
@@ -188,8 +188,8 @@ $id = $_SESSION['id'];
                                 </div>
 
                                 <div class='icons'>
-                                    <img class='icons1' src='./picture/heart.png' alt='Love'>
-                                    <img class='icon2' src='./picture/network.png' alt='Connection'>
+                                    <img class='icons1' src='../picture/heart.png' alt='Love'>
+                                    <img class='icon2' src='../picture/network.png' alt='Connection'>
                                 </div>
 
 

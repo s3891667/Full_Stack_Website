@@ -43,10 +43,10 @@ function welcome()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./carousel.css">
-    <script src="./JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <script src="../JS/bootstrap.min.js"></script>
     <title>Homepage</title>
 </head>
 
@@ -106,7 +106,7 @@ function welcome()
                 <div class="card">
                     <h3 class="title">Card 4</h3>
 
-                    <img src="./picture/3.jpg" alt="">
+                    <img src="../picture/3.jpg" alt="">
                     <!-- <div class="bar">
                         <div class="emptybar"></div>
                         <div class="filledbar"></div>
@@ -118,8 +118,8 @@ function welcome()
         </div>
 
         <?php
-        include "./user_resources_handling.php";
-        $xml = simplexml_load_file("./posts.xml");
+        include "../dataProcessing/user_resources_handling.php";
+        $xml = simplexml_load_file("../database/posts.xml");
         foreach ($xml->user as $user) {
             if ("$user->status" == "Public" || "$user->status" == "Internal") {
                 $image = $user->attachment;
@@ -162,8 +162,8 @@ function welcome()
                         </div>
 
                         <div class='icons'>
-                            <img class='icons1' src='./picture/heart.png' alt='Love'>
-                            <img class='icon2' src='./picture/network.png' alt='Connection'>
+                            <img class='icons1' src='../picture/heart.png' alt='Love'>
+                            <img class='icon2' src='../picture/network.png' alt='Connection'>
                         </div>
 
             

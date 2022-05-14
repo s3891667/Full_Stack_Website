@@ -11,10 +11,10 @@ if (isset($_SESSION['user'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <script src="./JS/bootstrap.min.js"></script>
-  <script src="./JS/bootstrap.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../JS/bootstrap.min.js"></script>
+  <script src="../JS/bootstrap.js"></script>
   <title>Homepage</title>
 </head>
 
@@ -58,10 +58,10 @@ if (isset($_SESSION['user'])) {
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="./picture/3.jpg" alt="First slide">
+      <img class="d-block w-100" src="../picture/3.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="./picture/ava.jpeg" alt="Second slide">
+      <img class="d-block w-100" src="../picture/ava.jpeg" alt="Second slide">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="..." alt="Third slide">
@@ -80,8 +80,8 @@ if (isset($_SESSION['user'])) {
   </header>
   <main>
     <?php
-    include "./user_resources_handling.php";
-    $xml = simplexml_load_file("./posts.xml");
+    include "../dataProcessing/user_resources_handling.php";
+    $xml = simplexml_load_file("../database/posts.xml");
     foreach ($xml->user as $user) {
       if ("$user->status" == "Public") {
         $image = $user->attachment;
@@ -124,8 +124,8 @@ if (isset($_SESSION['user'])) {
                         </div>
 
                         <div class='icons'>
-                            <img class='icons1' src='./picture/heart.png' alt='Love'>
-                            <img class='icon2' src='./picture/network.png' alt='Connection'>
+                            <img class='icons1' src='../picture/heart.png' alt='Love'>
+                            <img class='icon2' src='../picture/network.png' alt='Connection'>
                         </div>
 
 

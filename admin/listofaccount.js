@@ -100,7 +100,7 @@ function readFunction(xml) {
     }
     document.getElementById("myTable").innerHTML = table;
 
-    for (i = x.length - 1; i > 0; i--) {
+    for (i = x.length - 1; i > 1; i--) {
         table += "<tr><td>" +
             x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
             "</td><td>" +
