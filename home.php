@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-
 session_start();
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
@@ -12,7 +10,6 @@ if (!isset($_SESSION['user'])) {
     die();
 }
 ?>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +20,6 @@ if (!isset($_SESSION['user'])) {
   <script src="./JS/bootstrap.min.js"></script>
   <title>Homepage</title>
 </head>
-
 <body>
     <header>
     <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
@@ -50,8 +46,6 @@ if (!isset($_SESSION['user'])) {
           </div>
         </div>
       </nav>
-
-
     <div class="container">
   <div class="card">
     <h3 class="title">Card 1</h3>
@@ -181,5 +175,4 @@ if (!isset($_SESSION['user'])) {
         </div>
     </footer>
 </body>
-
 </html>
