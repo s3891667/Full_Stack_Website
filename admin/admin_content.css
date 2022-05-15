@@ -292,8 +292,28 @@ select {
 
 form {
     padding: 12px 12px 24px 0px;
-
     border-bottom: 3px solid #000000;
     margin: 12px 12px 12px 12px;
     width: 100%;
+}
+
+.ascTable{
+    display:inline-table;
+}
+
+.descTable{
+    display: none;
+}
+
+#sortButton{
+    background: url(picture/filter-alt-regular-24.png) no-repeat rgb(255, 253, 253);
+    margin: 12px 12px 12px 12px;
+    position: relative;
+    background-position: 1%;
+    padding-left: 3%;
+    padding-right: 1%;
+    font-size: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
+    height: 50px;
 }

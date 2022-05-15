@@ -49,7 +49,7 @@
             </li>
         </ul>
     </div>
-    
+
     <div class="user_content">
         <div class="text">List of account</div>
         <form method="POST">
@@ -60,15 +60,24 @@
                 <option value="email">Email</option>
             </select>
             <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search account">
-            <select name="sortDate" id="sortDate" onchange="location.reload()">
-                <option value="asc" selected="selected">ASC</option>
-                <option value="desc">DESC</option>
-            </select>
-            <button class="changeSelected">Change Selected</button>
         </form>
-        <table id="myTable"></table>
+        <button id="sortButton" class="sortButton" onclick="changeSelection()">--Click here to sort date--</button>
+        <table id="ascTable" class="ascTable"></table>
+        <table id="descTable" class="descTable"></table>
     </div>
-
+    <script>
+        function changeSelection() {
+            var ascTable = document.getElementById("ascTable");
+            let descTable = document.getElementById("descTable");
+            if (ascTable.style.display === "inline-table" && descTable.style.display === "none") {
+                ascTable.style.display = "none";
+                descTable.style.display = "inline-table";
+            } else {
+                ascTable.style.display = "inline-table";
+                descTable.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $check = 1;
-$xml = simplexml_load_file("./accounts.xml");
+$xml = simplexml_load_file("../database/accounts.xml");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["useremail"];
     $inputpassword = $_POST["userpassword"];
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['id'] = "$id";
             $_SESSION['checker'] = true;
             $check = 1;
-            header("location: home.php");
+            header("location: ../www/home.php");
             break;
         } else {
             $check = 0;
@@ -28,3 +28,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </SCRIPT>";
     }
 }
+?>

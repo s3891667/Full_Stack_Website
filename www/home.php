@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-
 session_start();
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
@@ -13,40 +11,37 @@ if (!isset($_SESSION['user'])) {
 }
 
 function welcome()
-{ 
+{
     if ($_SESSION['checker']) {
-      echo "
+        echo "
       <div id= 'alert' class='alert alert-success' role='alert'>
       <strong>Welcome </strong>";
-      echo $_SESSION['user'];
-      echo " to InstaKilogram ! 
+        echo $_SESSION['user'];
+        echo " to InstaKilogram ! 
       <a href='#' onclick = 'hide_alert()'; id= 'icon' 
       class='close' data-dismiss='alert' aria-label='close'>&#10005;</a>
       </div>
       ";
-      $_SESSION['checker'] = false;
-
+        $_SESSION['checker'] = false;
     }
 }
 
 ?>
 <script>
-    function hide_alert () {
-      document.getElementById("alert").style.visibility = "hidden";
-      location.reload();
-    }   
-
+    function hide_alert() {
+        document.getElementById("alert").style.visibility = "hidden";
+        location.reload();
+    }
 </script>
 
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./carousel.css">
-    <script src="./JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <script src="../JS/bootstrap.min.js"></script>
     <title>Homepage</title>
 </head>
 
@@ -75,51 +70,26 @@ function welcome()
             </div>
         </nav>
         <?php welcome();  ?>
-    
+
 
     </header>
     <main>
-        <div class="carousel_style">
+        <div>
             <div class="container d-flex justify-content-center ">
                 <div class="card">
-                    <h3 class="title">Card 1</h3>
-                    <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div>
-
+                <img class="pic-des" src="../picture/caro1.png" alt="">
                 </div>
                 <div class="card">
-                    <h3 class="title">Card 2</h3>
-                    <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div>
-                </div>
+                <img class="pic-des" src="../picture/caro2.png" alt="">                </div>
                 <div class="card">
-                    <h3 class="title">Card 3</h3>
-                    <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div>
-                </div>
+                <img class="pic-des" src="../picture/caro3.png" alt="">                </div>
                 <div class="card">
-                    <h3 class="title">Card 4</h3>
+                <img class="pic-des" src="../picture/caro4.png" alt="">                    <!-- <div class="bar">
 
-                    <img src="./picture/3.jpg" alt="">
-                    <!-- <div class="bar">
-                        <div class="emptybar"></div>
-                        <div class="filledbar"></div>
-                    </div> -->
-
-                </div>
-            </div>
-
-        </div>
 
         <?php
-        include "./user_resources_handling.php";
-        $xml = simplexml_load_file("./posts.xml");
+        include "../dataProcessing/user_resources_handling.php";
+        $xml = simplexml_load_file("../database/posts.xml");
         foreach ($xml->user as $user) {
             if ("$user->status" == "Public" || "$user->status" == "Internal") {
                 $image = $user->attachment;
@@ -162,8 +132,8 @@ function welcome()
                         </div>
 
                         <div class='icons'>
-                            <img class='icons1' src='./picture/heart.png' alt='Love'>
-                            <img class='icon2' src='./picture/network.png' alt='Connection'>
+                            <img class='icons1' src='../picture/heart.png' alt='Love'>
+                            <img class='icon2' src='../picture/network.png' alt='Connection'>
                         </div>
 
             

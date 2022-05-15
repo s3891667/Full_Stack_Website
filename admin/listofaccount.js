@@ -1,45 +1,74 @@
-var input, filter, table, tr, td, i, txtValue, selector;
+var input, filter, table1, table2, tr1, tr2, td1, td2, i, txtValue, selector;
 function myFunction() {
     // Declare variables
     selector = document.getElementById("filterType");
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
+    table1 = document.getElementById("ascTable");
+    table2 = document.getElementById("descTable");
+    tr1 = table1.getElementsByTagName("tr");
+    tr2 = table2.getElementsByTagName("tr");
     // Loop through all table rows, and hide those who don't match the search query
     if (selector.value == "firstname") { //firstname case
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
+        for (i = 0; i < tr1.length; i++) {
+            td1 = tr1[i].getElementsByTagName("td")[0];
+            td2 = tr2[i].getElementsByTagName("td")[0];
+            if (td1) {
+                txtValue = td1.textContent || td1.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
+                    tr1[i].style.display = "";
                 } else {
-                    tr[i].style.display = "none";
+                    tr1[i].style.display = "none";
+                }
+            }
+            if (td2) {
+                txtValue = td2.textContent || td2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr2[i].style.display = "";
+                } else {
+                    tr2[i].style.display = "none";
                 }
             }
         }
     } else if (selector.value == "lastname") { //lastname case
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
+        for (i = 0; i < tr1.length; i++) {
+            td1 = tr1[i].getElementsByTagName("td")[1];
+            td2 = tr2[i].getElementsByTagName("td")[1];
+            if (td1) {
+                txtValue = td1.textContent || td1.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
+                    tr1[i].style.display = "";
                 } else {
-                    tr[i].style.display = "none";
+                    tr1[i].style.display = "none";
+                }
+            }
+            if (td2) {
+                txtValue = td2.textContent || td2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr2[i].style.display = "";
+                } else {
+                    tr2[i].style.display = "none";
                 }
             }
         }
     } else if (selector.value == "email") { //email case
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[3];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
+        for (i = 0; i < tr1.length; i++) {
+            td1 = tr1[i].getElementsByTagName("td")[3];
+            td2 = tr2[i].getElementsByTagName("td")[3];
+            if (td1) {
+                txtValue = td1.textContent || td1.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
+                    tr1[i].style.display = "";
                 } else {
-                    tr[i].style.display = "none";
+                    tr1[i].style.display = "none";
+                }
+            }
+            if (td2) {
+                txtValue = td2.textContent || td2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr2[i].style.display = "";
+                } else {
+                    tr2[i].style.display = "none";
                 }
             }
         }
@@ -56,29 +85,13 @@ function menuFunction() {
 
 function loadXMLDoc() {
     var xmlhttp = new XMLHttpRequest();
-    var dateSelector = document.getElementById("sortDate"); 
-    const changeSelected = (e) => {
-        const $select = document.querySelector('#sortDate');
-        $select.value = 'desc'
-        window.location.reload();
-    };
-    document.querySelector('.changeSelected').addEventListener('click', changeSelected);
-    
-    if (dateSelector.value == 'asc') {
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                readFunctionASC(this);
-            }
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            readFunctionASC(this);
+            readFunctionDESC(this);
         }
     }
-    else if (dateSelector.value == 'desc') {
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                readFunctionDESC(this);
-            }
-        }
-    }
-    xmlhttp.open("GET", "../accounts.xml", true);
+    xmlhttp.open("GET", "../database/accounts.xml", true);
     xmlhttp.send();
 }
 
@@ -115,7 +128,7 @@ function readFunctionASC(xml) {
             x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
             "</td></tr>";
     }
-    document.getElementById("myTable").innerHTML = table;
+    document.getElementById("ascTable").innerHTML = table;
 }
 
 function readFunctionDESC(xml) {
@@ -151,6 +164,6 @@ function readFunctionDESC(xml) {
             x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
             "</td></tr>";
     }
-    document.getElementById("myTable").innerHTML = table;
+    document.getElementById("descTable").innerHTML = table;
 }
 

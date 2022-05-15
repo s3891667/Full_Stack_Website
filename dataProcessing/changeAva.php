@@ -6,7 +6,7 @@ $id = $_SESSION['id'];
 
 // update
 
-$xml = simplexml_load_file('./accounts.xml');
+$xml = simplexml_load_file('../database/accounts.xml');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newAvatar = $_FILES["newAvatar"]["name"];
     foreach ($xml->user as $user) {
@@ -14,11 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             resources_handling($id, $newAvatar);
             $_SESSION['avatar'] = $picAddress;
             $user->avatar = $_SESSION['avatar'];
-            header("location:user_profile.php");
+            header("location:../www/user_profile.php");
             break;
         }
     }
-    $xml->asXML('./accounts.xml');
+    $xml->asXML('../database/accounts.xml');
 }
 
 
@@ -27,7 +27,7 @@ function resources_handling($id, $newAvatar)
     if ($newAvatar != "") {
         global $picAddress;
         // Where the file is going to be stored
-        $target_dir = "resources/user{$id}/avatar/";
+        $target_dir = "../resources/user{$id}/avatar/";
         $file = $newAvatar;
         $path = pathinfo($file);
         $filename = $path['filename'];
