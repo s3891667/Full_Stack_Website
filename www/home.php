@@ -74,17 +74,17 @@ function welcome()
 
     </header>
     <main>
-        <div class="carousel_style">
+        <div>
             <div class="container d-flex justify-content-center ">
                 <div class="card">
-                <img src="../picture/caro1.png" alt="">
+                <img class="pic-des" src="../picture/caro1.png" alt="">
                 </div>
                 <div class="card">
-                <img src="../picture/caro2.png" alt="">                </div>
+                <img class="pic-des" src="../picture/caro2.png" alt="">                </div>
                 <div class="card">
-                <img src="../picture/caro3.png" alt="">                </div>
+                <img class="pic-des" src="../picture/caro3.png" alt="">                </div>
                 <div class="card">
-                <img src="../picture/caro4.png" alt="">                    <!-- <div class="bar">
+                <img class="pic-des" src="../picture/caro4.png" alt="">                    <!-- <div class="bar">
 
 
         <?php
