@@ -9,6 +9,7 @@
 }
 
 body {
+    font-family: "Trirong", serif;
     background-color: #eee;
     position: relative
 }
@@ -309,5 +310,6 @@ footer a {
     opacity: 1;
     left: 0;
     transition: all 2.5s;
+
 
 }
