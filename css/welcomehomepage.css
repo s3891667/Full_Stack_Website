@@ -10,7 +10,7 @@
 }
 
 body{
-    background-image: url(/picture/welcomehomepage.jpg);
+    background-image: url(../picture/welcomehomepage.jpg);
     filter: contrast(100%);
     position: relative;
     background-repeat: no-repeat;

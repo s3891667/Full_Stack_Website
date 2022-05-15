@@ -269,7 +269,7 @@ footer a {
 }
 
 #change_ava {
-    display : none;
+    display: none;
 }
 
 
@@ -282,6 +282,7 @@ footer a {
 #info_show {
     padding: 10px;
 }
+
 .posts {
     padding-top: 20px;
 }
@@ -291,11 +292,22 @@ footer a {
 }
 
 
-#icon{
+#icon {
     float: right;
     color: #969696;
     text-decoration: none;
-    
 
+}
+
+.hide {
+    opacity: 0;
+    left: -100%;
+
+}
+
+.show {
+    opacity: 1;
+    left: 0;
+    transition: all 2.5s;
 
 }
