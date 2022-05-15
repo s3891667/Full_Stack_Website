@@ -5,9 +5,9 @@
     <lastname>root</lastname>
     <password>$2y$10$8XI9.xxKYIEHQ2VsuEnMvOxVT37Q8xeKDGeq1wV5PxxPmakqQa49W</password>
     <email>s@rmit.edu.vn</email>
-    <date/>
-    <time/>
-    <avatar/>
+    <date>NULL</date>
+    <time>NULL</time>
+    <avatar>NULL</avatar>
   </user>
   <user id="2">
     <firstname>mai</firstname>

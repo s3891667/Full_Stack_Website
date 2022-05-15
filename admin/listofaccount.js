@@ -91,7 +91,7 @@ function loadXMLDoc() {
             readFunctionDESC(this);
         }
     }
-    xmlhttp.open("GET", "../accounts.xml", true);
+    xmlhttp.open("GET", "../database/accounts.xml", true);
     xmlhttp.send();
 }
 
