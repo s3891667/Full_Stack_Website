@@ -18,4 +18,22 @@
     <time>11:25:11pm</time>
     <avatar>resources/user2/avatar/1348001.jpg</avatar>
   </user>
+  <user id="3">
+    <firstname>Duc Anh</firstname>
+    <lastname>Hoang</lastname>
+    <password>$2y$15$QvYOIA5PLUiGxyB.3n3SvuX3fKnK1BxKWol4UduYmOO93nNL/PP2e</password>
+    <email>davidanh98@gmail.com</email>
+    <date>2022-05-14</date>
+    <time>03:48:59pm</time>
+    <avatar>resources/avatar.png</avatar>
+  </user>
+  <user id="4">
+    <firstname>Duc Anh</firstname>
+    <lastname>Hoang</lastname>
+    <password>$2y$15$J7rTkBrbb7zXWwuRXCLoNeIbV2yMsIeCXiPIZKJVa1sE29B68JsFy</password>
+    <email>daviddanh98@gmail.com</email>
+    <date>2022-05-15</date>
+    <time>02:03:54pm</time>
+    <avatar/>
+  </user>
 </system>

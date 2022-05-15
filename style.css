@@ -9,6 +9,7 @@
 }
 
 body {
+    font-family: "Trirong", serif;
     background-color: #eee;
     position: relative
 }
@@ -295,7 +296,7 @@ footer a {
     float: right;
     color: #969696;
     text-decoration: none;
-    
+
 
 
 }

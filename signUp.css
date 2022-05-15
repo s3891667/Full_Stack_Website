@@ -15,7 +15,7 @@ body {
     width: 100%;
     background: #eee;
     position: relative;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Trirong", serif;
 }
 
 .form_des{
@@ -26,7 +26,7 @@ body {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     box-shadow: 2px 2px 2px 2px grey;
-    
+
 }
 
 .form-group{
@@ -38,7 +38,7 @@ body {
     padding-bottom: 20px;
     padding-top: 20px;
     margin: 50px 100px 30px 90px;
-    border-radius: 15px;    
+    border-radius: 15px;
 }
 
 .button_des2{

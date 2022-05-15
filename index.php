@@ -15,6 +15,7 @@ if (isset($_SESSION['user'])) {
   <link rel="stylesheet" href="./css/bootstrap.css">
   <script src="./JS/bootstrap.min.js"></script>
   <script src="./JS/bootstrap.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
   <title>Homepage</title>
 </head>
 
