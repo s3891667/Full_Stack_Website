@@ -18,6 +18,7 @@
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
+    border-radius: 15px;
   }
 
   .card:not(:first-child) {
@@ -27,6 +28,7 @@
   .card:hover {
     transform: translateY(-20px);
     transition: 0.4s ease-out;
+    border-radius: 15px;
   }
 
   .card:hover~.card {

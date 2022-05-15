@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<posts>
+  <user id="user2">
+    <content>today is cool ! </content>
+    <attachment>../resources/user2/posts/1348001.jpg</attachment>
+    <status>Public</status>
+    <date>2022-05-15</date>
+    <time>02:50:40am</time>
+  </user>
+  <user id="user2">
+    <content/>
+    <attachment>../resources/user2/posts/Screenshot from 2022-04-28 22-05-57.png</attachment>
+    <status>Internal</status>
+    <date>2022-05-15</date>
+    <time>02:51:53am</time>
+  </user>
+</posts>

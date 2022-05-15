@@ -1,13 +1,15 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $id = $_SESSION['id'];
 $user = $_SESSION['user'];
 $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
-$xml->load("./posts.xml");
+$xml->load("../database/posts.xml");
 $picAddress = "";
-
 if (!$xml) {
     $posts = $xml->createElement("posts");
     $xml->appendChild($posts);
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $attachment = $_FILES["picture"]["name"];
     if ($status == "1") {
         $status = "Internal";
-    } else if ($status == "2"){
+    } else if ($status == "2") {
         $status = "Public";
     } else {
         $status = "Private";
@@ -30,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $users = $xml->getElementsByTagName("user");
     foreach ($users as $user) {
         storing_data($posts, $xml, $content, $status, $attachment, $id);
-        header("Location:user_profile.php");
+         header("Location:../www/user_profile.php");
         break;
     }
 }
@@ -44,10 +46,10 @@ function storing_data($posts, $xml, $content, $status, $attachment, $id)
     $user = $xml->createElement("user");
     $user->setAttribute("id", "user{$id}");
     $posts->appendChild($user);
-    if (!file_exists("resources/user{$id}/posts")) {
-        mkdir("resources/user{$id}/posts", 0777, true);
+    if (!file_exists("../resources/user{$id}/posts")) {
+        mkdir("../resources/user{$id}/posts", 0777, true);
         resources_handling($id, $attachment);
-    } else if (file_exists("resources/user{$id}/posts")) {
+    } else if (file_exists("../resources/user{$id}/posts")) {
         resources_handling($id, $attachment);
     }
 
@@ -63,7 +65,7 @@ function storing_data($posts, $xml, $content, $status, $attachment, $id)
     $time = $xml->createElement("time", $registerd_time);
     $user->appendChild($time);
     echo "<xmp>" . $xml->saveXML() . "</xmp>";
-    $xml->save("./posts.xml");
+    $xml->save("../database/posts.xml");
 }
 
 function resources_handling($id, $attachment)
@@ -71,16 +73,16 @@ function resources_handling($id, $attachment)
     if ($attachment != "") {
         global $picAddress;
         // Where the file is going to be stored
-        $target_dir = "resources/user{$id}/posts/";
+        $target_dir = "../resources/user{$id}/posts/";
         $file = $attachment;
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
         if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
             echo "<SCRIPT> //not showing me this
-            window.location.href = 'user_profile.php?img=invalidType';
-            alert('Please check for file type');
-            </SCRIPT>";
+             window.location.href = '../www/user_profile.php?img=invalidType';
+             alert('Please check for file type');
+             </SCRIPT>";
         }
         $temp_name = $_FILES['picture']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
@@ -123,7 +125,7 @@ function time_check($check, $dateDiff, $timeDiff)
 function reading_user_name($id)
 {
     $name = "";
-    $xml = simplexml_load_file("./accounts.xml");
+    $xml = simplexml_load_file("../database/accounts.xml");
     foreach ($xml->user as $user) {
         if ($id == "user{$user['id']}") {
             $name = $user->firstname;
@@ -135,7 +137,7 @@ function reading_user_name($id)
 function avatar_dir_check($id)
 {
     $dir = "";
-    $xml = simplexml_load_file("./accounts.xml");
+    $xml = simplexml_load_file("../database/accounts.xml");
     foreach ($xml->user as $user) {
         if ($id == "user{$user['id']}") {
             $dir = $user->avatar;
@@ -145,9 +147,10 @@ function avatar_dir_check($id)
 }
 
 
-function email_check ($id) {
+function email_check($id)
+{
     $email = "";
-    $xml = simplexml_load_file("./accounts.xml");
+    $xml = simplexml_load_file("../database/accounts.xml");
     foreach ($xml->user as $user) {
         if ($id == $user['id']) {
             $email = $user->email;
@@ -157,9 +160,10 @@ function email_check ($id) {
 }
 
 
-function lastName_check ($id) {
+function lastName_check($id)
+{
     $lastname = "";
-    $xml = simplexml_load_file("./accounts.xml");
+    $xml = simplexml_load_file("../database/accounts.xml");
     foreach ($xml->user as $user) {
         if ($id == $user['id']) {
             $lastname = $user->lastname;
@@ -167,6 +171,3 @@ function lastName_check ($id) {
     }
     return $lastname;
 }
-
-
-

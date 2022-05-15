@@ -6,7 +6,7 @@ $flag = 0;
 $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
-$xml->load("accounts.xml");
+$xml->load("../database/accounts.xml");
 
 if (!$xml) {
     $system = $xml->createElement("system");
@@ -39,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($flag == 0) {
         $message = "Your email has been registed !";
         echo "<SCRIPT> //not showing me this
-        window.location.href = 'signUp.html?email=used';
+        window.location.href = '../www/signUp.html?email=used';
         alert('$message');
         </SCRIPT>";
     } else if ($flag ==1 ) {
         storing_data($system, $xml, $firstname, $lastname, $hashed_password, $email, $avatar);
-        header("Location:index.php");
+        header("Location:../www/index.php");
 
     }
 }
@@ -55,7 +55,7 @@ function resources_handling($totalAffiliates, $avatar)
     global $avatar_dir;
     if ($avatar != "") {
         // Where the file is going to be stored
-        $target_dir = "resources/user{$totalAffiliates}/avatar/";
+        $target_dir = "../resources/user{$totalAffiliates}/avatar/";
         $file = $avatar;
         $path = pathinfo($file);
         $filename = $path['filename'];
@@ -74,7 +74,7 @@ function resources_handling($totalAffiliates, $avatar)
         
     }
     else {
-        $avatar_dir = "resources/avatar.png";
+        $avatar_dir = "../resources/avatar.png";
 
     }
 }
@@ -93,9 +93,9 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
 
 
     //Creating directory and save images for users.
-    if (!file_exists("resources/user{$totalAffiliates}")) {
+    if (!file_exists("../resources/user{$totalAffiliates}")) {
         // create a folder for each user
-        mkdir("resources/user{$totalAffiliates}/avatar", 0777, true);
+        mkdir("../resources/user{$totalAffiliates}/avatar", 0777, true);
         resources_handling($totalAffiliates, $avatar);
     }
 
@@ -116,5 +116,5 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
     $user->appendChild($ava);
 
     echo "<xmp>" . $xml->saveXML() . "</xmp>";
-    $xml->save("./accounts.xml");
+    $xml->save("../database/accounts.xml");
 }

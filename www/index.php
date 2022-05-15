@@ -11,20 +11,16 @@ if (isset($_SESSION['user'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <script src="./JS/bootstrap.min.js"></script>
-  <script src="./JS/bootstrap.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../JS/bootstrap.min.js"></script>
+  <script src="../JS/bootstrap.js"></script>
   <title>Homepage</title>
 </head>
 
 <body>
   <header>
-    <div>
-    <header>
-    <div>
-      <!--link to address that user want-->
-      <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
+  <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <a class="navbar-brand text-white" href="#">InstaKilogram</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,16 +31,12 @@ if (isset($_SESSION['user'])) {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link text-white" href="./signUp.html">Sign Up</a>
+                <a class="nav-link text-white" href="./user_profile.php">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="./login.php">Log In</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="./Menu.html">Menu</a>
+                <a class="nav-link text-white" href="./login.php">Login</a>
               </li>
             </ul>
-            <!--Search information-->
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn  btn-light" type="submit">Search</button>
@@ -52,36 +44,12 @@ if (isset($_SESSION['user'])) {
           </div>
         </div>
       </nav>
-  </header>
-    </div>
-
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="./picture/3.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="./picture/ava.jpeg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
   </header>
   <main>
     <?php
-    include "./user_resources_handling.php";
-    $xml = simplexml_load_file("./posts.xml");
+    include "../dataProcessing/user_resources_handling.php";
+    $xml = simplexml_load_file("../database/posts.xml");
     foreach ($xml->user as $user) {
       if ("$user->status" == "Public") {
         $image = $user->attachment;
@@ -124,8 +92,8 @@ if (isset($_SESSION['user'])) {
                         </div>
 
                         <div class='icons'>
-                            <img class='icons1' src='./picture/heart.png' alt='Love'>
-                            <img class='icon2' src='./picture/network.png' alt='Connection'>
+                            <img class='icons1' src='../picture/heart.png' alt='Love'>
+                            <img class='icon2' src='../picture/network.png' alt='Connection'>
                         </div>
 
 
