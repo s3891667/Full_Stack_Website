@@ -8,7 +8,10 @@
     <title>Admin test</title>
     <link rel="stylesheet" href="admin_content.css">
     <script src="listofaccount.js"></script>
-    <link rel="stylesheet" href="../css//bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body onload="loadXMLDoc()">
@@ -63,10 +66,45 @@
             <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search account">
         </form>
         <button id="sortButton" class="sortButton" onclick="changeSelection()">--Click here to sort date--</button>
-        <button class="btn btn-primary " >Reset Password</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Reset Password</button>
         <table id="ascTable" class="ascTable"></table>
         <table id="descTable" class="descTable"></table>
     </div>
+
+    <div class="container mt-5">
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Password Reset</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label required">User Email</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">New Password</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Retype Password</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         function changeSelection() {
             var ascTable = document.getElementById("ascTable");
