@@ -33,7 +33,7 @@ function resources_handling($id, $newAvatar)
         $filename = $path['filename'];
         $ext = $path['extension'];
         if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
-            echo "<SCRIPT> //not showing me this
+            echo "<SCRIPT>
             window.location.href = 'user_profile.php?img=invalidType';
             alert('Please check for file type');
             </SCRIPT>";

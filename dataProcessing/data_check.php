@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Wrong email or Password";
         echo "<SCRIPT>
         alert('$message');
-        window.location.href='login.php?error';
+        window.location.href='../www/login.php?error';
         </SCRIPT>";
     }
 }

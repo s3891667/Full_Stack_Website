@@ -80,23 +80,23 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="passReset" action="./resetPass.php" method="POST">
                             <div class="mb-3">
                                 <label class="form-label required">User Email</label>
-                                <input type="text" class="form-control">
+                                <input name="userEmail" type="text" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">New Password</label>
-                                <input type="email" class="form-control">
+                                <input name="newPass" type="password" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Retype Password</label>
-                                <input type="email" class="form-control">
+                                <input name="retypeNewPass" type="password" class="form-control">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Reset</button>
+                        <button type="submit" form="passReset" class="btn btn-primary">Reset</button>
                         <button type="submit" class="btn btn-danger">Cancel</button>
                     </div>
                 </div>
