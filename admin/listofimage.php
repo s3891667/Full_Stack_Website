@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin test</title>
+    <title>Admin</title>
+    <!--CSS and javascript used in this html-->
     <link rel="stylesheet" href="listofimage.css">
     <script src="listofimage.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
