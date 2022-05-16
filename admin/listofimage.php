@@ -8,6 +8,8 @@
     <title>Admin test</title>
     <link rel="stylesheet" href="listofimage.css">
     <script src="listofimage.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body onload="loadXMLDoc()">
@@ -85,11 +87,6 @@
             }
             ?>
         </table>
-        <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null, null, window.location.href);
-            }
-        </script>
     </div>
 
 </body>
