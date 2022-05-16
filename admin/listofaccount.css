@@ -266,7 +266,7 @@ table tr:hover {
 }
 
 .user_content input {
-    margin: 12px 12px 12px 0px;
+    margin: 12px 12px 12px 12px;
     position: relative;
     height: 50px;
     border-radius: 70px;
