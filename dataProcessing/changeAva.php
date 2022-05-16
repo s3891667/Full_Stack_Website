@@ -3,7 +3,7 @@ session_start();
 
 $picAddress = "";
 $id = $_SESSION['id'];
-
+$exception = 1;
 //read accounts.xml file to loop through and set new image for account
 $xml = simplexml_load_file('../database/accounts.xml');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //check id from session 
         if ($id == $user['id'] ) {
             resources_handling($id, $newAvatar);
+            if ($exception ==0) {
+                return false;
+            }
             $_SESSION['avatar'] = $picAddress;
             //change the new image address and address 
             $user->avatar = $_SESSION['avatar'];
@@ -27,18 +30,22 @@ function resources_handling($id, $newAvatar)
 {
     if ($newAvatar != "") {
         global $picAddress;
+        global $exception;
         // Where the file is going to be stored
         $target_dir = "../resources/user{$id}/avatar/";
         $file = $newAvatar;
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
+        echo $ext; 
         //check the file type
         if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
             echo "<SCRIPT>
-            window.location.href = 'user_profile.php?img=invalidType';
+            window.location.href = '../www/user_profile.php?img=invalidType';
             alert('Please check for file type');
             </SCRIPT>";
+            $exception = 0;
+            return false;
         }
         $temp_name = $_FILES['newAvatar']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
