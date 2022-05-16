@@ -1,5 +1,4 @@
-var input, filter, table1, table2, tr1, tr2, td1, td2, i, txtValue, selector, viewBtn;
-
+var input, filter, table1, table2, tr1, tr2, td1, td2, i, txtValue, selector;
 function myFunction() {
     // Declare variables
     selector = document.getElementById("filterType");
@@ -97,10 +96,9 @@ function loadXMLDoc() {
 }
 
 function readFunctionASC(xml) {
-    const viewBtn = "<button id='viewBtn' class='viewBtn' onclick='viewProfile()'>View</button>";
     var i;
     var xmlDoc = xml.responseXML;
-    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th><th>Action</th></tr>";
+    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
     var x = xmlDoc.getElementsByTagName("user");
     table += "<tr><td>" +
         x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
@@ -128,8 +126,6 @@ function readFunctionASC(xml) {
             x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
             "</td><td>" +
             x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            viewBtn +
             "</td></tr>";
 
     }
@@ -137,10 +133,9 @@ function readFunctionASC(xml) {
 }
 
 function readFunctionDESC(xml) {
-    const viewBtn = "<button class='viewBtn' onclick='viewProfile()'>View</button>";
     var i;
     var xmlDoc = xml.responseXML;
-    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th><th>Action</th></tr>";
+    var table = "<tr><th>Firstname</th><th>Lastname</th><th>Password</th><th>Email</th><th>Date</th><th>Time</th></tr>";
     var x = xmlDoc.getElementsByTagName("user");
     table += "<tr><td>" +
         x[0].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
@@ -168,8 +163,6 @@ function readFunctionDESC(xml) {
             x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
             "</td><td>" +
             x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            viewBtn +
             "</td></tr>";
     }
     document.getElementById("descTable").innerHTML = table;
