@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin test</title>
-    <link rel="stylesheet" href="admin_content.css">
+    <link rel="stylesheet" href="listofimage.css">
     <script src="listofimage.js"></script>
 </head>
 
@@ -49,7 +49,7 @@
         </ul>
     </div>
 
-    <div class="user_content" onload="loadXMLDoc()">
+    <div class="user_content">
         <div class="text">List of image</div>
         <table id="myTable">
             <tr>
@@ -73,18 +73,23 @@
                     );
                     $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     if (in_array($ext, $supported_file)) {
-                        echo "<form method='post' action='listofimage.php'>";
+                        echo "<form method='post' action='delete_file.php'>";
                         echo "<td><a href='{$image}'><div name='file_name'>  $image  </div></a></td>";
                         echo '<td><div>' . filesize($image) . ' bytes</div></td>';
-                        echo "<td><button name='delete_file''>Delete</button></td>";
+                        echo "<input type='hidden' name='file_name' value='$image'>";
+                        echo "<td><input type='submit' name='delete_file' value='Delete File'></td>";
                         echo "</form>";
                     }
                     echo "</tr>";
                 }
             }
-
             ?>
         </table>
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
     </div>
 
 </body>

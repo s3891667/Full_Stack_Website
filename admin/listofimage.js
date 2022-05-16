@@ -5,3 +5,4 @@ function menuFunction() {
         sidebar.classList.toggle("active");
     }
 }
+

@@ -268,16 +268,8 @@ table tr:hover {
 .user_content input {
     margin: 12px 12px 12px 0px;
     position: relative;
-    height: 50px;
-    border-radius: 70px;
-    outline: none;
-    border: none;
-    background: url(picture/search-regular-24.png) no-repeat rgb(255, 253, 253);
-    background-position: 15px;
-    padding-left: 50px;
-    font-size: 20px;
-    color: rgb(5, 37, 73);
-    border: 2px solid #041264;
+    height: 30px; 
+    font-size: 16px;
 }
 
 select {
@@ -312,8 +304,12 @@ form {
     background-position: 1%;
     padding-left: 3%;
     padding-right: 1%;
-    font-size: 20px;
-    border: 2px solid rgb(0, 0, 0);
+    font-size: 1rem;
+    border: 1px solid #0d6efd;
     cursor: pointer;
-    height: 50px;
+    height: 38px;
+    background-color: #0d6efd;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-weight: 400;
 }
