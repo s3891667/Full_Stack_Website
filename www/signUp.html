@@ -15,38 +15,38 @@
     <form name="signupform" class="form_des form-horizontal" method="post" action="../dataProcessing/data_saving.php" enctype="multipart/form-data" >
       <h1 class="text-center">Register Your Account</h1>
       <div class="form-group">
-        <label for="inputEmail4" class="form-label">First name</label>
+        <label for="firstname" class="form-label">First name</label>
         <input id="firstname" name="firstname" type="text" class="form-control" placeholder="First name"
           aria-label="First name">
       </div>
       <div class="form-group">
-        <label for="inputEmail4" class="form-label">Last name</label>
+        <label for="lastname" class="form-label">Last name</label>
         <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Last name"
           aria-label="Last name">
       </div>
       <div class="form-group">
-        <label for="inputEmail4" class="form-label">Email</label>
+        <label for="email" class="form-label">Email</label>
         <input name="email" type="email" class="form-control" id="email" placeholder="@gmail">
       </div>
       <div class="form-group">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input name="password" type="password" class="form-control" id="inputPassword1"
+        <label for="inputPassword" class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" id="inputPassword"
           pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
           title="Must contains at least 8 characters and 1 special character" required
           placeholder="Input your password">
       </div>
       <div class="form-group">
-        <label for="inputPassword4" class="form-label">Re-type Password</label>
+        <label for="inputPassword2" class="form-label">Re-type Password</label>
         <input type="password" class="form-control" id="inputPassword2" onkeyup="form_check(this)"
           placeholder="Input your password">
         <p id="alert"></p>
       </div>
       <div class="form-group">
         <div class="custom-file">
-          <label id="avatar_label" class="custom-file-label" for="customFile">Upload Your Profile Image</label>
+          <label id="avatar_label" class="custom-file-label" for="avatar">Upload Your Profile Image</label>
           <input name="avatar" class="custom-file-input" type="file" id="avatar" >
         </div>
-        <label  class="form-check-label"  for="avatar_confirm" id="avatar_confirm_label" >Choose avatar later</label>
+        <label  class="form-check-label"  for="avatar_confirm_input" id="avatar_confirm_label" >Choose avatar later</label>
         <input onclick="avatar_confirm()" class="form-check-input" type="checkbox" id="avatar_confirm_input" >
       <br>
       </div>

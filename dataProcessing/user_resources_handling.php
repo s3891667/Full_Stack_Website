@@ -1,13 +1,15 @@
 <?php
+// check if session existed
 if (!isset($_SESSION)) {
     session_start();
 }
-
+//take value from session for displaying
 $id = $_SESSION['id'];
 $user = $_SESSION['user'];
 $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
+
 $xml->load("../database/posts.xml");
 $picAddress = "";
 if (!$xml) {
@@ -19,6 +21,7 @@ if (!$xml) {
 //one default , two global
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //take value from the create post form
     $content = $_POST['contents'];
     $status = $_POST['checker'];
     $attachment = $_FILES["picture"]["name"];
@@ -31,21 +34,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $users = $xml->getElementsByTagName("user");
     foreach ($users as $user) {
+        //looping through to create posts for the users
         storing_data($posts, $xml, $content, $status, $attachment, $id);
          header("Location:../www/user_profile.php");
         break;
     }
 }
 
-// function that help create a database
+// function that help create posts
 function storing_data($posts, $xml, $content, $status, $attachment, $id)
 {
-    //Creating directory and save images for users.
+    //generating current time for posts
     $registerd_date = date("Y-m-d");
     $registerd_time = date("h:i:sa");
     $user = $xml->createElement("user");
     $user->setAttribute("id", "user{$id}");
     $posts->appendChild($user);
+    //create folder to store attachments for users
     if (!file_exists("../resources/user{$id}/posts")) {
         mkdir("../resources/user{$id}/posts", 0777, true);
         resources_handling($id, $attachment);
@@ -68,6 +73,7 @@ function storing_data($posts, $xml, $content, $status, $attachment, $id)
     $xml->save("../database/posts.xml");
 }
 
+// function to store image to resources folder
 function resources_handling($id, $attachment)
 {
     if ($attachment != "") {
@@ -78,6 +84,7 @@ function resources_handling($id, $attachment)
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
+        //check image type
         if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
             echo "<SCRIPT> //not showing me this
              window.location.href = '../www/user_profile.php?img=invalidType';
@@ -97,6 +104,7 @@ function resources_handling($id, $attachment)
     }
 }
 
+//show time differences for displaying in index, home and userprofile page
 
 function time_check($check, $dateDiff, $timeDiff)
 {
@@ -122,6 +130,7 @@ function time_check($check, $dateDiff, $timeDiff)
     }
 }
 
+//return name from ID
 function reading_user_name($id)
 {
     $name = "";
@@ -133,6 +142,8 @@ function reading_user_name($id)
     }
     return $name;
 }
+
+//return avatar directory from id
 
 function avatar_dir_check($id)
 {
@@ -146,7 +157,7 @@ function avatar_dir_check($id)
     return $dir;
 }
 
-
+//return email from id
 function email_check($id)
 {
     $email = "";
@@ -159,7 +170,7 @@ function email_check($id)
     return $email;
 }
 
-
+// return last name from id 
 function lastName_check($id)
 {
     $lastname = "";

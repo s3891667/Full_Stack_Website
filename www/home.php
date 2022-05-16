@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+//start session
 session_start();
+//alert to avoid guest users from access to homepage 
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
     alert('Please login your account !');
@@ -10,8 +12,9 @@ if (!isset($_SESSION['user'])) {
     die();
 }
 
+//this function will display when user first logged in 
 function welcome()
-{
+{   //$_SESSION['checker] will ensure the welcome banner only display once
     if ($_SESSION['checker']) {
         echo "
       <div id= 'alert' class='alert alert-success' role='alert'>
@@ -28,6 +31,7 @@ function welcome()
 
 ?>
 <script>
+    //close the welcome banner
     function hide_alert() {
         document.getElementById("alert").style.visibility = "hidden";
         location.reload();
@@ -93,6 +97,7 @@ function welcome()
                     include "../dataProcessing/user_resources_handling.php";
                     $xml = simplexml_load_file("../database/posts.xml");
                     foreach ($xml->user as $user) {
+                        //check type to display protect the private posts and display public + internal posts
                         if ("$user->status" == "Public" || "$user->status" == "Internal") {
                             $image = $user->attachment;
                             //generate current time to compare the posts upload time

@@ -14,11 +14,11 @@
           <form action="../dataProcessing/data_check.php" class="form-horizontal" method="post">
               <h1 class="text-center">Login</h1>
             <div class="form-group ">
-              <label for="inputEmail3" class="col-form-label">Email</label>
+              <label for="inputEmail" class="col-form-label">Email</label>
                 <input type="email"  name="useremail" class="form-control" id="inputEmail" placeholder="Email address" >
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class=" col-form-label">Password</label>
+              <label for="inputPassword" class=" col-form-label">Password</label>
             <input type="password" name="userpassword"   class="form-control" id="inputPassword" placeholder="Password" >
             </div>
             <div class="form-check mt-3">

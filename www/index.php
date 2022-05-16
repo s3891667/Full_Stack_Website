@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php
+//if the user have already logged in , they will redirect to home page
 if (isset($_SESSION['user'])) {
   header("location: home.php");
 }
@@ -19,6 +20,8 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <script>
+
+  // this js will display text on scroll 
   window.onscroll = function() {
     myFunction()
   };
@@ -73,8 +76,10 @@ if (isset($_SESSION['user'])) {
 
     <?php
     include "../dataProcessing/user_resources_handling.php";
+    //reading posts.xml to display for guest user
     $xml = simplexml_load_file("../database/posts.xml");
     foreach ($xml->user as $user) {
+      //only display Public posts
       if ("$user->status" == "Public") {
         $image = $user->attachment;
         //generate current time to compare the posts upload time
