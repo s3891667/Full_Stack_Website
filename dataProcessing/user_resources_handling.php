@@ -9,6 +9,7 @@ $user = $_SESSION['user'];
 $xml = new DOMDocument();
 $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
+$fileCheck = 1;
 
 $xml->load("../database/posts.xml");
 $picAddress = "";
@@ -36,7 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($users as $user) {
         //looping through to create posts for the users
         storing_data($posts, $xml, $content, $status, $attachment, $id);
-         header("Location:../www/user_profile.php");
+        if ($fileCheck == 0) {
+            echo "<SCRIPT> //not showing me this
+         window.location.href = '../www/user_profile.php?img=invalidType';
+         alert('Please check for file type');
+        </SCRIPT>";
+        } else {
+            header("Location:../www/user_profile.php");
+        }
         break;
     }
 }
@@ -58,6 +66,11 @@ function storing_data($posts, $xml, $content, $status, $attachment, $id)
         resources_handling($id, $attachment);
     }
 
+    global $fileCheck;
+    if ($fileCheck == 0) {
+        return false;
+    }
+
     global $picAddress;
     $contents = $xml->createElement("content", $content);
     $user->appendChild($contents);
@@ -76,21 +89,17 @@ function storing_data($posts, $xml, $content, $status, $attachment, $id)
 // function to store image to resources folder
 function resources_handling($id, $attachment)
 {
-    if ($attachment != "") {
+    global $fileCheck;
+    $target_dir = "../resources/user{$id}/posts/";
+    $file = $attachment;
+    $path = pathinfo($file);
+    $filename = $path['filename'];
+    $ext = "{$path['extension']}";
+    //check the data type
+    if (($attachment != "" && ($ext == "jpg" || $ext == "jpeg" || $ext == "png" || $ext == "gif"))
+        || $attachment == "") 
+    {
         global $picAddress;
-        // Where the file is going to be stored
-        $target_dir = "../resources/user{$id}/posts/";
-        $file = $attachment;
-        $path = pathinfo($file);
-        $filename = $path['filename'];
-        $ext = $path['extension'];
-        //check image type
-        if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
-            echo "<SCRIPT> //not showing me this
-             window.location.href = '../www/user_profile.php?img=invalidType';
-             alert('Please check for file type');
-             </SCRIPT>";
-        }
         $temp_name = $_FILES['picture']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
         $picAddress = $path_filename_ext;
@@ -101,6 +110,8 @@ function resources_handling($id, $attachment)
             move_uploaded_file($temp_name, $path_filename_ext);
             echo "Congratulations! File Uploaded Successfully.";
         }
+    } else {
+        $fileCheck = 0;
     }
 }
 

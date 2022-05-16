@@ -8,6 +8,7 @@ $xml->formatOutput = true;
 $xml->preserveWhiteSpace = false;
 //Read the xml file from the database
 $xml->load("../database/accounts.xml");
+$imgCheck = 1;
 
 if (!$xml) {
     $system = $xml->createElement("system");
@@ -46,51 +47,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         alert('$message');
         </SCRIPT>";
         //If everything are clear then start storing data in xml file
-    } else if ($flag ==1 ) {
-        
+    } else if ($flag == 1) {
         storing_data($system, $xml, $firstname, $lastname, $hashed_password, $email, $avatar);
-        //redirect users to the index in order to login the system.
-        header("Location:../www/index.php");
-
+        echo $avatar_dir;
+        if ($imgCheck == 0) {
+            echo "<SCRIPT> //not showing me this
+            window.location.href = '../www/signUp.html?invalidType';
+            alert('Please check for file type');
+            </SCRIPT>";
+        } else {
+            //redirect users to the index in order to login the system.
+            header("Location:../www/index.php");
+        }
     }
 }
 
 //function to store pictures for users;
 function resources_handling($totalAffiliates, $avatar)
 {
+    //dir address to store files
+    $target_dir = "../resources/user{$totalAffiliates}/avatar/";
+    $file = $avatar;
+    $path = pathinfo($file);
+    $filename = $path['filename'];
+    $ext = "{$path['extension']}";
     global $avatar_dir;
-    //if the file is not empty.
-    if ($avatar != "") {
-        //dir address to store files
-        $target_dir = "../resources/user{$totalAffiliates}/avatar/";
-        $file = $avatar;
-        $path = pathinfo($file);
-        $filename = $path['filename'];
-        $ext = $path['extension'];
-        // check image types;
-        if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
-            echo "<SCRIPT> //not showing me this
-            window.location.href = 'signUp.html?email=used';
-            alert('Please check for file type');
-            </SCRIPT>";
-        }
+    // check image types;
+    if ($avatar != "" && ($ext == "jpg" || $ext == "jpeg" || $ext == "png" || $ext == "gif")) {
         $temp_name = $_FILES['avatar']['tmp_name'];
         $path_filename_ext = $target_dir . $filename . "." . $ext;
         $avatar_dir = $path_filename_ext;
         //save files in the directory
         move_uploaded_file($temp_name, $path_filename_ext);
-        
-    }
-    else {
+    } else if ($avatar == "") {
         // if user hasn't choosen any image yet -> choose the avatar icon for the user
         $avatar_dir = "../resources/avatar.png";
-
+    } else {
+        global $imgCheck;
+        $imgCheck = 0;
     }
 }
 
 // function that help create a database
 function storing_data($system, $xml, $firstname, $lastname, $password, $email, $avatar)
 {
+    global $avatar_dir;
     //generate current to calculate the registered time
     $registerd_date = date("Y-m-d");
     $registerd_time = date("h:i:sa");
@@ -109,6 +110,11 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
         mkdir("../resources/user{$totalAffiliates}/avatar", 0777, true);
         resources_handling($totalAffiliates, $avatar);
     }
+    global $imgCheck;
+
+    if ($imgCheck == 0) {
+        return false;
+    }
     // storing information
     $fname = $xml->createElement("firstname", $firstname);
     $user->appendChild($fname);
@@ -122,7 +128,6 @@ function storing_data($system, $xml, $firstname, $lastname, $password, $email, $
     $user->appendChild($date);
     $time = $xml->createElement("time", $registerd_time);
     $user->appendChild($time);
-    global $avatar_dir;
     $ava = $xml->createElement("avatar", $avatar_dir);
     $user->appendChild($ava);
 
