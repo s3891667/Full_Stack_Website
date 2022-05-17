@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['avatar'] = $picAddress;
             //change the new image address and address 
             $user->avatar = $_SESSION['avatar'];
-            header("location:../www/user_profile.php");
+            // header("location:../www/user_profile.php");
             break;
         }
     }
@@ -28,28 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //this function will storing users' images in the database
 function resources_handling($id, $newAvatar)
 {
-    if ($newAvatar != "") {
-        global $picAddress;
-        global $exception;
-        // Where the file is going to be stored
-        $target_dir = "../resources/user{$id}/avatar/";
-        $file = $newAvatar;
-        $path = pathinfo($file);
-        $filename = $path['filename'];
-        $ext = $path['extension'];
-        echo $ext; 
-        //check the file type
-        if ($ext != 'jpg' || $ext != 'jpeg' || $ext != 'png' || $ext != 'gif') {
-            echo "<SCRIPT>
-            window.location.href = '../www/user_profile.php?img=invalidType';
-            alert('Please check for file type');
-            </SCRIPT>";
-            $exception = 0;
-            return false;
-        }
-        $temp_name = $_FILES['newAvatar']['tmp_name'];
-        $path_filename_ext = $target_dir . $filename . "." . $ext;
-        $picAddress = $path_filename_ext;
+    global $picAddress;
+    global $exception;
+    // Where the file is going to be stored
+    $target_dir = "../resources/user{$id}/avatar/";
+    $file = $newAvatar;
+    $path = pathinfo($file);
+    $filename = $path['filename'];
+    $ext = "{$path['extension']}";   
+    $temp_name = $_FILES['newAvatar']['tmp_name'];
+    $path_filename_ext = $target_dir . $filename . "." . $ext;
+    $picAddress = $path_filename_ext;
+     //check the file type
+    if ($newAvatar != "" && ($ext == "jpg" || $ext == "jpeg" || $ext == "png" || $ext == "gif" )) {
         // Check if file already exists
         if (file_exists($path_filename_ext)) {
             echo "Sorry, file already exists.";
@@ -58,6 +49,14 @@ function resources_handling($id, $newAvatar)
             move_uploaded_file($temp_name, $path_filename_ext);
             echo "Congratulations! File Uploaded Successfully.";
         }
+    }
+    else {
+        echo "<SCRIPT>
+        window.location.href = '../www/user_profile.php?img=invalidType';
+        alert('Please check for file type');
+        </SCRIPT>";
+        $exception = 0;
+        return false;
     }
 }
 
