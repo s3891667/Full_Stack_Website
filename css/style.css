@@ -72,7 +72,6 @@ footer a {
 
 .content2 {
     margin-left: 14%;
-
     margin-top: 40px;
     height: fit-content;
     background-color: rgb(255, 255, 255);
@@ -322,9 +321,9 @@ footer a {
 
     .box-des {
         padding: 10px;
-    
+
     }
-    
+
 }
 
 
@@ -348,7 +347,7 @@ footer a {
         padding-top: 20px;
         cursor: pointer;
         margin-left: 1%;
-    
+
     }
 }
 
@@ -366,7 +365,7 @@ footer a {
         margin-top: 20px;
         width: 60%;
     }
-    
+
     #content-text2 {
         float: left;
         padding-top: 20px;
@@ -374,6 +373,17 @@ footer a {
         margin-left: 30px;
     }
 
+<<<<<<< HEAD
+}
+
+.p1{
+    font-style: italic;
+    margin: 0px 15px 15px 15px;
+}
+.p2{
+  font-family: "Trirong", serif;
+  margin: 0px 15px 15px 15px;
+=======
     footer {
         background-color: rgb(150, 149, 149);
         left: 0;
@@ -410,4 +420,5 @@ footer a {
     }
     
 
+>>>>>>> 5028d4da9f6c5c1b9772ea1ca9d90be27a29a5e7
 }

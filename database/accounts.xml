@@ -27,4 +27,22 @@
     <time>07:33:23am</time>
     <avatar>../resources/user3/avatar/248470827_1595994617404195_720930471133005499_n.jpg</avatar>
   </user>
+  <user id="4">
+    <firstname>Duc Anh</firstname>
+    <lastname>Hoang</lastname>
+    <password>$2y$15$MNhdM/6yzsSLCr/F8PoiNu5Aei2Ex5CcdkU9D9gZggA0LmqG3xl5a</password>
+    <email>davidanh98@gmail.com</email>
+    <date>2022-05-17</date>
+    <time>08:48:02am</time>
+    <avatar/>
+  </user>
+  <user id="5">
+    <firstname>Duc Anh</firstname>
+    <lastname>Hoang</lastname>
+    <password>$2y$15$L9JYY4ca2d5IyJdocPOkPees1jAY5Nprbwu748aaB1YJCPutU8ntq</password>
+    <email>manyhope0502@gmail.com</email>
+    <date>2022-05-17</date>
+    <time>09:00:24am</time>
+    <avatar/>
+  </user>
 </system>
