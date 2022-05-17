@@ -1,6 +1,6 @@
 # Full_Stack_Website
 
-# Members :\
+# Members :
   Leader and Frontend designers : s3891455-Pham Viet Hoang\
   Backend designers : s3891667-Nguyen Duc Dang Khoa\
                        s3879300-Tran Tuan Kiet\
@@ -12,17 +12,22 @@
 
 
 # Contributions :
+s3891455-Pham Viet Hoang : 5.6
+s3891667-Nguyen Duc Dang Khoa : 5.6
+s3879300-Tran Tuan Kiet : 5.6 
+s3847506-Tran Duc Anh : 3
 
 
 
 # Instructions:
   Before local host our project you will need to setup the database folder which contains two files xml\
   by pasting it in the Full_StacK_Website folder (Root document) Since we want to protect the users' data\
+
   Data link:\
   https://drive.google.com/drive/folders/1ijQWCSMJ5UIHT1hn8up6tH45XClgvONH\
 
-
-
+  Accounts:\
+  Will be sent the submission Zip file !
 
 # User: 
   Step 1 : php -S localhost:4000 at Full_Stack_Website which is our root account.\
@@ -55,7 +60,6 @@ Document tree:
 │   │   └── user-account-solid-24.png
 │   └── resetPass.php
 ├── css
-│   ├── 404.css
 │   ├── bootstrap.css
 │   ├── bootstrap.min.css
 │   ├── carousel.css
