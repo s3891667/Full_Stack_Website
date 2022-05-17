@@ -38,6 +38,17 @@ if (isset($_SESSION['user'])) {
 
 
 <body>
+<?php
+  echo "<div class='wrapper'></div>";
+  echo "<div class='cookie-container'>";
+  echo     "<div>I use cookies</div>";
+  echo   "<p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
+            my use of cookies and other technologies.
+        </p>";
+  echo "<button class='accept-button'>I understand</button>";
+  echo "<a href='#'>Learn more</a>";
+  echo "</div>";
+  ?>
   <header>
     <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -208,17 +219,6 @@ if (isset($_SESSION['user'])) {
       <a class="footer_tab" href="#">Contact Information</a>
     </div>
   </footer>
-  <?php
-  echo "<div class='wrapper'></div>";
-  echo "<div class='cookie-container'>";
-  echo     "<div>I use cookies</div>";
-  echo   "<p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
-            my use of cookies and other technologies.
-        </p>";
-  echo "<button class='accept-button'>I understand</button>";
-  echo "<a href='#'>Learn more</a>";
-  echo "</div>";
-  ?>
 </body>
 
 </html>
