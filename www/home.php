@@ -17,8 +17,8 @@ function welcome()
       <div id= 'alert' class='alert alert-success' role='alert'>
       <strong>Welcome </strong>";
         echo $_SESSION['user'];
-        echo " to InstaKilogram ! 
-      <a href='#' onclick = 'hide_alert()'; id= 'icon' 
+        echo " to InstaKilogram !
+      <a href='#' onclick = 'hide_alert()'; id= 'icon'
       class='close' data-dismiss='alert' aria-label='close'>&#10005;</a>
       </div>
       ";
@@ -74,7 +74,7 @@ function welcome()
 
     </header>
     <main>
-        
+
             <div class="container d-flex justify-content-center ">
                 <div class="card">
                     <img class="pic-des" src="../picture/caro1.png" alt="">
@@ -138,7 +138,7 @@ function welcome()
                             <img class='icon2' src='../picture/network.png' alt='Connection'>
                         </div>
 
-            
+
                         <div class='timedisplay'>
         ";
                             echo      time_check($check, $dateDiff, $timeDiff);
@@ -159,10 +159,10 @@ function welcome()
     </div>
     <footer>
         <div>
-            <a class="footer_tab" href="#">About Us</a>
-            <a class="footer_tab" href="#">Copyright</a>
-            <a class="footer_tab" href="#">Privacy</a>
-            <a class="footer_tab" href="#">Contact Information</a>
+            <a class="footer_tab" href="./Menu.html">About Us</a>
+            <a class="footer_tab" href="./Menu.html">Copyright</a>
+            <a class="footer_tab" href="./Menu.html">Privacy</a>
+            <a class="footer_tab" href="./Menu.html">Contact Information</a>
         </div>
     </footer>
 </body>

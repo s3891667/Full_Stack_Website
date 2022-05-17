@@ -43,8 +43,11 @@ $id = $_SESSION['id'];
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                              <a class="nav-link text-white" href="./index.php">index</a>
+                          </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="./About Us.html">About us</a>
+                                <a class="nav-link text-white" href="./Menu.html">Menu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="./logout.php">Logout</a>
@@ -214,10 +217,10 @@ $id = $_SESSION['id'];
     </div>
     <footer>
         <div>
-            <a class="footer_tab" href="#">About Us</a>
-            <a class="footer_tab" href="#">Copyright</a>
-            <a class="footer_tab" href="#">Privacy</a>
-            <a class="footer_tab" href="#">Contact Information</a>
+            <a class="footer_tab" href="./Menu.html">About Us</a>
+            <a class="footer_tab" href="./Menu.html">Copyright</a>
+            <a class="footer_tab" href="./Menu.html">Privacy</a>
+            <a class="footer_tab" href="./Menu.html">Contact Information</a>
         </div>
     </footer>
 </body>

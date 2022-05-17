@@ -50,6 +50,9 @@ if (isset($_SESSION['user'])) {
             <li class="nav-item">
               <a class="nav-link text-white" href="./login.php">Login</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./logout.php">Logout</a>
+            </li>
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -137,10 +140,10 @@ if (isset($_SESSION['user'])) {
   </main>
   <footer>
     <div>
-      <a class="footer_tab" href="#">About Us</a>
-      <a class="footer_tab" href="#">Copyright</a>
-      <a class="footer_tab" href="#">Privacy</a>
-      <a class="footer_tab" href="#">Contact Information</a>
+      <a class="footer_tab" href="./Menu.html">About Us</a>
+      <a class="footer_tab" href="./Menu.html">Copyright</a>
+      <a class="footer_tab" href="./Menu.html">Privacy</a>
+      <a class="footer_tab" href="./Menu.html">Contact Information</a>
     </div>
   </footer>
 </body>
