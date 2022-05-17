@@ -30,6 +30,13 @@ body{
     text-decoration: none;
 
 }
+
+.logo_des :hover {
+    color: white;
+    box-shadow: 1px 5px 1px 5px whitesmoke; 
+    border-radius: 15px;
+}
+
 .Text_des{
     margin-left: 100px;
     margin-right: 100px;
@@ -65,3 +72,10 @@ body{
     box-shadow: 5px 5px 5px 5px rgb(2, 38, 80);
 }
 
+
+/* for Phones */
+@media only screen and (max-width :767px) {
+    #head-des {
+        display: none;
+    }
+}

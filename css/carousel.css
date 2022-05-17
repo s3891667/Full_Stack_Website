@@ -1,13 +1,16 @@
 /* Design CSS container for card holder   */
-.containercarousel {
-    position: absolute;
-    height: 300px;
-    width: 600px;
-    left: calc(50% - 300px);
-    display: flex;
+#container-des {
+  width: 70%;
+  margin: auto;
+}  
 
-  }
-  .card {
+.postBackground-des {
+  width: 80%;
+  margin :auto;
+  display: block;
+}
+
+.card {
     display: flex;
     width: 900px;
     border-radius: 20px;

@@ -322,9 +322,9 @@ footer a {
 
     .box-des {
         padding: 10px;
-    
+
     }
-    
+
 }
 
 
@@ -338,6 +338,7 @@ footer a {
         margin-bottom: 20px;
 
     }
+
     .button-des1 {
         margin-top: 20px;
         background-color: red;
@@ -348,7 +349,13 @@ footer a {
         padding-top: 20px;
         cursor: pointer;
         margin-left: 1%;
-    
+
+    }
+
+    .posts {
+        padding-top: 20px;
+        margin: auto;
+        width: 80%;
     }
 }
 
@@ -362,11 +369,12 @@ footer a {
         margin-bottom: 20px;
 
     }
+
     #button-des3 {
         margin-top: 20px;
         width: 60%;
     }
-    
+
     #content-text2 {
         float: left;
         padding-top: 20px;
@@ -383,7 +391,7 @@ footer a {
         padding: 13px;
         text-align: center;
     }
-    
+
     footer a {
         background-color: rgb(150, 149, 149);
         padding: 5px;
@@ -392,7 +400,7 @@ footer a {
         color: rgb(255, 255, 255);
         box-shadow: 1px 1px 1px 1px rgb(232, 231, 231);
     }
-    
+
     .footer_tab {
         margin: auto;
         padding: 5px;
@@ -402,12 +410,12 @@ footer a {
         display: flex;
         justify-content: center;
     }
-    
+
     .footer_tab:hover {
         color: rgb(150, 149, 149);
         background-color: #eee;
         box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
     }
-    
+
 
 }

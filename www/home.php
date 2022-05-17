@@ -47,7 +47,8 @@ function welcome()
     <link rel="stylesheet" href="../css/carousel.css">
     <script src="../JS/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/cookies_content.css">
-    <title>Homepage</title>
+    <link rel="shortcut icon" href="https://scontent.fsgn2-3.fna.fbcdn.net/v/t39.30808-6/281803414_2181973431966187_1457439446331752993_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-6&_nc_sid=730e14&_nc_ohc=0LQj95gXwQQAX-e-5sf&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT8I2cb4wf5buAoVV_npLW_IEE8MkUhhRMkp9MMbVx5ezA&oe=6288F258" type="image/x-icon" />
+    <title>InstaKilogram</title>
 </head>
 
 <body>
@@ -79,8 +80,8 @@ function welcome()
 
     </header>
     <main>
-        
-            <div class="container d-flex justify-content-center ">
+        <div class = "postBackground-des">
+            <div  id="container-des" class="container d-flex justify-content-center ">
                 <div class="card">
                     <img class="pic-des" src="../picture/caro1.png" alt="">
                 </div>
@@ -94,49 +95,49 @@ function welcome()
                     <img class="pic-des" src="../picture/caro4.png" alt="">
                 </div>
             </div>
-                    <?php
-                    include "../dataProcessing/user_resources_handling.php";
-                    $xml = simplexml_load_file("../database/posts.xml");
-                    foreach ($xml->user as $user) {
-                        //check type to display protect the private posts and display public + internal posts
-                        if ("$user->status" == "Public" || "$user->status" == "Internal") {
-                            $image = $user->attachment;
-                            //generate current time to compare the posts upload time
-                            $currentDate = date_create(date("Y-m-d"));
-                            $currentTime = date_create(date("h:i:sa"));
-                            //query time from the xml file
-                            $postDate = date_create($user->date);
+            <?php
+            include "../dataProcessing/user_resources_handling.php";
+            $xml = simplexml_load_file("../database/posts.xml");
+            foreach ($xml->user as $user) {
+                //check type to display protect the private posts and display public + internal posts
+                if ("$user->status" == "Public" || "$user->status" == "Internal") {
+                    $image = $user->attachment;
+                    //generate current time to compare the posts upload time
+                    $currentDate = date_create(date("Y-m-d"));
+                    $currentTime = date_create(date("h:i:sa"));
+                    //query time from the xml file
+                    $postDate = date_create($user->date);
 
-                            $dateDiff = date_diff($postDate, $currentDate);
-                            //check to choose display method time or date
-                            $check = (int)$dateDiff->format('%a');
-                            $postTime = date_create($user->time);
-                            $timeDiff = date_diff($postTime, $currentTime);
-                            echo "
+                    $dateDiff = date_diff($postDate, $currentDate);
+                    //check to choose display method time or date
+                    $check = (int)$dateDiff->format('%a');
+                    $postTime = date_create($user->time);
+                    $timeDiff = date_diff($postTime, $currentTime);
+                    echo "
     <section  class = 'posts'>
     <div  class='user-profile-box'  >
                 <div class='content2_pad'>
 
             <div class='content2-first-1'>";
-                            $ava = avatar_dir_check($user['id']);
-                            echo "
+                    $ava = avatar_dir_check($user['id']);
+                    echo "
                             <img class='images1' src='$ava' alt='Hoang_avatar'>
                         </div>
 
                         <div class='content2-first-2'> ";
 
-                            echo "                <p class='content2-text' href=''>";
-                            echo  reading_user_name($user['id']);
-                            echo "
+                    echo "                <p  id= 'content-text2' class='content2-text' href=''>";
+                    echo  reading_user_name($user['id']);
+                    echo "
                             </p>
 
                             </div>
                             <div class='imgdiv'>
 
                             <p class='content2-text' href=''> $user->content</p>";
-                            printf('<img src="%s" class="imgdiv-style" alt="">', $image);
+                    printf('<img src="%s" class="imgdiv-style" alt="">', $image);
 
-                            echo "
+                    echo "
                         </div>
 
                         <div class='icons'>
@@ -147,30 +148,33 @@ function welcome()
 
                         <div class='timedisplay'>
         ";
-                            echo      time_check($check, $dateDiff, $timeDiff);
+                    echo      time_check($check, $dateDiff, $timeDiff);
 
-                            echo '
+                    echo '
                         </div>
                 </div>
     </div>
     </section> ';
-                        }
-                    }
-                    ?>
+                }
+            }
+            ?>
 
+
+        </div>
     </main>
+
     <div class="empty_box">
         <h1>EMPTYBOX</h1>
         <h1>EMPTYBOX</h1>
     </div>
     <footer>
-    <div>
-      <a class="footer_tab" href="Menu.html">About Us</a>
-      <a class="footer_tab" href="Menu.html">Copyright</a>
-      <a class="footer_tab" href="Menu.html">Privacy</a>
-      <a class="footer_tab" href="Menu.html">Contact Information</a>
-    </div>
-    <script src="../JS/cookies_content.js"></script>
+        <div>
+            <a class="footer_tab" href="Menu.html">About Us</a>
+            <a class="footer_tab" href="Menu.html">Copyright</a>
+            <a class="footer_tab" href="Menu.html">Privacy</a>
+            <a class="footer_tab" href="Menu.html">Contact Information</a>
+        </div>
+        <script src="../JS/cookies_content.js"></script>
 </body>
 
 </html>
