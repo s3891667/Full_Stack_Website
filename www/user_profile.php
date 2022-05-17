@@ -16,8 +16,6 @@ $id = $_SESSION['id'];
     <title>User Profile</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../JS/bootstrap.min.js"></script>
 
 </head>
@@ -44,7 +42,7 @@ $id = $_SESSION['id'];
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="./About Us.html">About us</a>
+                                <a class="nav-link text-white" href="./Menu.html">About us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="./logout.php">Logout</a>
@@ -69,11 +67,7 @@ $id = $_SESSION['id'];
                     <?php
                     echo " <div>
             <img class='images1' src='{$_SESSION['avatar']}' alt='avatarimage'>
-
             </div>";
-
-
-
                     ?>
                 </div>
                 <div class="box-des">
@@ -120,7 +114,7 @@ $id = $_SESSION['id'];
                 </button>
 
                 <button type='check' onclick="change_avatar()" id="button-des3" class="btn btn-secondary ">Change Avatar</button>
-            </div>  
+            </div>
         </div>
         <hr>
         <div id="change_ava" class="user-profile-box container square-box ">
@@ -205,9 +199,6 @@ $id = $_SESSION['id'];
             </section> ';
         }
     }
-
-
-
     ?>
     <div class="empty_box">
         <h1>EMPTYBOX</h1>
@@ -215,10 +206,10 @@ $id = $_SESSION['id'];
     </div>
     <footer>
         <div>
-            <a class="footer_tab" href="#">About Us</a>
-            <a class="footer_tab" href="#">Copyright</a>
-            <a class="footer_tab" href="#">Privacy</a>
-            <a class="footer_tab" href="#">Contact Information</a>
+            <a class="footer_tab" href="./Menu.html">About Us</a>
+            <a class="footer_tab" href="./Menu.html">Copyright</a>
+            <a class="footer_tab" href="./Menu.html">Privacy</a>
+            <a class="footer_tab" href="./Menu.html">Contact Information</a>
         </div>
     </footer>
 </body>

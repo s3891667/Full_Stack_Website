@@ -46,8 +46,6 @@ function welcome()
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/carousel.css">
     <script src="../JS/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/cookies_content.css">
-    <script src="../JS/cookies_content.js"></script>
     <title>Homepage</title>
 </head>
 
@@ -80,64 +78,64 @@ function welcome()
 
     </header>
     <main>
+        
+            <div class="container d-flex justify-content-center ">
+                <div class="card">
+                    <img class="pic-des" src="../picture/caro1.png" alt="">
+                </div>
+                <div class="card">
+                    <img class="pic-des" src="../picture/caro2.png" alt="">
+                </div>
+                <div class="card">
+                    <img class="pic-des" src="../picture/caro3.png" alt="">
+                </div>
+                <div class="card">
+                    <img class="pic-des" src="../picture/caro4.png" alt="">
+                </div>
+            </div>
+                    <?php
+                    include "../dataProcessing/user_resources_handling.php";
+                    $xml = simplexml_load_file("../database/posts.xml");
+                    foreach ($xml->user as $user) {
+                        //check type to display protect the private posts and display public + internal posts
+                        if ("$user->status" == "Public" || "$user->status" == "Internal") {
+                            $image = $user->attachment;
+                            //generate current time to compare the posts upload time
+                            $currentDate = date_create(date("Y-m-d"));
+                            $currentTime = date_create(date("h:i:sa"));
+                            //query time from the xml file
+                            $postDate = date_create($user->date);
 
-        <div class="container d-flex justify-content-center ">
-            <div class="card">
-                <img class="pic-des" src="../picture/caro1.png" alt="">
-            </div>
-            <div class="card">
-                <img class="pic-des" src="../picture/caro2.png" alt="">
-            </div>
-            <div class="card">
-                <img class="pic-des" src="../picture/caro3.png" alt="">
-            </div>
-            <div class="card">
-                <img class="pic-des" src="../picture/caro4.png" alt="">
-            </div>
-        </div>
-        <?php
-        include "../dataProcessing/user_resources_handling.php";
-        $xml = simplexml_load_file("../database/posts.xml");
-        foreach ($xml->user as $user) {
-            //check type to display protect the private posts and display public + internal posts
-            if ("$user->status" == "Public" || "$user->status" == "Internal") {
-                $image = $user->attachment;
-                //generate current time to compare the posts upload time
-                $currentDate = date_create(date("Y-m-d"));
-                $currentTime = date_create(date("h:i:sa"));
-                //query time from the xml file
-                $postDate = date_create($user->date);
-
-                $dateDiff = date_diff($postDate, $currentDate);
-                //check to choose display method time or date
-                $check = (int)$dateDiff->format('%a');
-                $postTime = date_create($user->time);
-                $timeDiff = date_diff($postTime, $currentTime);
-                echo "
+                            $dateDiff = date_diff($postDate, $currentDate);
+                            //check to choose display method time or date
+                            $check = (int)$dateDiff->format('%a');
+                            $postTime = date_create($user->time);
+                            $timeDiff = date_diff($postTime, $currentTime);
+                            echo "
     <section  class = 'posts'>
     <div  class='user-profile-box'  >
                 <div class='content2_pad'>
 
             <div class='content2-first-1'>";
-                $ava = avatar_dir_check($user['id']);
-                echo "
+                            $ava = avatar_dir_check($user['id']);
+                            echo "
                             <img class='images1' src='$ava' alt='Hoang_avatar'>
                         </div>
 
                         <div class='content2-first-2'> ";
 
-                echo "                <p class='content2-text' href=''>";
-                echo  reading_user_name($user['id']);
-                echo "
+                            echo "                <p class='content2-text' href=''>";
+                            echo  reading_user_name($user['id']);
+                            echo "
                             </p>
 
                             </div>
                             <div class='imgdiv'>
 
                             <p class='content2-text' href=''> $user->content</p>";
-                printf('<img src="%s" class="imgdiv-style" alt="">', $image);
+                            printf('<img src="%s" class="imgdiv-style" alt="">', $image);
 
-                echo "
+                            echo "
                         </div>
 
                         <div class='icons'>
@@ -148,16 +146,16 @@ function welcome()
             
                         <div class='timedisplay'>
         ";
-                echo      time_check($check, $dateDiff, $timeDiff);
+                            echo      time_check($check, $dateDiff, $timeDiff);
 
-                echo '
+                            echo '
                         </div>
                 </div>
     </div>
     </section> ';
-            }
-        }
-        ?>
+                        }
+                    }
+                    ?>
 
     </main>
     <div class="empty_box">
@@ -165,22 +163,13 @@ function welcome()
         <h1>EMPTYBOX</h1>
     </div>
     <footer>
-        <div>
-            <a class="footer_tab" href="Menu.html">About Us</a>
-            <a class="footer_tab" href="Menu.html">Copyright</a>
-            <a class="footer_tab" href="Menu.html">Privacy</a>
-            <a class="footer_tab" href="Menu.html">Contact Information</a>
-        </div>
-    </footer>
-    <div class="wrapper"></div>
-    <div class="cookie-container">
-        <div>I use cookies</div>
-        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
-            my use of cookies and other technologies.
-        </p>
-        <button class="accept-button">I understand</button>
-        <a href="#">Learn more</a>
+    <div>
+      <a class="footer_tab" href="Menu.html">About Us</a>
+      <a class="footer_tab" href="Menu.html">Copyright</a>
+      <a class="footer_tab" href="Menu.html">Privacy</a>
+      <a class="footer_tab" href="Menu.html">Contact Information</a>
     </div>
+  </footer>
 </body>
 
 </html>
