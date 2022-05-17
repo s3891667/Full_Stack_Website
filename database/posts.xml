@@ -21,4 +21,11 @@
     <date>2022-05-17</date>
     <time>07:48:54pm</time>
   </user>
+  <user id="user1">
+    <content>helooooo</content>
+    <attachment>../resources/user1/posts/352084.jpg</attachment>
+    <status>Private</status>
+    <date>2022-05-17</date>
+    <time>08:04:03pm</time>
+  </user>
 </posts>

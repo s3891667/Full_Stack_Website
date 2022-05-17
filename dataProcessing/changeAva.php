@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['avatar'] = $picAddress;
             //change the new image address and address 
             $user->avatar = $_SESSION['avatar'];
-            // header("location:../www/user_profile.php");
+            header("location:../www/user_profile.php");
             break;
         }
     }

@@ -7,7 +7,7 @@
     <email>s@rmit.edu.vn</email>
     <date>NULL</date>
     <time>NULL</time>
-    <avatar>../resources/avatar.png</avatar>
+    <avatar>../resources/user1/avatar/nature.jpeg</avatar>
   </user>
   <user id="2">
     <firstname>Hoang</firstname>
@@ -43,6 +43,15 @@
     <email>ducanh@gmail.com</email>
     <date>2022-05-17</date>
     <time>07:37:17pm</time>
+    <avatar>../resources/avatar.png</avatar>
+  </user>
+  <user id="6">
+    <firstname>khoaa</firstname>
+    <lastname>khoa</lastname>
+    <password>$2y$15$GJBJPm8JsteJmgVt0Cn4L.gByMPOr7UCXYWTjdVgJg4QSHJlfPhru</password>
+    <email>khoanguyn789@ymail.com</email>
+    <date>2022-05-17</date>
+    <time>08:06:21pm</time>
     <avatar>../resources/avatar.png</avatar>
   </user>
 </system>
