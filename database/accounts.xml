@@ -10,39 +10,39 @@
     <avatar>../resources/avatar.png</avatar>
   </user>
   <user id="2">
-    <firstname>mai</firstname>
-    <lastname>mai</lastname>
-    <password>$2y$15$fJdnpvWDFKMjUYf6K3xYQ.pRJQwB0nT9pfqemiXmnrd1FbvJmawjW</password>
-    <email>maimai@gmail.com</email>
-    <date>2022-05-15</date>
-    <time>01:43:50am</time>
-    <avatar>../resources/user2/avatar/352084.jpg</avatar>
+    <firstname>Hoang</firstname>
+    <lastname>Pham</lastname>
+    <password>$2y$15$YMp..Gkl0i9I3o8kyQ6d4e.fXTGgfsUOg5ULsQl4UhHXnw7nEPibi</password>
+    <email>hoangfamm@gmail.com</email>
+    <date>2022-05-17</date>
+    <time>07:35:35pm</time>
+    <avatar>../resources/avatar.png</avatar>
   </user>
   <user id="3">
-    <firstname>kiet</firstname>
-    <lastname>tran</lastname>
-    <password>$2y$15$VTmV91G4fyBsVvVsx8Hfuuw30hDxelqaIgwZOKnEeT8H.a7FR3pH6</password>
-    <email>kiet0110@gmail.com</email>
+    <firstname>Khoa</firstname>
+    <lastname>Nguyen</lastname>
+    <password>$2y$15$ZPqTNBpQjRpBfDEUHaQdVOEnQdy4TmUwha8hthzjqdsX7Ih80VMrm</password>
+    <email>khoanguyn48@yahoo.com</email>
     <date>2022-05-17</date>
-    <time>07:33:23am</time>
-    <avatar>../resources/user3/avatar/248470827_1595994617404195_720930471133005499_n.jpg</avatar>
+    <time>07:36:00pm</time>
+    <avatar>../resources/avatar.png</avatar>
   </user>
   <user id="4">
-    <firstname>Duc Anh</firstname>
-    <lastname>Hoang</lastname>
-    <password>$2y$15$MNhdM/6yzsSLCr/F8PoiNu5Aei2Ex5CcdkU9D9gZggA0LmqG3xl5a</password>
-    <email>davidanh98@gmail.com</email>
+    <firstname>Kiet </firstname>
+    <lastname>Kiet</lastname>
+    <password>$2y$15$Z8k1/OFooNzjCIVqL0oFiu1AM7Duamldlj3WhY1g/3XnkF.ZrvF8G</password>
+    <email>kiet@gmail.com</email>
     <date>2022-05-17</date>
-    <time>08:48:02am</time>
-    <avatar/>
+    <time>07:36:40pm</time>
+    <avatar>../resources/avatar.png</avatar>
   </user>
   <user id="5">
-    <firstname>Duc Anh</firstname>
-    <lastname>Hoang</lastname>
-    <password>$2y$15$L9JYY4ca2d5IyJdocPOkPees1jAY5Nprbwu748aaB1YJCPutU8ntq</password>
-    <email>manyhope0502@gmail.com</email>
+    <firstname>Anh</firstname>
+    <lastname>Duc</lastname>
+    <password>$2y$15$8A2BGD0uwRK5h6Ef9nQ4DO99C57lpV0TZ6l0KkINss.J6tT2/XD4u</password>
+    <email>ducanh@gmail.com</email>
     <date>2022-05-17</date>
-    <time>09:00:24am</time>
-    <avatar/>
+    <time>07:37:17pm</time>
+    <avatar>../resources/avatar.png</avatar>
   </user>
 </system>

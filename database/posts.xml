@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <posts>
-  <user id="user2">
-    <content>today is cool ! </content>
-    <attachment>../resources/user2/posts/1348001.jpg</attachment>
+  <user id="user1">
+    <content>today is a good day </content>
+    <attachment>../resources/user1/posts/.</attachment>
+    <status>Internal</status>
+    <date>2022-05-17</date>
+    <time>06:02:24pm</time>
+  </user>
+  <user id="user1">
+    <content>digrams !!! </content>
+    <attachment>../resources/user1/posts/Q2.png</attachment>
     <status>Public</status>
-    <date>2022-05-15</date>
-    <time>02:50:40am</time>
+    <date>2022-05-17</date>
+    <time>06:03:19pm</time>
   </user>
 </posts>
