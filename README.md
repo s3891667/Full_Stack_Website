@@ -2,11 +2,11 @@
 Members : 
   Leader and Frontend designers : Pham Viet Hoang\
   Backend designers : s3891667-Nguyen Duc Dang Khoa\
-                               Tran Tuan Kiet\
-  Frontend designers : Tran Duc Anh
+                       s3879300-Tran Tuan Kiet\
+  Frontend designers : s3847506-Tran Duc Anh
 
 
-Demonstration video :
+Demonstration video link :
 
 
 Contributions :
