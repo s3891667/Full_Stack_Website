@@ -190,10 +190,6 @@ if (isset($_SESSION['user'])) {
       }
       return $dir;
     }
-
-
-
-
     ?>
   </main>
   <div class="empty_box">
