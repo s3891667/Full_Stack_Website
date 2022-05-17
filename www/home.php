@@ -47,7 +47,6 @@ function welcome()
     <link rel="stylesheet" href="../css/carousel.css">
     <script src="../JS/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/cookies_content.css">
-    <script src="../JS/cookies_content.js"></script>
     <title>Homepage</title>
 </head>
 
@@ -181,6 +180,7 @@ function welcome()
         <button class="accept-button">I understand</button>
         <a href="#">Learn more</a>
     </div>
+    <script src="../JS/cookies_content.js"></script>
 </body>
 
 </html>

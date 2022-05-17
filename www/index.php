@@ -17,7 +17,6 @@ if (isset($_SESSION['user'])) {
   <script src="../JS/bootstrap.min.js"></script>
   <script src="../JS/bootstrap.js"></script>
   <link rel="stylesheet" href="../css/cookies_content.css">
-  <script src="../JS/cookies_content.js"></script>
   <title>Homepage</title>
 </head>
 
@@ -39,6 +38,7 @@ if (isset($_SESSION['user'])) {
 
 
 <body>
+
   <header>
     <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -192,6 +192,7 @@ if (isset($_SESSION['user'])) {
       return $dir;
     }
     ?>
+
   </main>
   <div class="empty_box">
     <h1>EMPTYBOX</h1>
@@ -214,6 +215,7 @@ if (isset($_SESSION['user'])) {
         <button class="accept-button">I understand</button>
         <a href="#">Learn more</a>
     </div>
+    <script src="../JS/cookies_content.js"></script>
 </body>
 
 </html>
