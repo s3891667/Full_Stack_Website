@@ -1,8 +1,7 @@
 # Full_Stack_Website
 
-
 Document tree:
-
+```bash
 ├── admin
 │   ├── delete_file.php
 │   ├── listofaccount.css
@@ -93,3 +92,4 @@ Document tree:
     ├── signUp.html
     ├── user_profile.php
     └── welcomehomepage.html
+    ```
