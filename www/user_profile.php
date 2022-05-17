@@ -41,9 +41,6 @@ $id = $_SESSION['id'];
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
-                              <a class="nav-link text-white" href="./index.php">index</a>
-                          </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="./Menu.html">Menu</a>
                             </li>

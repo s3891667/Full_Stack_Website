@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-//if the user have already logged in , they will redirect to home page
-if (isset($_SESSION['user'])) {
-  header("location: home.php");
-}
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +12,16 @@ if (isset($_SESSION['user'])) {
   <link rel="stylesheet" href="../css/cookies_content.css">
   <title>Homepage</title>
 </head>
+
+<?php
+
+//redirect to home page if user has logged in 
+session_start();
+if (isset($_SESSION['user'])) {
+  header("location:./home.php");
+}
+
+?>
 
 <script>
   // this js will display text on scroll
@@ -38,7 +41,6 @@ if (isset($_SESSION['user'])) {
 
 
 <body>
-
   <header>
     <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -104,11 +106,10 @@ if (isset($_SESSION['user'])) {
             <div class='content2-first-1'>";
         $ava = avatar_dir_check($user['id']);
         echo "
-                            <img class='images1' src='$ava' alt='Hoang_avatar'>
-                        </div>
-
-                        <div class='content2-first-2'> ";
-
+        <img class='images1' src='$ava' alt=''>
+        </div>
+        
+        <div class='content2-first-2'> ";
         echo "                <p class='content2-text' href=''>";
         echo  reading_user_name($user['id']);
         echo "
@@ -210,15 +211,15 @@ if (isset($_SESSION['user'])) {
     </div>
   </footer>
   <div class="wrapper"></div>
-    <div class="cookie-container">
-        <div>I use cookies</div>
-        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
-            my use of cookies and other technologies.
-        </p>
-        <button class="accept-button">I understand</button>
-        <a href="#">Learn more</a>
-    </div>
-    <script src="../JS/cookies_content.js"></script>
+  <div class="cookie-container">
+    <div>I use cookies</div>
+    <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
+      my use of cookies and other technologies.
+    </p>
+    <button class="accept-button">I understand</button>
+    <a href="#">Learn more</a>
+  </div>
+  <script src="../JS/cookies_content.js"></script>
 </body>
 
 </html>

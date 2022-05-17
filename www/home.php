@@ -7,7 +7,7 @@ session_start();
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
     alert('Please login your account !');
-    window.location.href='index.php';
+    window.location.href='./index.php';
     </SCRIPT>";
     die();
 }
@@ -55,7 +55,7 @@ function welcome()
     <header>
         <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">InstaKilogram</a>
+                <a class="navbar-brand text-white" href="./welcomehomepage.html">InstaKilogram</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
