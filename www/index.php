@@ -205,6 +205,15 @@ if (isset($_SESSION['user'])) {
       <a class="footer_tab" href="Menu.html">Contact Information</a>
     </div>
   </footer>
+  <div class="wrapper"></div>
+    <div class="cookie-container">
+        <div>I use cookies</div>
+        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
+            my use of cookies and other technologies.
+        </p>
+        <button class="accept-button">I understand</button>
+        <a href="#">Learn more</a>
+    </div>
 </body>
 
 </html>
