@@ -1,11 +1,11 @@
 # Full_Stack_Website
 Members : 
-Leader and Frontend designers : Pham Viet Hoang__
-Backend designers : s3891667-Nguyen Duc Dang Khoa__
-                             Tran Tuan Kiet__
-Frontend designers : Tran Duc Anh__
+Leader and Frontend designers : Pham Viet Hoang\
+Backend designers : s3891667-Nguyen Duc Dang Khoa\
+                             Tran Tuan Kiet\\
+Frontend designers : Tran Duc Anh\\
 
-Contributions :__
+Contributions :\\
 
 
 
