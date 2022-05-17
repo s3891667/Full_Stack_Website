@@ -29,12 +29,12 @@ s3847506-Tran Duc Anh : 3
   Accounts:\
   Will be sent the submission Zip file !
 
-# User: 
+ User:\ 
   Step 1 : php -S localhost:4000 at Full_Stack_Website which is our root account.\
   Step 2 : direct to index.php by changing the URL on the browser to localhost:4000/www/index.php\
   Step 3 : Now you can easily testing our project !.
 
-# Admin:
+ Admin:\
   Step 1 : Same as User\
   Step 2 : direct to admin section by changing the URL on the browser to localhost:4000/admin/listofaccount.html\
   Step 3 : Finishing to login as Admin !.
