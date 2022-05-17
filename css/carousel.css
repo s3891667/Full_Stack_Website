@@ -21,6 +21,7 @@
   .pic-des{
     border-radius:20px ;
     box-shadow: 2px 2px 2px 2px whitesmoke;
+    height: fit-content;
   }
 
   .card:not(:first-child) {
