@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php
+//if the user have already logged in , they will redirect to home page
 if (isset($_SESSION['user'])) {
   header("location: home.php");
 }
@@ -15,10 +16,12 @@ if (isset($_SESSION['user'])) {
   <link rel="stylesheet" href="../css/bootstrap.css">
   <script src="../JS/bootstrap.min.js"></script>
   <script src="../JS/bootstrap.js"></script>
+  <link rel="stylesheet" href="../css/cookies_content.css">
   <title>Homepage</title>
 </head>
 
 <script>
+  // this js will display text on scroll
   window.onscroll = function() {
     myFunction()
   };
@@ -35,6 +38,7 @@ if (isset($_SESSION['user'])) {
 
 
 <body>
+
   <header>
     <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -75,9 +79,10 @@ if (isset($_SESSION['user'])) {
     </div>
 
     <?php
-    include "../dataProcessing/user_resources_handling.php";
+    //reading posts.xml to display for guest user
     $xml = simplexml_load_file("../database/posts.xml");
     foreach ($xml->user as $user) {
+      //only display Public posts
       if ("$user->status" == "Public") {
         $image = $user->attachment;
         //generate current time to compare the posts upload time
@@ -136,16 +141,84 @@ if (isset($_SESSION['user'])) {
     </section> ';
       }
     }
+
+    //show time differences for displaying in index, home and userprofile page
+
+    function time_check($check, $dateDiff, $timeDiff)
+    {
+      //day check
+      if ($check >= 1) {
+        if ($check == 1) {
+          echo $dateDiff->format('%a day ago');
+        } else {
+          echo $dateDiff->format('%a days ago');
+        }
+      } else {
+        // hour check
+        if ((int)$timeDiff->format('%h') == 0) {
+          //minutes check
+          if ((int)$timeDiff->format('%i') <= 0) {
+            echo "recently";
+          } else {
+            echo $timeDiff->format('%i minutes ago');
+          }
+        } else {
+          echo $timeDiff->format('%h hours ago');
+        }
+      }
+    }
+
+    //return name from ID
+    function reading_user_name($id)
+    {
+      $name = "";
+      $xml = simplexml_load_file("../database/accounts.xml");
+      foreach ($xml->user as $user) {
+        if ($id == "user{$user['id']}") {
+          $name = $user->firstname;
+        };
+      }
+      return $name;
+    }
+
+    //return avatar directory from id
+
+    function avatar_dir_check($id)
+    {
+      $dir = "";
+      $xml = simplexml_load_file("../database/accounts.xml");
+      foreach ($xml->user as $user) {
+        if ($id == "user{$user['id']}") {
+          $dir = $user->avatar;
+        };
+      }
+      return $dir;
+    }
     ?>
+
   </main>
+  <div class="empty_box">
+    <h1>EMPTYBOX</h1>
+    <h1>EMPTYBOX</h1>
+  </div>
   <footer>
     <div>
-      <a class="footer_tab" href="./Menu.html">About Us</a>
-      <a class="footer_tab" href="./Menu.html">Copyright</a>
-      <a class="footer_tab" href="./Menu.html">Privacy</a>
-      <a class="footer_tab" href="./Menu.html">Contact Information</a>
+      <a class="footer_tab" href="Menu.html">About Us</a>
+      <a class="footer_tab" href="Menu.html">Copyright</a>
+      <a class="footer_tab" href="Menu.html">Privacy</a>
+      <a class="footer_tab" href="Menu.html">Contact Information</a>
     </div>
   </footer>
+  <div class="wrapper"></div>
+    <div class="cookie-container">
+        <div>I use cookies</div>
+        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
+            my use of cookies and other technologies.
+        </p>
+        <button class="accept-button">I understand</button>
+        <a href="#">Learn more</a>
+    </div>
+    <script src="../JS/cookies_content.js"></script>
 </body>
 
 </html>

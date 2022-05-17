@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin test</title>
+    <title>Admin</title>
+    <!--CSS and javascript used in this html-->
     <link rel="stylesheet" href="listofimage.css">
     <script src="listofimage.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -27,13 +28,14 @@
 
         <!--Navigator list-->
         <ul class="nav_list">
+            <!--menu option-->
             <li>
                 <a href="listofaccount.html">
                     <img src="picture/user-account-solid-24.png" alt="user-account">
                     <span class="link">User-account</span>
                 </a>
             </li>
-
+            <!--menu option-->
             <li>
                 <a href="listofimage.php">
                     <img src="picture/image-solid-24.png" alt="image-list">
@@ -53,21 +55,22 @@
 
     <div class="user_content">
         <div class="text">List of image</div>
+        <!--create a table-->
         <table id="myTable">
             <tr>
                 <th>File name</th>
                 <th>File size</th>
                 <th>Action</th>
             </tr>
-
+            <!--loop for image and put it in table-->
             <?php
             $total_user = count(glob("../resources/*", GLOB_ONLYDIR));
             for ($x = 2; $x <= 3; $x++) {
-                $files = glob("../resources/user" . $x . "/posts/*");
+                $files = glob("../resources/user" . $x . "/posts/*");//search for user image file
                 for ($i = 0; $i < count($files); $i++) {
                     echo "<tr>";
                     $image = $files[$i];
-                    $supported_file = array(
+                    $supported_file = array( //supported image file
                         'gif',
                         'jpg',
                         'jpeg',
@@ -76,10 +79,10 @@
                     $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     if (in_array($ext, $supported_file)) {
                         echo "<form method='post' action='delete_file.php'>";
-                        echo "<td><a href='{$image}'><div name='file_name'>  $image  </div></a></td>";
-                        echo '<td><div>' . filesize($image) . ' bytes</div></td>';
+                        echo "<td><a href='{$image}'><div name='file_name'>  $image  </div></a></td>"; //image name
+                        echo '<td><div>' . filesize($image) . ' bytes</div></td>'; //image size
                         echo "<input type='hidden' name='file_name' value='$image'>";
-                        echo "<td><input type='submit' name='delete_file' value='Delete File'></td>";
+                        echo "<td><input type='submit' name='delete_file' value='Delete File'></td>"; //delete button
                         echo "</form>";
                     }
                     echo "</tr>";

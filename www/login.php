@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/login.css">
+
     <title>InstaKilogram</title>
 </head>
 <body>
+    
   <!--Login page require user to provide enough information before using our website-->
   <section class="form_box">
       <section class="container">
           <form action="../dataProcessing/data_check.php" class="form-horizontal" method="post">
               <h1 class="text-center">Login</h1>
             <div class="form-group ">
-              <label for="inputEmail3" class="col-form-label">Email</label>
+              <label for="inputEmail" class="col-form-label">Email</label>
                 <input type="email"  name="useremail" class="form-control" id="inputEmail" placeholder="Email address" >
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class=" col-form-label">Password</label>
+              <label for="inputPassword" class=" col-form-label">Password</label>
             <input type="password" name="userpassword"   class="form-control" id="inputPassword" placeholder="Password" >
             </div>
             <div class="form-check mt-3">

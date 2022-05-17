@@ -142,9 +142,8 @@ body {
     opacity: 1;
 }
 
-.sidebar ul {
+.sidebar ul{
     margin-top: 20px;
-
 }
 
 .sidebar ul li {
@@ -156,7 +155,7 @@ body {
     line-height: 50px;
 }
 
-.sidebar ul li a {
+.sidebar ul li a{
     color: #032F53;
     display: flex;
     align-items: center;
@@ -169,7 +168,7 @@ body {
 
 .sidebar ul li a:hover {
     color: white;
-    background: #032F53;
+    background: #7499b8;
     border: 2px solid rgb(255, 255, 255);
 }
 
@@ -192,16 +191,16 @@ body {
 }
 
 .sidebar ul li a span {
+    display: none;
     font-size: 20px;
     font-weight: bold;
+    position:relative;
     left: 50px;
-    position: relative;
-    opacity: 0;
 }
 
 
 .sidebar.active ul li a span {
-    opacity: 1;
+    display: inline;
 }
 
 .sidebar ul li.log_out {
@@ -219,6 +218,7 @@ body {
     left: 90px;
     width: calc(100% - 90px);
     background-color: rgb(255, 255, 255);
+    padding: 0px 20px 0px 0px;
 }
 
 .sidebar.active~.user_content {

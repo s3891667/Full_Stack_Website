@@ -313,3 +313,63 @@ footer a {
 
 
 }
+
+/* for tablet */
+
+@media only screen and (max-width :1023px) and (min-width:768px) {
+
+    .box-des {
+        padding: 10px;
+    
+    }
+    
+}
+
+
+/* for desktop */
+
+
+@media only screen and (min-width:1024px) {
+    .box-des {
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    }
+    .button-des1 {
+        margin-top: 20px;
+        background-color: red;
+    }
+
+    #content-text2 {
+        float: left;
+        padding-top: 20px;
+        cursor: pointer;
+        margin-left: 1%;
+    
+    }
+}
+
+
+
+/* for Phones */
+@media only screen and (max-width :767px) {
+    .box-des {
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    }
+    #button-des3 {
+        margin-top: 20px;
+        width: 60%;
+    }
+    
+    #content-text2 {
+        float: left;
+        padding-top: 20px;
+        cursor: pointer;
+        margin-left: 30px;
+    }
+
+}

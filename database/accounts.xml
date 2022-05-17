@@ -7,7 +7,7 @@
     <email>s@rmit.edu.vn</email>
     <date>NULL</date>
     <time>NULL</time>
-    <avatar>NULL</avatar>
+    <avatar>../resources/avatar.png</avatar>
   </user>
   <user id="2">
     <firstname>mai</firstname>
@@ -19,21 +19,12 @@
     <avatar>../resources/user2/avatar/352084.jpg</avatar>
   </user>
   <user id="3">
-    <firstname>Duc Anh</firstname>
-    <lastname>Hoang</lastname>
-    <password>$2y$15$RIW7jcqQHxwn4NJFZitJfOtqwKcm9DNsOGrHQIUiBknpxcELJ46py</password>
-    <email>daviddanh98@gmail.com</email>
-    <date>2022-05-16</date>
-    <time>03:37:19pm</time>
-    <avatar/>
-  </user>
-  <user id="4">
-    <firstname>David</firstname>
-    <lastname>Hoang</lastname>
-    <password>$2y$15$cwWvO7mZHAHQ.xvnGRZhyOsaQIjuXElx3Lg137sytti4zw2BN5L7q</password>
-    <email>davidanh98@gmail.com</email>
+    <firstname>kiet</firstname>
+    <lastname>tran</lastname>
+    <password>$2y$15$VTmV91G4fyBsVvVsx8Hfuuw30hDxelqaIgwZOKnEeT8H.a7FR3pH6</password>
+    <email>kiet0110@gmail.com</email>
     <date>2022-05-17</date>
-    <time>07:55:58am</time>
-    <avatar/>
+    <time>07:33:23am</time>
+    <avatar>../resources/user3/avatar/248470827_1595994617404195_720930471133005499_n.jpg</avatar>
   </user>
 </system>

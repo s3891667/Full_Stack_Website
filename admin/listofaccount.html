@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin test</title>
+    <title>Admin</title>
+    <!--CSS and javascript used in this html-->
     <link rel="stylesheet" href="listofaccount.css">
     <script src="listofaccount.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -13,7 +14,7 @@
     <script src="../JS/bootstrap.bundle.min.js"></script>
 
 </head>
-
+<!--load table when the page is open-->
 <body onload="loadXMLDoc()">
     <!--Sidebar menu-->
     <div class="sidebar">
@@ -30,15 +31,16 @@
 
         <!--Navigator list-->
         <ul class="nav_list">
+            <!--menu option-->
             <li>
-                <a href="listofaccount.html">
+                <a href="listofaccount.html" id="menu_option">
                     <img src="picture/user-account-solid-24.png" alt="user-account">
                     <span class="link">User-account</span>
                 </a>
             </li>
-
+            <!--menu option-->
             <li>
-                <a href="listofimage.php">
+                <a href="listofimage.php" id="menu_option">
                     <img src="picture/image-solid-24.png" alt="image-list">
                     <span class="link">List of image</span>
                 </a>
@@ -46,14 +48,14 @@
 
             <!--Log out-->
             <li class="log_out">
-                <a href="https://google.com">
+                <a href="https://google.com" id="menu_option">
                     <img src="picture/log-out-regular-24.png" alt="log-out">
                     <span class="link">Log out</span>
                 </a>
             </li>
         </ul>
     </div>
-
+    
     <div class="user_content">
         <div class="text">List of account</div>
         <form method="POST">
@@ -71,7 +73,7 @@
         <table id="ascTable" class="ascTable"></table>
         <table id="descTable" class="descTable"></table>
     </div>
-
+    <!--reset password-->
     <div class="container mt-5">
         <div class="modal" id="myModal">
             <div class="modal-dialog">
@@ -104,6 +106,7 @@
             </div>
         </div>
     </div>
+    <!--script to sort date-->
     <script>
         function changeSelection() {
             var ascTable = document.getElementById("ascTable");

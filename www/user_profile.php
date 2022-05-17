@@ -121,8 +121,9 @@ $id = $_SESSION['id'];
                 <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#info_show" aria-expanded="false" aria-controls="collapseExample">
                     Show information
                 </button>
-                <button type='check' onclick="change_avatar()" class="btn btn-secondary">Change Avatar</button>
-            </div>
+
+                <button type='check' onclick="change_avatar()" id="button-des3" class="btn btn-secondary ">Change Avatar</button>
+            </div>  
         </div>
         <hr>
         <div id="change_ava" class="user-profile-box container square-box ">
@@ -130,7 +131,7 @@ $id = $_SESSION['id'];
                 <label id="avatar_label" class="box-des2" for="customFile">Choose your image : </label>
                 <input name="newAvatar" class="custom-file-input" type="file" id="newAvatar">
                 <div class="box-des ">
-                    <button id="hello" type='submit' class="btn btn-secondary">Change</button>
+                    <button id="hello" type='submit' class="btn btn-secondary ">Change</button>
                 </div>
             </form>
         </div>
@@ -178,7 +179,7 @@ $id = $_SESSION['id'];
 
                                 <div class='content2-first-2'>
 
-                                    <p class='content2-text' href=''>{$_SESSION['user']}</p>
+                                    <p class='content2-text' id='content-text2' href=''>{$_SESSION['user']}</p>
 
                                 </div>
                                 <div class='imgdiv'>
