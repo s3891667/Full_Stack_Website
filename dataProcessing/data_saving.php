@@ -49,16 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //If everything are clear then start storing data in xml file
     } else if ($flag == 1) {
         storing_data($system, $xml, $firstname, $lastname, $hashed_password, $email, $avatar);
-        echo $avatar_dir;
         if ($imgCheck == 0) {
             echo "<SCRIPT> //not showing me this
             window.location.href = '../www/signUp.html?invalidType';
             alert('Please check for file type');
             </SCRIPT>";
-        } else {
+        } 
             //redirect users to the index in order to login the system.
-            header("Location:../www/index.php");
-        }
+        header("Location:../www/index.php");
+        
     }
 }
 

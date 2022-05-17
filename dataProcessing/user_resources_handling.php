@@ -1,4 +1,5 @@
 <?php
+$id = $user = "";
 // check if session existed
 if (!isset($_SESSION)) {
     session_start();
