@@ -18,4 +18,13 @@
     <time>01:43:50am</time>
     <avatar>../resources/user2/avatar/352084.jpg</avatar>
   </user>
+  <user id="3">
+    <firstname>kiet</firstname>
+    <lastname>tran</lastname>
+    <password>$2y$15$VTmV91G4fyBsVvVsx8Hfuuw30hDxelqaIgwZOKnEeT8H.a7FR3pH6</password>
+    <email>kiet0110@gmail.com</email>
+    <date>2022-05-17</date>
+    <time>07:33:23am</time>
+    <avatar>../resources/user3/avatar/248470827_1595994617404195_720930471133005499_n.jpg</avatar>
+  </user>
 </system>

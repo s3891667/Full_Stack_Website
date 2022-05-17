@@ -199,10 +199,10 @@ if (isset($_SESSION['user'])) {
   </div>
   <footer>
     <div>
-      <a class="footer_tab" href="#">About Us</a>
-      <a class="footer_tab" href="#">Copyright</a>
-      <a class="footer_tab" href="#">Privacy</a>
-      <a class="footer_tab" href="#">Contact Information</a>
+      <a class="footer_tab" href="Menu.html">About Us</a>
+      <a class="footer_tab" href="Menu.html">Copyright</a>
+      <a class="footer_tab" href="Menu.html">Privacy</a>
+      <a class="footer_tab" href="Menu.html">Contact Information</a>
     </div>
   </footer>
 </body>
