@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../JS/cookies_content.js"></script>
+
     <title>InstaKilogram</title>
 </head>
 <body>
@@ -42,15 +42,6 @@
     </section>
     <div class="form-horizontal button_des">
       <a href="./welcomehomepage.html" button type="button" class="btn btn-outline-secondary button_des2 form-control">Back To The Homepage</button>
-    </div>
-    <div class="wrapper"></div>
-    <div class="cookie-container">
-        <div>I use cookies</div>
-        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
-            my use of cookies and other technologies.
-        </p>
-        <button class="accept-button">I understand</button>
-        <a href="#">Learn more</a>
     </div>
   </body>
 </html>
