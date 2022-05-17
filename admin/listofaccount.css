@@ -191,7 +191,7 @@ body {
 }
 
 .sidebar ul li a span {
-    opacity: 0;
+    display: none;
     font-size: 20px;
     font-weight: bold;
     position:relative;
@@ -200,7 +200,7 @@ body {
 
 
 .sidebar.active ul li a span {
-    opacity: 1;
+    display: inline;
 }
 
 .sidebar ul li.log_out {

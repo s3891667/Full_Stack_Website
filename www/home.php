@@ -46,10 +46,12 @@ function welcome()
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/carousel.css">
     <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/cookies_content.js"></script>
     <title>Homepage</title>
 </head>
 
 <body>
+
     <header>
         <nav id="colorsetup1" class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -170,6 +172,15 @@ function welcome()
             <a class="footer_tab" href="#">Contact Information</a>
         </div>
     </footer>
+    <div class="wrapper"></div>
+    <div class="cookie-container">
+        <div>I use cookies</div>
+        <p>My website uses cookies necessary for its basic <br>functioning. By continuing browsing, you consent <br>to
+            my use of cookies and other technologies.
+        </p>
+        <button class="accept-button">I understand</button>
+        <a href="#">Learn more</a>
+    </div>
 </body>
 
 </html>

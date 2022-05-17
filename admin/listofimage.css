@@ -196,12 +196,12 @@ body {
     font-weight: bold;
     left: 50px;
     position: relative;
-    opacity: 0;
+    display: none;
 }
 
 
 .sidebar.active ul li a span {
-    opacity: 1;
+    display: inline;
 }
 
 .sidebar ul li.log_out {
