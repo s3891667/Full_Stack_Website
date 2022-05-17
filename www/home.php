@@ -3,7 +3,7 @@
 <?php
 //start session
 session_start();
-//alert to avoid guest users from access to homepage 
+//alert to avoid guest users from access to homepage
 if (!isset($_SESSION['user'])) {
     echo "<SCRIPT>
     alert('Please login your account !');
@@ -12,7 +12,7 @@ if (!isset($_SESSION['user'])) {
     die();
 }
 
-//this function will display when user first logged in 
+//this function will display when user first logged in
 function welcome()
 {   //$_SESSION['checker] will ensure the welcome banner only display once
     if ($_SESSION['checker']) {
@@ -20,8 +20,8 @@ function welcome()
       <div id= 'alert' class='alert alert-success' role='alert'>
       <strong>Welcome </strong>";
         echo $_SESSION['user'];
-        echo " to InstaKilogram ! 
-      <a href='#' onclick = 'hide_alert()'; id= 'icon' 
+        echo " to InstaKilogram !
+      <a href='#' onclick = 'hide_alert()'; id= 'icon'
       class='close' data-dismiss='alert' aria-label='close'>&#10005;</a>
       </div>
       ";
@@ -46,6 +46,7 @@ function welcome()
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/carousel.css">
     <script src="../JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/cookies_content.css">
     <title>Homepage</title>
 </head>
 
@@ -143,7 +144,7 @@ function welcome()
                             <img class='icon2' src='../picture/network.png' alt='Connection'>
                         </div>
 
-            
+
                         <div class='timedisplay'>
         ";
                             echo      time_check($check, $dateDiff, $timeDiff);
@@ -169,7 +170,7 @@ function welcome()
       <a class="footer_tab" href="Menu.html">Privacy</a>
       <a class="footer_tab" href="Menu.html">Contact Information</a>
     </div>
-  </footer>
+    <script src="../JS/cookies_content.js"></script>
 </body>
 
 </html>
