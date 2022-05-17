@@ -1,9 +1,9 @@
 # Full_Stack_Website
 Members : 
-Leader and Frontend designers : Pham Viet Hoang\
-Backend designers : s3891667-Nguyen Duc Dang Khoa\
-                             Tran Tuan Kiet\
-Frontend designers : Tran Duc Anh
+  Leader and Frontend designers : Pham Viet Hoang\
+  Backend designers : s3891667-Nguyen Duc Dang Khoa\
+                               Tran Tuan Kiet\
+  Frontend designers : Tran Duc Anh
 
 
 Demonstration video :
@@ -14,23 +14,23 @@ Contributions :
 
 
 Instructions:
-Before local host our project you will need to setup the database folder which contains two files xml\
-by pasting it in the Full_StacK_Website folder (Root document) Since we want to protect the users' data\
-Data link:\
-https://drive.google.com/drive/folders/1ijQWCSMJ5UIHT1hn8up6tH45XClgvONH\
+  Before local host our project you will need to setup the database folder which contains two files xml\
+  by pasting it in the Full_StacK_Website folder (Root document) Since we want to protect the users' data\
+  Data link:\
+  https://drive.google.com/drive/folders/1ijQWCSMJ5UIHT1hn8up6tH45XClgvONH\
 
 
 
 
 User: 
-Step 1 : php -S localhost:4000 at Full_Stack_Website which is our root account.\
-Step 2 : direct to index.php by changing the URL on the browser to localhost:4000/www/index.php\
-Step 3 : Now you can easily testing our project !.\
+  Step 1 : php -S localhost:4000 at Full_Stack_Website which is our root account.\
+  Step 2 : direct to index.php by changing the URL on the browser to localhost:4000/www/index.php\
+  Step 3 : Now you can easily testing our project !.
 
 Admin:
-Step 1 : Same as User\
-Step 2 : direct to admin section by changing the URL on the browser to localhost:4000/admin/listofaccount.html\
-Step 3 : Finishing to login as Admin !.\
+  Step 1 : Same as User\
+  Step 2 : direct to admin section by changing the URL on the browser to localhost:4000/admin/listofaccount.html\
+  Step 3 : Finishing to login as Admin !.
 
 
 Document tree:
