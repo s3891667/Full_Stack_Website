@@ -1,4 +1,5 @@
-  .containercarousel {
+/* Design CSS container for card holder   */
+.containercarousel {
     position: absolute;
     height: 300px;
     width: 600px;
@@ -18,11 +19,15 @@
     height: fit-content;
   }
 
+/* Design the layout of the image */
+
   .pic-des{
     border-radius:20px ;
     box-shadow: 2px 2px 2px 2px whitesmoke;
     height: fit-content;
   }
+
+/*  Transition for the image when clicking on*/
 
   .card:not(:first-child) {
     margin-left: -50px;
@@ -30,12 +35,12 @@
 
   .card:hover {
     transform: translateY(-20px);
-    transition: 0.4s ease-out;
+    transition: 0.5s ease-out;
     border-radius: 15px;
   }
 
   .card:hover~.card {
     position: relative;
-    left: 50px;
-    transition: 0.4s ease-out;
+    left: 55px;
+    transition: 0.5s ease-out;
   }
