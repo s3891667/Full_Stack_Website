@@ -34,7 +34,7 @@ Admin:
 
 
 Document tree:
-```bash
+```
 ├── admin
 │   ├── delete_file.php
 │   ├── listofaccount.css
@@ -100,21 +100,26 @@ Document tree:
 │   ├── logo_remove_me_and_the_boiz.png
 │   ├── network.png
 │   └── welcomehomepage.jpg
+├── README.md
 ├── resources
 │   ├── avatar.png
-│   ├── user
-│   │   └── posts
-│   │       └── 4.png
-│   ├── user2
+│   ├── user1
 │   │   ├── avatar
-│   │   │   └── 352084.jpg
+│   │   │   └── nature.jpeg
 │   │   └── posts
-│   │       └── 1348001.jpg
-│   └── user3
+│   │       ├── 352084.jpg
+│   │       └── Q1.png
+│   ├── user2
+│   │   └── avatar
+│   ├── user3
+│   │   └── avatar
+│   ├── user4
+│   │   └── avatar
+│   ├── user5
+│   │   └── avatar
+│   └── user6
 │       └── avatar
-│           └── 248470827_1595994617404195_720930471133005499_n.jpg
 └── www
-    ├── 404.php
     ├── cookies.html
     ├── home.php
     ├── index.php
@@ -125,4 +130,5 @@ Document tree:
     ├── signUp.html
     ├── user_profile.php
     └── welcomehomepage.html
+
 ```
