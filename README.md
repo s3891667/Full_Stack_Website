@@ -15,7 +15,7 @@
 s3891455-Pham Viet Hoang : 5.6\
 s3891667-Nguyen Duc Dang Khoa : 5.6\
 s3879300-Tran Tuan Kiet : 5.6\ 
-s3847506-Tran Duc Anh : 3\
+s3847506-Tran Duc Anh : 3
 
 
 
